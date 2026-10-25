@@ -17,7 +17,7 @@ import { ProfileScreen } from "./screens/ProfileScreen";
 import { ResultScreen } from "./screens/ResultScreen";
 import { ScanScreen } from "./screens/ScanScreen";
 import { SearchScreen } from "./screens/SearchScreen";
-import { ServerSettingsScreen } from "./screens/ServerSettingsScreen";
+import { ClaudeKeyScreen } from "./screens/ClaudeKeyScreen";
 import { useTheme } from "./theme";
 
 const Tab = createBottomTabNavigator<TabParamList>();
@@ -89,7 +89,7 @@ export function Navigation() {
         <Stack.Screen name="Manufacturer" component={ManufacturerScreen} options={{ title: "Výrobce" }} />
         <Stack.Screen name="Alternatives" component={AlternativesScreen} options={{ title: "Alternativy" }} />
         <Stack.Screen name="ManualEntry" component={ManualEntryScreen} options={{ title: "Ruční zadání" }} />
-        <Stack.Screen name="ServerSettings" component={ServerSettingsScreen} options={{ title: "Nastavení serveru" }} />
+        <Stack.Screen name="ClaudeKey" component={ClaudeKeyScreen} options={{ title: "Claude API klíč" }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

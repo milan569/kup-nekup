@@ -134,7 +134,7 @@ function DeepProgress({ tone }: { tone: Tone }) {
         <ActivityIndicator color={t.primary} />
         <Text style={[styles.status, { color: t.text, marginTop: 0, marginLeft: spacing.md, flex: 1 }]}>{lines[idx % lines.length]}</Text>
       </View>
-      <Text style={[styles.deepDesc, { color: t.muted }]}>Důkladný průzkum trvá 1–2 minuty. Verdikt z pravidel platí hned.</Text>
+      <Text style={[styles.deepDesc, { color: t.muted }]}>Důkladný průzkum trvá 1–2 minuty, nechte obrazovku zapnutou. Verdikt z pravidel platí hned.</Text>
     </View>
   );
 }

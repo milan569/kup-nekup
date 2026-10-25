@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { Alert, ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import type { UserProfile } from "../api/types";
 import { Button } from "../components/Button";
@@ -11,6 +11,7 @@ import type { RootNavigation } from "../navigationTypes";
 import { useProfile } from "../profile";
 import { clearHistory } from "../storage/history";
 import { fontSize, spacing, useTheme } from "../theme";
+import { confirmDestructive } from "../utils/confirm";
 import { APP_VERSION } from "../version";
 
 type ListKey = keyof Pick<UserProfile, "countries" | "stores" | "allergens" | "diets" | "avoid">;
@@ -18,7 +19,7 @@ type ListKey = keyof Pick<UserProfile, "countries" | "stores" | "allergens" | "d
 export function ProfileScreen() {
   const t = useTheme();
   const navigation = useNavigation<RootNavigation>();
-  const { profile, updateProfile } = useProfile();
+  const { profile, updateProfile, hasClaudeKey } = useProfile();
 
   const toggle = (key: ListKey, value: string) => {
     const list = profile[key];
@@ -28,10 +29,7 @@ export function ProfileScreen() {
   };
 
   const confirmClear = () => {
-    Alert.alert("Smazat historii?", "Smaže všechny skeny i uložené produkty.", [
-      { text: "Zrušit", style: "cancel" },
-      { text: "Smazat", style: "destructive", onPress: () => clearHistory() },
-    ]);
+    confirmDestructive("Smazat historii?", "Smaže všechny skeny i uložené produkty.", "Smazat", () => void clearHistory());
   };
 
   return (
@@ -87,7 +85,14 @@ export function ProfileScreen() {
         <ToggleRow label="Zobrazovat udržitelnost" value={profile.showSustainability} onChange={(v) => updateProfile({ showSustainability: v })} />
 
         <SectionTitle>Aplikace</SectionTitle>
-        <Button title="Nastavení serveru" variant="secondary" onPress={() => navigation.navigate("ServerSettings")} />
+        <Button
+          title={hasClaudeKey ? "Claude API klíč a útrata" : "Zadat Claude API klíč"}
+          variant={hasClaudeKey ? "secondary" : "primary"}
+          onPress={() => navigation.navigate("ClaudeKey")}
+        />
+        {!hasClaudeKey ? (
+          <Text style={[styles.sub, { color: t.muted, marginTop: spacing.xs }]}>Bez klíče funguje jen čárový kód a pravidla; fotky etiket a posudky AI potřebují klíč.</Text>
+        ) : null}
         <Button title="Smazat historii" variant="ghost" onPress={confirmClear} style={{ marginTop: spacing.sm }} />
         <Text style={[styles.version, { color: t.muted }]}>Kup / Nekup {APP_VERSION} · verdikt není zdravotní rada</Text>
       </ScrollView>

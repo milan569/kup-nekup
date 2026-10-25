@@ -21,7 +21,7 @@ export function ScanScreen() {
   const t = useTheme();
   const navigation = useNavigation<RootNavigation>();
   const isFocused = useIsFocused();
-  const { profile } = useProfile();
+  const { profile, hasClaudeKey } = useProfile();
   const [hint, setHint] = useState<string | null>(null);
   const hintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   // codes the server identified as in-store (scale/price) labels: answer locally next time
@@ -91,7 +91,8 @@ export function ScanScreen() {
     dismissError();
     setCapturing(true);
     try {
-      const pic = await cameraRef.current.takePictureAsync({ quality: 0.85 });
+      // imageType matters on web only: the default PNG of a phone camera is tens of megabytes
+      const pic = await cameraRef.current.takePictureAsync({ quality: 0.85, imageType: "jpg" });
       if (pic?.uri) await lookup.lookupPhotoUri(pic.uri);
       else setLocalError("Fotku se nepodařilo pořídit. Zkuste to znovu.");
     } catch (err) {
@@ -120,25 +121,10 @@ export function ScanScreen() {
     }
   }, [lookup, dismissError]);
 
-  const openServerSettings = useCallback(() => {
+  const openKeySettings = useCallback(() => {
     dismissError();
-    navigation.navigate("ServerSettings");
+    navigation.navigate("ClaudeKey");
   }, [navigation, dismissError]);
-
-  if (Platform.OS === "web") {
-    return (
-      <SafeAreaView style={[styles.safe, { backgroundColor: t.bg }]}>
-        <View style={styles.center}>
-          <Text style={[styles.h, { color: t.text }]}>Kamera funguje jen v telefonu</Text>
-          <Text style={[styles.p, { color: t.muted }]}>
-            Otevřete aplikaci v Expo Go na iPhonu. Tady můžete zatím hledat podle názvu.
-          </Text>
-          <Text style={[styles.p, { color: t.muted }]}>Nebo zadejte čárový kód ručně v záložce Hledat.</Text>
-          <Button title="Hledat podle názvu" onPress={() => navigation.navigate("Tabs", { screen: "Search" })} />
-        </View>
-      </SafeAreaView>
-    );
-  }
 
   if (!permission) {
     return <SafeAreaView style={[styles.safe, { backgroundColor: t.bg }]} />;
@@ -154,6 +140,11 @@ export function ScanScreen() {
           </Text>
           {permission.canAskAgain ? (
             <Button title="Povolit kameru" onPress={() => requestPermission()} />
+          ) : Platform.OS === "web" ? (
+            <Text style={[styles.p, { color: t.muted }]}>
+              Kamera je pro tuto stránku zakázaná. Na iPhonu ji povolte v Nastavení → Safari → Kamera (u aplikace na ploše v Nastavení → Kup / Nekup), pak
+              aplikaci znovu otevřete.
+            </Text>
           ) : (
             <Button title="Otevřít nastavení" onPress={() => Linking.openSettings().catch(() => undefined)} />
           )}
@@ -182,16 +173,16 @@ export function ScanScreen() {
         <CollectBanner />
         <View style={styles.topHint}>
           <Text style={styles.hintText}>Namiřte na čárový kód</Text>
-          <Text style={styles.hintSub}>{hint ?? "nebo vyfoťte etiketu se složením"}</Text>
+          <Text style={styles.hintSub}>{hint ?? (hasClaudeKey ? "nebo vyfoťte etiketu se složením" : "bez Claude klíče funguje jen čárový kód a pravidla")}</Text>
         </View>
         <View style={styles.bottom}>
           {error ? (
             authError ? (
               <ErrorBox
-                title="Server odmítl přístup"
+                title="Chybí nebo neplatí Claude klíč"
                 message={error}
-                actionLabel="Nastavení serveru"
-                onAction={openServerSettings}
+                actionLabel="Zadat klíč"
+                onAction={openKeySettings}
                 onRetry={dismissError}
                 retryLabel="Zavřít"
               />

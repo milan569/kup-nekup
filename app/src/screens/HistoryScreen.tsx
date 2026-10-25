@@ -1,6 +1,6 @@
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import React, { useCallback, useMemo, useState } from "react";
-import { Alert, FlatList, Pressable, StyleSheet, Text, View } from "react-native";
+import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { verdictText } from "../api/verdicts";
 import { Chip, ChipRow } from "../components/Chip";
@@ -11,6 +11,7 @@ import { useTone } from "../profile";
 import { loadComparisons, removeComparison, type ComparisonEntry } from "../storage/comparisons";
 import { loadFavorites, loadHistory, removeFromHistory, type HistoryEntry } from "../storage/history";
 import { fontSize, radius, spacing, useTheme } from "../theme";
+import { confirmDestructive } from "../utils/confirm";
 
 /** Products and comparisons in one timeline, newest first. */
 type Row = { kind: "product"; id: string; at: string; entry: HistoryEntry } | { kind: "comparison"; id: string; at: string; entry: ComparisonEntry };
@@ -50,18 +51,11 @@ export function HistoryScreen() {
 
   const confirmDelete = (row: Row) => {
     const title = row.kind === "product" ? row.entry.result.product.name : comparisonTitle(row.entry);
-    Alert.alert("Smazat z historie?", title, [
-      { text: "Zrušit", style: "cancel" },
-      {
-        text: "Smazat",
-        style: "destructive",
-        onPress: async () => {
-          if (row.kind === "product") await removeFromHistory(row.id);
-          else await removeComparison(row.id);
-          reload();
-        },
-      },
-    ]);
+    confirmDestructive("Smazat z historie?", title, "Smazat", async () => {
+      if (row.kind === "product") await removeFromHistory(row.id);
+      else await removeComparison(row.id);
+      reload();
+    });
   };
 
   const open = (row: Row) => {

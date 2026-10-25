@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { FlatList, Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { api, describeError } from "../api/client";
@@ -21,36 +21,45 @@ export function SearchScreen() {
   const lookup = useLookup(profile);
   const [q, setQ] = useState("");
   const [candidates, setCandidates] = useState<SearchCandidate[]>([]);
+  const [searched, setSearched] = useState<string | null>(null);
+  const [via, setVia] = useState<"off" | "ai" | "none" | undefined>(undefined);
   const [searching, setSearching] = useState(false);
   const [searchError, setSearchError] = useState<string | null>(null);
   const [localError, setLocalError] = useState<string | null>(null);
   const seq = useRef(0);
 
   const typedEan = /^\d{8,14}$/.test(q.trim()) ? q.trim() : null;
+  const canSearch = q.trim().length >= 2 && !typedEan;
+
+  // Search runs on submit, not while typing: when the database is down the
+  // fallback is a paid web search, and nobody wants to pay per keystroke.
+  const runSearch = useCallback(async () => {
+    const term = q.trim();
+    if (term.length < 2 || /^\d{8,14}$/.test(term)) return;
+    const mySeq = ++seq.current;
+    setSearching(true);
+    setSearchError(null);
+    try {
+      const res = await api.search(term, profile.countries);
+      if (mySeq !== seq.current) return;
+      setCandidates(res.candidates);
+      setVia(res.via);
+      setSearched(term);
+    } catch (err) {
+      if (mySeq === seq.current) setSearchError(describeError(err));
+    } finally {
+      if (mySeq === seq.current) setSearching(false);
+    }
+  }, [q, profile.countries]);
 
   useEffect(() => {
-    const term = q.trim();
-    if (term.length < 2 || /^\d{8,14}$/.test(term)) {
+    if (q.trim().length < 2) {
       setCandidates([]);
-      setSearching(false);
+      setSearched(null);
+      setVia(undefined);
       setSearchError(null);
-      return;
     }
-    const mySeq = ++seq.current;
-    const timer = setTimeout(async () => {
-      setSearching(true);
-      setSearchError(null);
-      try {
-        const res = await api.search(term, profile.countries);
-        if (mySeq === seq.current) setCandidates(res.candidates);
-      } catch (err) {
-        if (mySeq === seq.current) setSearchError(describeError(err));
-      } finally {
-        if (mySeq === seq.current) setSearching(false);
-      }
-    }, 400);
-    return () => clearTimeout(timer);
-  }, [q, profile.countries]);
+  }, [q]);
 
   const pick = (c: SearchCandidate) => {
     if (c.ean) lookup.lookupEan(c.ean, true);
@@ -83,19 +92,21 @@ export function SearchScreen() {
           keyboardType="default"
           returnKeyType="search"
           clearButtonMode="while-editing"
+          onSubmitEditing={runSearch}
           style={[styles.input, { backgroundColor: t.card, color: t.text, borderColor: t.border }]}
         />
+        {canSearch ? <Button title="Hledat v databázi" compact onPress={runSearch} loading={searching} style={{ marginTop: spacing.sm }} /> : null}
       </View>
 
       {error ? (
         !localError && lookup.errorKind === "auth" ? (
           <ErrorBox
-            title="Server odmítl přístup"
+            title="Chybí nebo neplatí Claude klíč"
             message={error}
-            actionLabel="Nastavení serveru"
+            actionLabel="Zadat klíč"
             onAction={() => {
               lookup.clearError();
-              navigation.navigate("ServerSettings");
+              navigation.navigate("ClaudeKey");
             }}
             onRetry={lookup.clearError}
             retryLabel="Zavřít"
@@ -134,7 +145,10 @@ export function SearchScreen() {
             )}
             {searching && <InlineLoading text="Hledám…" />}
             {searchError && <ErrorBox message={searchError} />}
-            {!searching && !typedEan && q.trim().length >= 3 && !searchError && candidates.length > 0 && (candidates[0]?.match ?? 1) < 0.99 && (
+            {!searching && via === "ai" && candidates.length > 0 && (
+              <Text style={[styles.empty, { color: t.muted }]}>Databáze produktů neodpovídala, hledáno přes AI (asi 0,01 USD).</Text>
+            )}
+            {!searching && !typedEan && searched !== null && !searchError && candidates.length > 0 && (candidates[0]?.match ?? 1) < 0.99 && (
               <View style={[styles.noExact, { backgroundColor: t.card, borderColor: t.border }]}>
                 <Text style={[styles.noExactTitle, { color: t.text }]}>Přesnou shodu jsme v databázi nenašli</Text>
                 <Text style={[styles.noExactText, { color: t.muted }]}>
@@ -150,8 +164,11 @@ export function SearchScreen() {
                 />
               </View>
             )}
-            {!searching && !typedEan && q.trim().length >= 2 && candidates.length === 0 && !searchError && (
+            {!searching && !typedEan && searched !== null && candidates.length === 0 && !searchError && (
               <Text style={[styles.empty, { color: t.muted }]}>Nic jsme nenašli. Zkuste fotku etikety nebo ruční zadání.</Text>
+            )}
+            {!searching && !typedEan && searched === null && q.trim().length >= 2 && (
+              <Text style={[styles.empty, { color: t.muted }]}>Stiskněte Hledat, nebo rovnou vyfoťte etiketu.</Text>
             )}
           </View>
         }

@@ -1,8 +1,9 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { EMPTY_PROFILE, type Tone, type UserProfile } from "./api/types";
-import { setAppToken, setBaseUrl } from "./api/client";
+import { setClaudeApiKey } from "./api/client";
+import { clearClaudeKey, loadClaudeKey, saveClaudeKey } from "./storage/claudeKey";
 import { loadProfile, saveProfile } from "./storage/profile";
-import { loadSettings } from "./storage/settings";
+import { loadSpend } from "./storage/spend";
 
 interface ProfileContextValue {
   ready: boolean;
@@ -10,6 +11,10 @@ interface ProfileContextValue {
   profile: UserProfile;
   updateProfile: (patch: Partial<UserProfile>) => Promise<void>;
   replaceProfile: (profile: UserProfile) => Promise<void>;
+  /** the stored Claude API key ("" = none); AI features need it */
+  claudeKey: string;
+  hasClaudeKey: boolean;
+  setClaudeKey: (key: string) => Promise<void>;
 }
 
 const ProfileContext = createContext<ProfileContextValue | null>(null);
@@ -18,14 +23,15 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
   const [ready, setReady] = useState(false);
   const [hasProfile, setHasProfile] = useState(false);
   const [profile, setProfile] = useState<UserProfile>(EMPTY_PROFILE);
+  const [claudeKey, setKeyState] = useState("");
 
   useEffect(() => {
     let cancelled = false;
     (async () => {
-      const [stored, settings] = await Promise.all([loadProfile(), loadSettings()]);
+      const [stored, key] = await Promise.all([loadProfile(), loadClaudeKey(), loadSpend()]);
       if (cancelled) return;
-      setBaseUrl(settings.apiUrl);
-      setAppToken(settings.appToken);
+      setClaudeApiKey(key);
+      setKeyState(key);
       if (stored) {
         setProfile(stored);
         setHasProfile(true);
@@ -50,9 +56,17 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
     [profile, replaceProfile],
   );
 
+  const setClaudeKey = useCallback(async (key: string) => {
+    const k = key.trim();
+    setClaudeApiKey(k);
+    setKeyState(k);
+    if (k) await saveClaudeKey(k);
+    else await clearClaudeKey();
+  }, []);
+
   const value = useMemo(
-    () => ({ ready, hasProfile, profile, updateProfile, replaceProfile }),
-    [ready, hasProfile, profile, updateProfile, replaceProfile],
+    () => ({ ready, hasProfile, profile, updateProfile, replaceProfile, claudeKey, hasClaudeKey: !!claudeKey, setClaudeKey }),
+    [ready, hasProfile, profile, updateProfile, replaceProfile, claudeKey, setClaudeKey],
   );
 
   return <ProfileContext.Provider value={value}>{children}</ProfileContext.Provider>;

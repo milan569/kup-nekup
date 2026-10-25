@@ -1,3 +1,13 @@
+import Anthropic from "@anthropic-ai/sdk";
+import { hasApiKey, keyFormatProblem, setApiKey, testApiKey } from "../core/anthropic";
+import { Cache } from "../core/cache";
+import { MODEL } from "../core/config";
+import { ApiError, describeError, toApiError } from "../core/errors";
+import * as lookup from "../core/lookup";
+import { setSpendGuard, setUsageListener } from "../core/usage";
+import { platformCacheStore } from "../storage/cacheStore";
+import { addSpend, spendGuardMessage } from "../storage/spend";
+import { withWakeLock } from "../utils/wakeLock";
 import type {
   Alternative,
   AlternativesRequest,
@@ -17,213 +27,109 @@ import type {
   QuickInsightResponse,
   SearchCandidate,
 } from "./types";
-import { DEFAULT_API_URL, DEFAULT_APP_TOKEN } from "../storage/settings";
-
-let baseUrl = DEFAULT_API_URL;
-let appToken = DEFAULT_APP_TOKEN;
-
-export function setBaseUrl(url: string): void {
-  baseUrl = url.trim().replace(/\/+$/, "") || DEFAULT_API_URL;
-}
-
-export function getBaseUrl(): string {
-  return baseUrl;
-}
 
 /**
- * Phone keyboards add surprises when typing the token: a capital first
- * letter, trailing spaces, typographic dashes. Same normalisation as the server.
+ * The app's "API": the same calls the screens always made, now answered on
+ * the device by src/core instead of a server. Every failure becomes an
+ * ApiError with a short Czech message (kind "auth" = no Claude key or a
+ * rejected one; code "in_store_code" = a shop scale label).
  */
-export function normalizeToken(raw: string): string {
-  // trims and lower-cases for display/storage; the server additionally treats
-  // the "kupnekup-" prefix and dashes as optional
-  return raw
-    .normalize("NFKC")
-    .replace(/[‐-―−﹘﹣－]/g, "-")
-    .replace(/\s+/g, "")
-    .toLowerCase();
+
+export { ApiError, describeError, hasApiKey, keyFormatProblem };
+
+const cache = new Cache(platformCacheStore());
+lookup.initLookup(cache);
+setUsageListener((e) => {
+  void addSpend(e.usd);
+});
+setSpendGuard(spendGuardMessage);
+// old cache entries go after start-up, not on the critical path
+setTimeout(() => {
+  void cache.sweep();
+}, 8000);
+
+/** Called by the profile provider when the stored key loads or changes. */
+export function setClaudeApiKey(key: string | undefined): void {
+  setApiKey(key);
 }
 
-export function setAppToken(token: string): void {
-  appToken = normalizeToken(token);
-}
-
-export function getAppToken(): string {
-  return appToken;
-}
-
-export class ApiError extends Error {
-  /** "auth" = the server rejected the access token (401/403) */
-  readonly kind: "timeout" | "network" | "http" | "auth";
-  readonly status?: number;
-  /** machine-readable code from the error body, e.g. "in_store_code" */
-  readonly code?: string;
-  constructor(kind: ApiError["kind"], message: string, status?: number, code?: string) {
-    super(message);
-    this.kind = kind;
-    this.status = status;
-    this.code = code;
-  }
-}
-
-/** Short Czech message for the UI; never a stack trace. */
-export function describeError(err: unknown): string {
-  if (err instanceof ApiError) return err.message;
-  if (err instanceof Error && err.message) return err.message.split("\n")[0];
-  return "Neznámá chyba.";
-}
-
-interface RequestOptions {
-  method?: "GET" | "POST";
-  body?: unknown;
-  timeoutMs: number;
-  baseUrlOverride?: string;
-  tokenOverride?: string;
-}
-
-async function request<T>(path: string, opts: RequestOptions): Promise<T> {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), opts.timeoutMs);
-  const url = (opts.baseUrlOverride ?? baseUrl) + path;
-  const headers: Record<string, string> = { "Content-Type": "application/json", Accept: "application/json" };
-  const token = normalizeToken(opts.tokenOverride ?? appToken);
-  if (token) headers["x-app-token"] = token;
+async function call<T>(fn: () => Promise<T>): Promise<T> {
   try {
-    const res = await fetch(url, {
-      method: opts.method ?? "GET",
-      headers,
-      body: opts.body == null ? undefined : JSON.stringify(opts.body),
-      signal: controller.signal,
-    });
-    let data: unknown = null;
-    const text = await res.text();
-    if (text) {
-      try {
-        data = JSON.parse(text);
-      } catch {
-        data = null;
-      }
-    }
-    if (!res.ok) {
-      const serverMsg =
-        data && typeof data === "object" && typeof (data as { error?: unknown }).error === "string"
-          ? (data as { error: string }).error
-          : null;
-      const msg =
-        serverMsg ??
-        (res.status === 401 || res.status === 403
-          ? "Server odmítl přístup. Zkontrolujte přístupový klíč v Nastavení serveru."
-          : `Server vrátil chybu ${res.status}.`);
-      const code =
-        data && typeof data === "object" && typeof (data as { code?: unknown }).code === "string"
-          ? (data as { code: string }).code
-          : undefined;
-      throw new ApiError(res.status === 401 || res.status === 403 ? "auth" : "http", msg, res.status, code);
-    }
-    // Streamed endpoints (insight) send HTTP 200 before the work is done; a failure
-    // then arrives as a body that is exactly { "error": "…" }.
-    if (data && typeof data === "object" && !Array.isArray(data)) {
-      const keys = Object.keys(data);
-      const errorValue = (data as { error?: unknown }).error;
-      if (keys.length === 1 && keys[0] === "error" && typeof errorValue === "string") {
-        throw new ApiError("http", errorValue);
-      }
-    }
-    return data as T;
+    return await fn();
   } catch (err) {
-    if (err instanceof ApiError) throw err;
-    if (err instanceof Error && err.name === "AbortError") {
-      throw new ApiError("timeout", "Server neodpověděl včas. Zkuste to znovu.");
-    }
-    throw new ApiError(
-      "network",
-      "Nepodařilo se připojit k serveru. Zkontrolujte připojení a adresu serveru v Profilu.",
-    );
-  } finally {
-    clearTimeout(timer);
+    throw toApiError(err);
   }
-}
-
-export interface HealthResponse {
-  ok: boolean;
-  model: string;
-  hasKey: boolean;
 }
 
 export const api = {
-  health(baseUrlOverride?: string, tokenOverride?: string): Promise<HealthResponse> {
-    return request<HealthResponse>("/api/health", { timeoutMs: 6000, baseUrlOverride, tokenOverride });
-  },
-
-  /** Verifies the access token (health is public and does not check it). */
-  authCheck(baseUrlOverride?: string, tokenOverride?: string): Promise<{ ok: boolean; tokenRequired: boolean }> {
-    return request<{ ok: boolean; tokenRequired: boolean }>("/api/auth-check", { timeoutMs: 8000, baseUrlOverride, tokenOverride });
+  /** Checks a key without spending credit (a GET of the model record). */
+  async testKey(key: string): Promise<{ model: string }> {
+    try {
+      return await testApiKey(key);
+    } catch (err) {
+      if (err instanceof Anthropic.NotFoundError) {
+        throw new ApiError("http", `Klíč platí, ale model ${MODEL} není pro vaši organizaci dostupný. Zkontrolujte v Claude Console, že máte kredit.`, 404);
+      }
+      throw toApiError(err);
+    }
   },
 
   lookupEan(body: EanLookupRequest): Promise<ProductResult> {
-    return request<ProductResult>("/api/lookup/ean", { method: "POST", body, timeoutMs: 8000 });
+    return call(() => lookup.lookupEan(body));
   },
 
   lookupPhoto(body: PhotoLookupRequest): Promise<ProductResult> {
-    return request<ProductResult>("/api/lookup/photo", { method: "POST", body, timeoutMs: 25000 });
+    return call(() => lookup.lookupPhoto(body));
   },
 
   lookupManual(body: ManualLookupRequest): Promise<ProductResult> {
-    return request<ProductResult>("/api/lookup/manual", { method: "POST", body, timeoutMs: 20000 });
+    return call(() => lookup.lookupManual(body));
   },
 
-  search(q: string, countries: string[]): Promise<{ candidates: SearchCandidate[] }> {
-    const params = new URLSearchParams({ q });
-    if (countries.length) params.set("countries", countries.join(","));
-    return request<{ candidates: SearchCandidate[] }>(`/api/search?${params.toString()}`, {
-      timeoutMs: 8000,
-    });
+  search(q: string, countries: string[]): Promise<{ candidates: SearchCandidate[]; via?: "off" | "ai" | "none" }> {
+    return call(() => lookup.search(q, countries));
   },
 
   manufacturer(body: ManufacturerRequest): Promise<ManufacturerInfo> {
-    return request<ManufacturerInfo>("/api/manufacturer", { method: "POST", body, timeoutMs: 25000 });
+    return call(() => lookup.manufacturer(body));
   },
 
   alternatives(body: AlternativesRequest): Promise<{ alternatives: Alternative[] }> {
-    return request<{ alternatives: Alternative[] }>("/api/alternatives", {
-      method: "POST",
-      body,
-      timeoutMs: 15000,
-    });
+    return call(() => lookup.alternatives(body));
   },
 
-  /** fast first opinion with a short web check (10–20 s); streamed like the deep insight */
+  /** fast first opinion with a short web check (10–20 s) */
   quickInsight(body: InsightRequest): Promise<QuickInsightResponse> {
-    return request<QuickInsightResponse>("/api/insight/quick", { method: "POST", body, timeoutMs: 90000 });
+    return call(() => withWakeLock(() => lookup.quickInsight(body)));
   },
 
   /** closest alternatives of the same kind in one country (web research, up to ~1 min) */
   alternativesResearch(body: AlternativesResearchRequest): Promise<AlternativesResearchResponse> {
-    return request<AlternativesResearchResponse>("/api/alternatives/research", { method: "POST", body, timeoutMs: 180000 });
+    return call(() => withWakeLock(() => lookup.alternativesResearch(body)));
   },
 
   /** quick comparison of the basket (rules + short web check, 10–20 s) */
   compareQuick(body: CompareRequest): Promise<CompareResponse> {
-    return request<CompareResponse>("/api/compare/quick", { method: "POST", body, timeoutMs: 90000 });
+    return call(() => withWakeLock(() => lookup.compareQuick(body)));
   },
 
   /** deep comparison: full research of every product first (1–3 min) */
   compare(body: CompareRequest): Promise<CompareResponse> {
-    return request<CompareResponse>("/api/compare", { method: "POST", body, timeoutMs: 420000 });
+    return call(() => withWakeLock(() => lookup.compare(body)));
   },
 
-  /** ingredient list in Czech (foreign lists are translated once on the server and cached) */
+  /** ingredient list in Czech (foreign lists are translated once and cached) */
   translateIngredients(body: { text: string }): Promise<{ text: string; translated: boolean; cached: boolean; items: { text: string; severity: number }[] }> {
-    return request("/api/ingredients/translate", { method: "POST", body, timeoutMs: 30000 });
+    return call(() => lookup.translateIngredients(body));
   },
 
-  /** health impact of one tapped ingredient (lookup on the server, no AI cost) */
+  /** health impact of one tapped ingredient (bundled tables, no AI cost) */
   ingredientInfo(body: { q?: string; ref?: string; context?: string }): Promise<IngredientInfoResponse> {
-    return request<IngredientInfoResponse>("/api/ingredient", { method: "POST", body, timeoutMs: 10000 });
+    return call(() => lookup.ingredientInfo(body));
   },
 
+  /** deep research: 1–3 minutes, keep the screen on */
   insight(body: InsightRequest): Promise<InsightResponse> {
-    // research takes 1–3 minutes; the server streams whitespace while it works
-    return request<InsightResponse>("/api/insight", { method: "POST", body, timeoutMs: 240000 });
+    return call(() => withWakeLock(() => lookup.insight(body)));
   },
 };

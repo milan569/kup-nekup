@@ -41,7 +41,7 @@ export type RootStackParamList = {
   Manufacturer: { result: ProductResult; manufacturer?: ManufacturerInfo };
   Alternatives: { result: ProductResult; aiAlternatives?: InsightAlternative[] };
   ManualEntry: { initialName?: string } | undefined;
-  ServerSettings: undefined;
+  ClaudeKey: undefined;
 };
 
 export type RootNavigation = NativeStackNavigationProp<RootStackParamList>;
