@@ -1,0 +1,5975 @@
+[
+  {
+    "code": "E100",
+    "name": "kurkumin",
+    "nameEn": "curcumin",
+    "category": "barvivo",
+    "risk": 0,
+    "note": "Žluté barvivo z kurkumy; dle EFSA bez obav při běžném příjmu.",
+    "aliases": [
+      "kurkumin",
+      "curcumin",
+      "Kurkumin",
+      "kurkuma extrakt",
+      "turmeric extract"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e100-curcumin",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E101",
+    "name": "riboflavin",
+    "nameEn": "riboflavin",
+    "category": "barvivo",
+    "risk": 0,
+    "note": "Vitamin B2 používaný jako žluté barvivo; bez obav.",
+    "aliases": [
+      "riboflavin",
+      "vitamin B2",
+      "riboflavin-5'-fosfát",
+      "Riboflavin",
+      "Lactoflavin"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e101-riboflavin",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E102",
+    "name": "tartrazin",
+    "nameEn": "tartrazine",
+    "category": "barvivo",
+    "risk": 3,
+    "note": "Azobarvivo ze „southamptonské šestky“; v EU povinné upozornění na možný vliv na pozornost dětí (nař. (ES) č. 1333/2008, příloha V), může vyvolat alergické reakce.",
+    "aliases": [
+      "tartrazin",
+      "tartrazine",
+      "Tartrazin",
+      "žluť 5",
+      "FD&C Yellow 5",
+      "tartrazin E102"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e102-tartrazine",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E104",
+    "name": "chinolinová žluť",
+    "nameEn": "quinoline yellow",
+    "category": "barvivo",
+    "risk": 3,
+    "note": "Syntetické barvivo ze „southamptonské šestky“ s povinným upozorněním na vliv na pozornost dětí; EFSA v roce 2009 výrazně snížila ADI.",
+    "aliases": [
+      "chinolinová žluť",
+      "quinoline yellow",
+      "Chinolingelb",
+      "kinolin žuta",
+      "kinolinsko žuta",
+      "chinolinová žlť"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e104-quinoline-yellow",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E110",
+    "name": "žluť SY",
+    "nameEn": "sunset yellow FCF",
+    "category": "barvivo",
+    "risk": 3,
+    "note": "Azobarvivo ze „southamptonské šestky“ s povinným upozorněním na vliv na pozornost dětí; možné alergické reakce.",
+    "aliases": [
+      "žluť SY",
+      "oranžová žluť",
+      "sunset yellow",
+      "sunset yellow FCF",
+      "Gelborange S",
+      "sunset žuta",
+      "žuta FCF",
+      "FD&C Yellow 6",
+      "žlť SY"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e110-sunset-yellow-fcf",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E120",
+    "name": "košenila, kyselina karmínová, karmíny",
+    "nameEn": "cochineal, carminic acid, carmines",
+    "category": "barvivo",
+    "risk": 1,
+    "note": "Přírodní červené barvivo z hmyzu; vzácně vyvolává alergické reakce, není vhodné pro vegany.",
+    "aliases": [
+      "košenila",
+      "kyselina karmínová",
+      "karmín",
+      "karmíny",
+      "cochineal",
+      "carmine",
+      "carminic acid",
+      "Echtes Karmin",
+      "Cochenille",
+      "košenil",
+      "karminska kiselina",
+      "karmin"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e120-cochineal",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E122",
+    "name": "azorubin",
+    "nameEn": "azorubine, carmoisine",
+    "category": "barvivo",
+    "risk": 3,
+    "note": "Azobarvivo ze „southamptonské šestky“ s povinným upozorněním na vliv na pozornost dětí; možné alergické reakce.",
+    "aliases": [
+      "azorubin",
+      "karmoisin",
+      "carmoisine",
+      "azorubine",
+      "Azorubin",
+      "Karmesin",
+      "karmoizin"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e122-azorubine",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E123",
+    "name": "amarant",
+    "nameEn": "amaranth",
+    "category": "barvivo",
+    "risk": 3,
+    "note": "Azobarvivo povolené v EU jen v úzkém okruhu výrobků (aperitivy, jikry); v USA zakázané od roku 1976.",
+    "aliases": [
+      "amarant",
+      "amaranth",
+      "Amaranth",
+      "červeň amarant",
+      "FD&C Red 2"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e123-amaranth",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E124",
+    "name": "Ponceau 4R, košenilová červeň A",
+    "nameEn": "ponceau 4R, cochineal red A",
+    "category": "barvivo",
+    "risk": 3,
+    "note": "Azobarvivo ze „southamptonské šestky“ s povinným upozorněním na vliv na pozornost dětí; EFSA v roce 2009 snížila ADI.",
+    "aliases": [
+      "ponceau 4R",
+      "košenilová červeň A",
+      "cochineal red A",
+      "Cochenillerot A",
+      "ponso 4R",
+      "košenil crvena A",
+      "Ponceau 4R"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e124-ponceau-4r",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E127",
+    "name": "erythrosin",
+    "nameEn": "erythrosine",
+    "category": "barvivo",
+    "risk": 3,
+    "note": "Jodované červené barvivo s účinky na štítnou žlázu u zvířat; v EU povoleno jen do koktejlových třešní (nař. (ES) č. 1333/2008).",
+    "aliases": [
+      "erythrosin",
+      "erythrosine",
+      "Erythrosin",
+      "eritrozin",
+      "FD&C Red 3",
+      "erytrozín"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e127-erythrosine",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E129",
+    "name": "červeň Allura AC",
+    "nameEn": "allura red AC",
+    "category": "barvivo",
+    "risk": 3,
+    "note": "Azobarvivo ze „southamptonské šestky“ s povinným upozorněním na vliv na pozornost dětí.",
+    "aliases": [
+      "červeň Allura AC",
+      "allura red",
+      "allura red AC",
+      "Allurarot AC",
+      "alura crvena AC",
+      "alura crvena",
+      "FD&C Red 40",
+      "červeň Allura"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e129-allura-red-ac",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E131",
+    "name": "patentní modř V",
+    "nameEn": "patent blue V",
+    "category": "barvivo",
+    "risk": 2,
+    "note": "Syntetické modré barvivo; vzácně hlášeny alergické reakce, v některých zemích mimo EU nepovoleno.",
+    "aliases": [
+      "patentní modř V",
+      "patent blue V",
+      "Patentblau V",
+      "patent plava V",
+      "patentna plava",
+      "patentná modrá V"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e131-patent-blue-v",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E132",
+    "name": "indigotin, indigokarmín",
+    "nameEn": "indigotine, indigo carmine",
+    "category": "barvivo",
+    "risk": 1,
+    "note": "Syntetické modré barvivo; dle EFSA bezpečné, ojediněle hlášeny přecitlivělosti.",
+    "aliases": [
+      "indigotin",
+      "indigokarmín",
+      "indigo carmine",
+      "indigotine",
+      "Indigotin",
+      "Indigokarmin",
+      "indigo karmin",
+      "FD&C Blue 2"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e132-indigotine",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E133",
+    "name": "brilantní modř FCF",
+    "nameEn": "brilliant blue FCF",
+    "category": "barvivo",
+    "risk": 1,
+    "note": "Syntetické modré barvivo; dle EFSA bezpečné v povolených dávkách.",
+    "aliases": [
+      "brilantní modř FCF",
+      "brilliant blue FCF",
+      "Brillantblau FCF",
+      "briljant plava FCF",
+      "brilantná modrá FCF",
+      "FD&C Blue 1"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e133-brilliant-blue-fcf",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E140",
+    "name": "chlorofyly a chlorofyliny",
+    "nameEn": "chlorophylls and chlorophyllins",
+    "category": "barvivo",
+    "risk": 0,
+    "note": "Přírodní zelené barvivo z rostlin; bez obav.",
+    "aliases": [
+      "chlorofyl",
+      "chlorofyly",
+      "chlorofyliny",
+      "chlorophyll",
+      "chlorophyllin",
+      "Chlorophylle",
+      "klorofil",
+      "hlorofil"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e140-chlorophylls-and-chlorophyllins",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E141",
+    "name": "měďnaté komplexy chlorofylů a chlorofylinů",
+    "nameEn": "copper complexes of chlorophylls and chlorophyllins",
+    "category": "barvivo",
+    "risk": 0,
+    "note": "Stabilizovaný zelený chlorofyl; dle EFSA bez obav.",
+    "aliases": [
+      "měďnaté komplexy chlorofylů",
+      "chlorofylin měďnatý",
+      "copper chlorophyllin",
+      "Kupferkomplexe der Chlorophylle",
+      "Kupferchlorophyllin",
+      "bakarni kompleksi hlorofila",
+      "bakrov klorofilin"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e141-copper-complexes-of-chlorophylls-and-chlorophyllins",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E142",
+    "name": "zeleň S",
+    "nameEn": "green S",
+    "category": "barvivo",
+    "risk": 2,
+    "note": "Syntetické zelené barvivo; EFSA považuje za bezpečné, ale ve více zemích mimo EU není povoleno.",
+    "aliases": [
+      "zeleň S",
+      "green S",
+      "Grün S",
+      "zelena S",
+      "lisaminová zeleň",
+      "zeleň S E142"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e142-green-s",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E150a",
+    "name": "karamel",
+    "nameEn": "plain caramel",
+    "category": "barvivo",
+    "risk": 0,
+    "note": "Obyčejný karamel vyráběný zahříváním cukru; bez obav.",
+    "aliases": [
+      "čistý karamel",
+      "plain caramel",
+      "caramel colour",
+      "Zuckerkulör",
+      "karamel boja",
+      "obični karamel",
+      "karamelové barvivo",
+      "barvivo karamel",
+      "barvivo: karamel",
+      "caramel color",
+      "karamelová barva"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e150a-plain-caramel",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E150b",
+    "name": "kaustický sulfitový karamel",
+    "nameEn": "caustic sulphite caramel",
+    "category": "barvivo",
+    "risk": 1,
+    "note": "Karamel vyráběný se siřičitany; dle EFSA bezpečný, bez amoniakových vedlejších látek.",
+    "aliases": [
+      "kaustický sulfitový karamel",
+      "caustic sulphite caramel",
+      "Sulfitlaugen-Zuckerkulör",
+      "sulfitni karamel",
+      "kaustický sulfitový karamel E150b"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e150b-caustic-sulphite-caramel",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E150c",
+    "name": "amoniakový karamel",
+    "nameEn": "ammonia caramel",
+    "category": "barvivo",
+    "risk": 2,
+    "note": "Karamel vyráběný s amoniakem, obsahuje 4-methylimidazol; EFSA v roce 2011 doporučila snížit expozici.",
+    "aliases": [
+      "amoniakový karamel",
+      "ammonia caramel",
+      "Ammoniak-Zuckerkulör",
+      "amonijačni karamel",
+      "amonijak karamel",
+      "amoniakový karamel E150c"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e150c-ammonia-caramel",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E150d",
+    "name": "amoniak-sulfitový karamel",
+    "nameEn": "sulphite ammonia caramel",
+    "category": "barvivo",
+    "risk": 2,
+    "note": "Karamel typický pro kolové nápoje, obsahuje 4-methylimidazol; EFSA doporučila snížit expozici u dětí.",
+    "aliases": [
+      "amoniak-sulfitový karamel",
+      "sulphite ammonia caramel",
+      "Ammonsulfit-Zuckerkulör",
+      "amonijum-sulfitni karamel",
+      "sulfitno-amonijačni karamel",
+      "karamel E150d"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e150d-sulphite-ammonia-caramel",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E151",
+    "name": "čerň BN, brilantní čerň PN",
+    "nameEn": "brilliant black BN",
+    "category": "barvivo",
+    "risk": 2,
+    "note": "Syntetické azobarvivo; dle EFSA bezpečné, ale u citlivých osob možné reakce přecitlivělosti.",
+    "aliases": [
+      "čerň BN",
+      "brilantní čerň PN",
+      "brilliant black BN",
+      "black PN",
+      "Brillantschwarz BN",
+      "briljant crna BN",
+      "čierna BN"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e151-brilliant-black-bn",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E153",
+    "name": "rostlinná uhlíková čerň",
+    "nameEn": "vegetable carbon",
+    "category": "barvivo",
+    "risk": 1,
+    "note": "Aktivní uhlí rostlinného původu; EFSA upozornila na možnou kontaminaci PAU a nanočástice, jinak bez obav.",
+    "aliases": [
+      "rostlinná uhlíková čerň",
+      "rostlinné uhlí",
+      "aktivní uhlí",
+      "vegetable carbon",
+      "carbon black",
+      "Pflanzenkohle",
+      "biljni ugalj",
+      "biljni ugljen",
+      "aktivno ugljevlje"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e153-vegetable-carbon",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E155",
+    "name": "hněď HT",
+    "nameEn": "brown HT",
+    "category": "barvivo",
+    "risk": 2,
+    "note": "Syntetické azobarvivo; EFSA v roce 2010 snížila ADI, možné alergické reakce.",
+    "aliases": [
+      "hněď HT",
+      "brown HT",
+      "Braun HT",
+      "smeđa HT",
+      "čokoládová hněď HT",
+      "hneď HT"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e155-brown-ht",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E160a",
+    "name": "karoteny",
+    "nameEn": "carotenes",
+    "category": "barvivo",
+    "risk": 0,
+    "note": "Oranžové barvivo přírodního původu (provitamin A); bez obav v běžných dávkách.",
+    "aliases": [
+      "karoteny",
+      "beta-karoten",
+      "karoten",
+      "carotenes",
+      "beta-carotene",
+      "Carotin",
+      "Beta-Carotin",
+      "karoteni",
+      "beta-karoten E160a"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e160a-carotenes",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E160b",
+    "name": "annatto, bixin, norbixin",
+    "nameEn": "annatto, bixin, norbixin",
+    "category": "barvivo",
+    "risk": 1,
+    "note": "Přírodní barvivo ze semen oreláníku; vzácně hlášeny alergické reakce.",
+    "aliases": [
+      "annatto",
+      "bixin",
+      "norbixin",
+      "Annatto",
+      "anato",
+      "oreláník",
+      "annatto extrakt"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e160b-annatto",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E160c",
+    "name": "paprikový extrakt, kapsanthin, kapsorubin",
+    "nameEn": "paprika extract, capsanthin, capsorubin",
+    "category": "barvivo",
+    "risk": 0,
+    "note": "Přírodní barvivo z papriky; bez obav.",
+    "aliases": [
+      "paprikový extrakt",
+      "kapsanthin",
+      "kapsorubin",
+      "paprika extract",
+      "paprika oleoresin",
+      "Paprikaextrakt",
+      "ekstrakt paprike",
+      "paprikový oleoresin"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e160c-paprika-extract",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E160d",
+    "name": "lykopen",
+    "nameEn": "lycopene",
+    "category": "barvivo",
+    "risk": 0,
+    "note": "Červené barvivo z rajčat; bez obav.",
+    "aliases": [
+      "lykopen",
+      "lycopene",
+      "Lycopin",
+      "likopen"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e160d-lycopene",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E160e",
+    "name": "beta-apo-8'-karotenal",
+    "nameEn": "beta-apo-8'-carotenal",
+    "category": "barvivo",
+    "risk": 0,
+    "note": "Syntetický karotenoid; dle EFSA bezpečný.",
+    "aliases": [
+      "beta-apo-8'-karotenal",
+      "apokarotenal",
+      "beta-apo-8'-carotenal",
+      "Beta-apo-8'-Carotinal",
+      "beta-apo-8'-karotenal E160e"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e160e-beta-apo-8-carotenal",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E161b",
+    "name": "lutein",
+    "nameEn": "lutein",
+    "category": "barvivo",
+    "risk": 0,
+    "note": "Žlutý karotenoid z měsíčku; bez obav.",
+    "aliases": [
+      "lutein",
+      "Lutein",
+      "xanthofyl",
+      "lutein E161b"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e161b-lutein",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E161g",
+    "name": "kanthaxanthin",
+    "nameEn": "canthaxanthin",
+    "category": "barvivo",
+    "risk": 1,
+    "note": "Karotenoid, při vysokých dávkách ukládání v sítnici; v EU povolen jen do štrasburských klobás.",
+    "aliases": [
+      "kanthaxanthin",
+      "canthaxanthin",
+      "Canthaxanthin",
+      "kantaksantin"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e161g-canthaxanthin",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E162",
+    "name": "betalainová červeň, betanin",
+    "nameEn": "beetroot red, betanin",
+    "category": "barvivo",
+    "risk": 0,
+    "note": "Přírodní barvivo z červené řepy; bez obav.",
+    "aliases": [
+      "betalainová červeň",
+      "betanin",
+      "řepná červeň",
+      "beetroot red",
+      "betanin",
+      "Betanin",
+      "Beetenrot",
+      "cvekla crvena",
+      "boja cvekle",
+      "crvena repa"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e162-beetroot-red",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E163",
+    "name": "anthokyany",
+    "nameEn": "anthocyanins",
+    "category": "barvivo",
+    "risk": 0,
+    "note": "Přírodní barviva z ovoce a zeleniny; bez obav.",
+    "aliases": [
+      "anthokyany",
+      "antokyany",
+      "anthocyanins",
+      "Anthocyane",
+      "antocijani",
+      "antocijanini",
+      "antokyanové barvivo"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e163-anthocyanins",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E170",
+    "name": "uhličitan vápenatý",
+    "nameEn": "calcium carbonate",
+    "category": "barvivo",
+    "risk": 0,
+    "note": "Bílé barvivo a protispékavá látka (křída); bez obav.",
+    "aliases": [
+      "uhličitan vápenatý",
+      "calcium carbonate",
+      "Calciumcarbonat",
+      "kalcijum karbonat",
+      "kalcijev karbonat",
+      "uhličitan vápenatý E170"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e170-calcium-carbonate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E171",
+    "name": "oxid titaničitý",
+    "nameEn": "titanium dioxide",
+    "category": "barvivo",
+    "risk": 3,
+    "note": "EFSA jej v roce 2021 přestala považovat za bezpečný (genotoxicita nevyloučena); v potravinách v EU zakázán nařízením (EU) 2022/63.",
+    "aliases": [
+      "oxid titaničitý",
+      "titanová běloba",
+      "titanium dioxide",
+      "Titandioxid",
+      "titan dioksid",
+      "titanijum dioksid",
+      "titanijev dioksid",
+      "CI 77891"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e171-titanium-dioxide",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E172",
+    "name": "oxidy a hydroxidy železa",
+    "nameEn": "iron oxides and hydroxides",
+    "category": "barvivo",
+    "risk": 0,
+    "note": "Minerální barvivo (žluté, červené, černé); bez obav.",
+    "aliases": [
+      "oxidy železa",
+      "oxid železitý",
+      "hydroxidy železa",
+      "iron oxide",
+      "iron oxides",
+      "Eisenoxide",
+      "Eisenhydroxide",
+      "oksidi gvožđa",
+      "željezni oksidi"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e172-iron-oxides-and-hydroxides",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E173",
+    "name": "hliník",
+    "nameEn": "aluminium",
+    "category": "barvivo",
+    "risk": 2,
+    "note": "Kovové barvivo na povrch cukrovinek; přispívá k celkovému příjmu hliníku, u něhož EFSA upozorňuje na překračování tolerovatelného příjmu.",
+    "aliases": [
+      "hliník",
+      "aluminium",
+      "aluminum",
+      "Aluminium",
+      "aluminijum",
+      "aluminij",
+      "CI 77000"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e173-aluminium",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E174",
+    "name": "stříbro",
+    "nameEn": "silver",
+    "category": "barvivo",
+    "risk": 1,
+    "note": "Kovové barvivo na dekorace; EFSA nemohla pro nedostatek dat bezpečnost plně potvrdit.",
+    "aliases": [
+      "stříbro",
+      "silver",
+      "Silber",
+      "srebro",
+      "CI 77820"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e174-silver",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E175",
+    "name": "zlato",
+    "nameEn": "gold",
+    "category": "barvivo",
+    "risk": 0,
+    "note": "Inertní kovové barvivo na dekorace; prakticky se nevstřebává.",
+    "aliases": [
+      "zlato",
+      "gold",
+      "Gold",
+      "zlato E175",
+      "CI 77480"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e175-gold",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E180",
+    "name": "litholrubin BK",
+    "nameEn": "litholrubine BK",
+    "category": "barvivo",
+    "risk": 2,
+    "note": "Syntetické azobarvivo povolené jen na jedlé kůrky sýrů; možné reakce přecitlivělosti.",
+    "aliases": [
+      "litholrubin BK",
+      "litholrubine BK",
+      "Litholrubin BK",
+      "litolrubin BK",
+      "rubínový pigment BK"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e180-litholrubine-bk",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E200",
+    "name": "kyselina sorbová",
+    "nameEn": "sorbic acid",
+    "category": "konzervant",
+    "risk": 0,
+    "note": "Konzervant proti plísním a kvasinkám; dle EFSA bez obav v povolených dávkách.",
+    "aliases": [
+      "kyselina sorbová",
+      "sorbic acid",
+      "Sorbinsäure",
+      "sorbinska kiselina",
+      "kyselina sorbová E200"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e200-sorbic-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E202",
+    "name": "sorban draselný",
+    "nameEn": "potassium sorbate",
+    "category": "konzervant",
+    "risk": 1,
+    "note": "Nejběžnější sorbát; obecně bezpečný, vzácně hlášeno podráždění kůže či sliznic.",
+    "aliases": [
+      "sorban draselný",
+      "sorbát draselný",
+      "potassium sorbate",
+      "Kaliumsorbat",
+      "kalijum sorbat",
+      "kalijev sorbat",
+      "sorban draselný E202"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e202-potassium-sorbate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E203",
+    "name": "sorban vápenatý",
+    "nameEn": "calcium sorbate",
+    "category": "konzervant",
+    "risk": 1,
+    "note": "Vápenatá sůl kyseliny sorbové; obecně bezpečná, EFSA v roce 2015 požádala o doplnění dat.",
+    "aliases": [
+      "sorban vápenatý",
+      "calcium sorbate",
+      "Calciumsorbat",
+      "kalcijum sorbat",
+      "kalcijev sorbat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e203-calcium-sorbate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E210",
+    "name": "kyselina benzoová",
+    "nameEn": "benzoic acid",
+    "category": "konzervant",
+    "risk": 2,
+    "note": "Konzervant, který u citlivých osob může vyvolat kopřivku či zhoršit astma; s vitaminem C může vznikat stopový benzen.",
+    "aliases": [
+      "kyselina benzoová",
+      "benzoic acid",
+      "Benzoesäure",
+      "benzojeva kiselina",
+      "benzoeva kiselina"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e210-benzoic-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E211",
+    "name": "benzoan sodný",
+    "nameEn": "sodium benzoate",
+    "category": "konzervant",
+    "risk": 2,
+    "note": "Konzervant v nápojích; u citlivých osob pseudoalergické reakce, v kombinaci s kyselinou askorbovou možný vznik stop benzenu.",
+    "aliases": [
+      "benzoan sodný",
+      "benzoát sodný",
+      "sodium benzoate",
+      "Natriumbenzoat",
+      "natrijum benzoat",
+      "natrijev benzoat",
+      "benzoan sodný E211"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e211-sodium-benzoate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E212",
+    "name": "benzoan draselný",
+    "nameEn": "potassium benzoate",
+    "category": "konzervant",
+    "risk": 2,
+    "note": "Draselná sůl kyseliny benzoové se stejnými výhradami jako benzoan sodný.",
+    "aliases": [
+      "benzoan draselný",
+      "potassium benzoate",
+      "Kaliumbenzoat",
+      "kalijum benzoat",
+      "kalijev benzoat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e212-potassium-benzoate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E213",
+    "name": "benzoan vápenatý",
+    "nameEn": "calcium benzoate",
+    "category": "konzervant",
+    "risk": 2,
+    "note": "Vápenatá sůl kyseliny benzoové se stejnými výhradami jako ostatní benzoáty.",
+    "aliases": [
+      "benzoan vápenatý",
+      "calcium benzoate",
+      "Calciumbenzoat",
+      "kalcijum benzoat",
+      "kalcijev benzoat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e213-calcium-benzoate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E214",
+    "name": "ethylparaben",
+    "nameEn": "ethyl p-hydroxybenzoate",
+    "category": "konzervant",
+    "risk": 2,
+    "note": "Paraben; EFSA jej považuje za přijatelný, ale parabeny jsou sledovány pro možné hormonální účinky.",
+    "aliases": [
+      "ethylparaben",
+      "ethyl-p-hydroxybenzoát",
+      "ethyl p-hydroxybenzoate",
+      "Ethylparaben",
+      "PHB-Ethylester",
+      "etilparaben",
+      "etil-p-hidroksibenzoat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e214-ethyl-p-hydroxybenzoate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E215",
+    "name": "ethylparaben sodná sůl",
+    "nameEn": "sodium ethyl p-hydroxybenzoate",
+    "category": "konzervant",
+    "risk": 2,
+    "note": "Sodná sůl ethylparabenu se stejnými výhradami jako ostatní parabeny.",
+    "aliases": [
+      "ethylparaben sodná sůl",
+      "natrium-ethylparaben",
+      "sodium ethyl p-hydroxybenzoate",
+      "Natriumethylparaben",
+      "natrijum etilparaben"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e215-sodium-ethyl-p-hydroxybenzoate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E218",
+    "name": "methylparaben",
+    "nameEn": "methyl p-hydroxybenzoate",
+    "category": "konzervant",
+    "risk": 2,
+    "note": "Paraben; EFSA jej považuje za přijatelný, parabeny jsou však sledovány pro možné hormonální účinky.",
+    "aliases": [
+      "methylparaben",
+      "methyl-p-hydroxybenzoát",
+      "methyl p-hydroxybenzoate",
+      "Methylparaben",
+      "PHB-Methylester",
+      "metilparaben",
+      "metil-p-hidroksibenzoat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e218-methyl-p-hydroxybenzoate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E219",
+    "name": "methylparaben sodná sůl",
+    "nameEn": "sodium methyl p-hydroxybenzoate",
+    "category": "konzervant",
+    "risk": 2,
+    "note": "Sodná sůl methylparabenu se stejnými výhradami jako ostatní parabeny.",
+    "aliases": [
+      "methylparaben sodná sůl",
+      "natrium-methylparaben",
+      "sodium methyl p-hydroxybenzoate",
+      "Natriummethylparaben",
+      "natrijum metilparaben"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e219-sodium-methyl-p-hydroxybenzoate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E220",
+    "name": "oxid siřičitý",
+    "nameEn": "sulphur dioxide",
+    "category": "konzervant",
+    "risk": 2,
+    "note": "Siřičitan; může vyvolat astmatické záchvaty u citlivých osob, ničí vitamin B1, nad 10 mg/kg musí být uveden jako alergen.",
+    "aliases": [
+      "oxid siřičitý",
+      "sulphur dioxide",
+      "sulfur dioxide",
+      "Schwefeldioxid",
+      "sumpor dioksid",
+      "sumporni dioksid",
+      "siřičitany",
+      "sulfity"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e220-sulphur-dioxide",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E221",
+    "name": "siřičitan sodný",
+    "nameEn": "sodium sulphite",
+    "category": "konzervant",
+    "risk": 2,
+    "note": "Siřičitan; u citlivých osob a astmatiků může vyvolat reakce, povinné označení jako alergen.",
+    "aliases": [
+      "siřičitan sodný",
+      "sodium sulphite",
+      "sodium sulfite",
+      "Natriumsulfit",
+      "natrijum sulfit",
+      "natrijev sulfit"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e221-sodium-sulphite",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E222",
+    "name": "hydrogensiřičitan sodný",
+    "nameEn": "sodium hydrogen sulphite",
+    "category": "konzervant",
+    "risk": 2,
+    "note": "Siřičitan; u citlivých osob a astmatiků může vyvolat reakce, povinné označení jako alergen.",
+    "aliases": [
+      "hydrogensiřičitan sodný",
+      "sodium bisulphite",
+      "sodium hydrogen sulphite",
+      "Natriumhydrogensulfit",
+      "natrijum bisulfit",
+      "natrijev hidrogensulfit"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e222-sodium-hydrogen-sulphite",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E223",
+    "name": "disiřičitan sodný",
+    "nameEn": "sodium metabisulphite",
+    "category": "konzervant",
+    "risk": 2,
+    "note": "Siřičitan běžný v sušeném ovoci a víně; u citlivých osob a astmatiků může vyvolat reakce.",
+    "aliases": [
+      "disiřičitan sodný",
+      "pyrosiřičitan sodný",
+      "sodium metabisulphite",
+      "sodium metabisulfite",
+      "Natriummetabisulfit",
+      "Natriumdisulfit",
+      "natrijum metabisulfit",
+      "natrijev metabisulfit"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e223-sodium-metabisulphite",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E224",
+    "name": "disiřičitan draselný",
+    "nameEn": "potassium metabisulphite",
+    "category": "konzervant",
+    "risk": 2,
+    "note": "Siřičitan běžný ve víně; u citlivých osob a astmatiků může vyvolat reakce.",
+    "aliases": [
+      "disiřičitan draselný",
+      "pyrosiřičitan draselný",
+      "potassium metabisulphite",
+      "potassium metabisulfite",
+      "Kaliummetabisulfit",
+      "Kaliumdisulfit",
+      "kalijum metabisulfit",
+      "kalijev metabisulfit"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e224-potassium-metabisulphite",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E226",
+    "name": "siřičitan vápenatý",
+    "nameEn": "calcium sulphite",
+    "category": "konzervant",
+    "risk": 2,
+    "note": "Siřičitan; u citlivých osob a astmatiků může vyvolat reakce, povinné označení jako alergen.",
+    "aliases": [
+      "siřičitan vápenatý",
+      "calcium sulphite",
+      "calcium sulfite",
+      "Calciumsulfit",
+      "kalcijum sulfit",
+      "kalcijev sulfit"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e226-calcium-sulphite",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E227",
+    "name": "hydrogensiřičitan vápenatý",
+    "nameEn": "calcium hydrogen sulphite",
+    "category": "konzervant",
+    "risk": 2,
+    "note": "Siřičitan; u citlivých osob a astmatiků může vyvolat reakce, povinné označení jako alergen.",
+    "aliases": [
+      "hydrogensiřičitan vápenatý",
+      "calcium bisulphite",
+      "calcium hydrogen sulphite",
+      "Calciumhydrogensulfit",
+      "kalcijum bisulfit",
+      "kalcijev hidrogensulfit"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e227-calcium-hydrogen-sulphite",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E228",
+    "name": "hydrogensiřičitan draselný",
+    "nameEn": "potassium hydrogen sulphite",
+    "category": "konzervant",
+    "risk": 2,
+    "note": "Siřičitan; u citlivých osob a astmatiků může vyvolat reakce, povinné označení jako alergen.",
+    "aliases": [
+      "hydrogensiřičitan draselný",
+      "potassium bisulphite",
+      "potassium hydrogen sulphite",
+      "Kaliumhydrogensulfit",
+      "kalijum bisulfit",
+      "kalijev hidrogensulfit"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e228-potassium-hydrogen-sulphite",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E234",
+    "name": "nisin",
+    "nameEn": "nisin",
+    "category": "konzervant",
+    "risk": 1,
+    "note": "Přírodní antibiotický peptid z bakterií mléčného kvašení; EFSA bez obav, diskutuje se vliv na střevní mikroflóru.",
+    "aliases": [
+      "nisin",
+      "Nisin",
+      "nizin",
+      "nisin E234"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e234-nisin",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E235",
+    "name": "natamycin",
+    "nameEn": "natamycin",
+    "category": "konzervant",
+    "risk": 1,
+    "note": "Antimykotikum na povrch sýrů a salámů; EFSA bez obav, vstřebává se minimálně.",
+    "aliases": [
+      "natamycin",
+      "pimaricin",
+      "Natamycin",
+      "natamicin",
+      "natamycin E235"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e235-natamycin",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E239",
+    "name": "hexamethylentetramin",
+    "nameEn": "hexamethylene tetramine",
+    "category": "konzervant",
+    "risk": 3,
+    "note": "Uvolňuje formaldehyd; v EU povolen pouze pro sýr Provolone (nař. (ES) č. 1333/2008), jinde zakázán.",
+    "aliases": [
+      "hexamethylentetramin",
+      "hexamin",
+      "urotropin",
+      "hexamethylene tetramine",
+      "Hexamethylentetramin",
+      "heksametilentetramin",
+      "heksamin"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e239-hexamethylene-tetramine",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E242",
+    "name": "dimethyldikarbonát",
+    "nameEn": "dimethyl dicarbonate",
+    "category": "konzervant",
+    "risk": 1,
+    "note": "Konzervant nápojů, který se rychle rozkládá na CO2 a methanol; EFSA bez obav v povolených dávkách.",
+    "aliases": [
+      "dimethyldikarbonát",
+      "dimethyl dicarbonate",
+      "DMDC",
+      "Dimethyldicarbonat",
+      "dimetil dikarbonat",
+      "dimetildikarbonat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e242-dimethyl-dicarbonate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E249",
+    "name": "dusitan draselný",
+    "nameEn": "potassium nitrite",
+    "category": "konzervant",
+    "risk": 3,
+    "note": "Dusitan v uzeninách, z něhož mohou vznikat karcinogenní nitrosaminy; EFSA 2023 potvrdila obavy a IARC řadí zpracované maso mezi karcinogeny.",
+    "aliases": [
+      "dusitan draselný",
+      "potassium nitrite",
+      "Kaliumnitrit",
+      "kalijum nitrit",
+      "kalijev nitrit",
+      "dusitan draselný E249"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e249-potassium-nitrite",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E250",
+    "name": "dusitan sodný",
+    "nameEn": "sodium nitrite",
+    "category": "konzervant",
+    "risk": 3,
+    "note": "Dusitan v uzeninách (nakládací sůl), z něhož mohou vznikat karcinogenní nitrosaminy; EU v roce 2023 snížila limity nař. (EU) 2023/2108.",
+    "aliases": [
+      "dusitan sodný",
+      "nitrit sodný",
+      "dusitanová solicí směs",
+      "sodium nitrite",
+      "Natriumnitrit",
+      "Nitritpökelsalz",
+      "natrijum nitrit",
+      "natrijev nitrit",
+      "nitritna sol"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e250-sodium-nitrite",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E251",
+    "name": "dusičnan sodný",
+    "nameEn": "sodium nitrate",
+    "category": "konzervant",
+    "risk": 3,
+    "note": "Dusičnan v uzeninách a sýrech, který se přeměňuje na dusitan a dále na nitrosaminy; EU limity sníženy v roce 2023.",
+    "aliases": [
+      "dusičnan sodný",
+      "nitrát sodný",
+      "sodium nitrate",
+      "Natriumnitrat",
+      "natrijum nitrat",
+      "natrijev nitrat",
+      "chilský ledek"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e251-sodium-nitrate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E252",
+    "name": "dusičnan draselný",
+    "nameEn": "potassium nitrate",
+    "category": "konzervant",
+    "risk": 3,
+    "note": "Dusičnan (ledek) v uzeninách a sýrech, který se přeměňuje na dusitan a dále na nitrosaminy.",
+    "aliases": [
+      "dusičnan draselný",
+      "ledek draselný",
+      "sanytr",
+      "potassium nitrate",
+      "saltpetre",
+      "Kaliumnitrat",
+      "Salpeter",
+      "kalijum nitrat",
+      "kalijev nitrat",
+      "šalitra"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e252-potassium-nitrate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E260",
+    "name": "kyselina octová",
+    "nameEn": "acetic acid",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Složka octa; bez obav.",
+    "aliases": [
+      "kyselina octová",
+      "acetic acid",
+      "Essigsäure",
+      "sirćetna kiselina",
+      "octena kiselina",
+      "ocetna kiselina"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e260-acetic-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E261",
+    "name": "octany draselné",
+    "nameEn": "potassium acetates",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Draselná sůl kyseliny octové; bez obav.",
+    "aliases": [
+      "octan draselný",
+      "octany draselné",
+      "potassium acetate",
+      "Kaliumacetat",
+      "kalijum acetat",
+      "kalijev acetat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e261-potassium-acetates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E262",
+    "name": "octany sodné",
+    "nameEn": "sodium acetates",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Sodná sůl kyseliny octové (i diacetát); bez obav, přispívá k příjmu sodíku.",
+    "aliases": [
+      "octan sodný",
+      "octany sodné",
+      "diacetát sodný",
+      "sodium acetate",
+      "sodium diacetate",
+      "Natriumacetat",
+      "Natriumdiacetat",
+      "natrijum acetat",
+      "natrijev acetat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e262-sodium-acetates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E263",
+    "name": "octan vápenatý",
+    "nameEn": "calcium acetate",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Vápenatá sůl kyseliny octové; bez obav.",
+    "aliases": [
+      "octan vápenatý",
+      "calcium acetate",
+      "Calciumacetat",
+      "kalcijum acetat",
+      "kalcijev acetat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e263-calcium-acetate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E270",
+    "name": "kyselina mléčná",
+    "nameEn": "lactic acid",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Přirozená kyselina mléčného kvašení; bez obav.",
+    "aliases": [
+      "kyselina mléčná",
+      "lactic acid",
+      "Milchsäure",
+      "mlečna kiselina",
+      "mliječna kiselina",
+      "kyselina mliečna"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e270-lactic-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E280",
+    "name": "kyselina propionová",
+    "nameEn": "propionic acid",
+    "category": "konzervant",
+    "risk": 1,
+    "note": "Konzervant proti plísním v pečivu; EFSA bez obav, ojedinělé studie zmiňují vliv na metabolismus při vysokém příjmu.",
+    "aliases": [
+      "kyselina propionová",
+      "propionic acid",
+      "Propionsäure",
+      "propionska kiselina",
+      "kyselina propiónová"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e280-propionic-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E281",
+    "name": "propionan sodný",
+    "nameEn": "sodium propionate",
+    "category": "konzervant",
+    "risk": 1,
+    "note": "Sodná sůl kyseliny propionové v baleném pečivu; EFSA bez obav.",
+    "aliases": [
+      "propionan sodný",
+      "propionát sodný",
+      "sodium propionate",
+      "Natriumpropionat",
+      "natrijum propionat",
+      "natrijev propionat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e281-sodium-propionate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E282",
+    "name": "propionan vápenatý",
+    "nameEn": "calcium propionate",
+    "category": "konzervant",
+    "risk": 1,
+    "note": "Nejčastější propionát v baleném chlebu; EFSA bez obav, ojediněle uváděna souvislost s podrážděností dětí.",
+    "aliases": [
+      "propionan vápenatý",
+      "propionát vápenatý",
+      "calcium propionate",
+      "Calciumpropionat",
+      "kalcijum propionat",
+      "kalcijev propionat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e282-calcium-propionate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E283",
+    "name": "propionan draselný",
+    "nameEn": "potassium propionate",
+    "category": "konzervant",
+    "risk": 1,
+    "note": "Draselná sůl kyseliny propionové; EFSA bez obav.",
+    "aliases": [
+      "propionan draselný",
+      "propionát draselný",
+      "potassium propionate",
+      "Kaliumpropionat",
+      "kalijum propionat",
+      "kalijev propionat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e283-potassium-propionate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E284",
+    "name": "kyselina boritá",
+    "nameEn": "boric acid",
+    "category": "konzervant",
+    "risk": 2,
+    "note": "V EU povolena pouze pro kaviár; bor se v těle hromadí a při vyšším příjmu je toxický.",
+    "aliases": [
+      "kyselina boritá",
+      "boric acid",
+      "Borsäure",
+      "borna kiselina",
+      "kyselina boritá E284"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e284-boric-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E285",
+    "name": "tetraboritan sodný",
+    "nameEn": "sodium tetraborate",
+    "category": "konzervant",
+    "risk": 2,
+    "note": "Borax; v EU povolen pouze pro kaviár, bor je při vyšším příjmu toxický.",
+    "aliases": [
+      "tetraboritan sodný",
+      "borax",
+      "sodium tetraborate",
+      "Borax",
+      "Natriumtetraborat",
+      "natrijum tetraborat",
+      "boraks"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e285-sodium-tetraborate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E290",
+    "name": "oxid uhličitý",
+    "nameEn": "carbon dioxide",
+    "category": "balicí plyn",
+    "risk": 0,
+    "note": "Plyn pro sycení nápojů a balení; bez obav.",
+    "aliases": [
+      "oxid uhličitý",
+      "carbon dioxide",
+      "Kohlendioxid",
+      "Kohlensäure",
+      "ugljen-dioksid",
+      "ugljikov dioksid",
+      "CO2"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e290-carbon-dioxide",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E296",
+    "name": "kyselina jablečná",
+    "nameEn": "malic acid",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Přirozená ovocná kyselina; bez obav, u kojenců se nepoužívá.",
+    "aliases": [
+      "kyselina jablečná",
+      "malic acid",
+      "Äpfelsäure",
+      "jabučna kiselina",
+      "kyselina jablčná"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e296-malic-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E297",
+    "name": "kyselina fumarová",
+    "nameEn": "fumaric acid",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Přirozená kyselina v instantních nápojích a dezertech; bez obav.",
+    "aliases": [
+      "kyselina fumarová",
+      "fumaric acid",
+      "Fumarsäure",
+      "fumarna kiselina",
+      "kyselina fumarová E297"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e297-fumaric-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E300",
+    "name": "kyselina askorbová",
+    "nameEn": "ascorbic acid",
+    "category": "antioxidant",
+    "risk": 0,
+    "note": "Vitamin C; bez obav.",
+    "aliases": [
+      "kyselina askorbová",
+      "vitamin C",
+      "ascorbic acid",
+      "Ascorbinsäure",
+      "askorbinska kiselina",
+      "kyselina askorbová E300"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e300-ascorbic-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E301",
+    "name": "askorban sodný",
+    "nameEn": "sodium ascorbate",
+    "category": "antioxidant",
+    "risk": 0,
+    "note": "Sodná sůl vitaminu C, běžná v uzeninách; bez obav.",
+    "aliases": [
+      "askorban sodný",
+      "askorbát sodný",
+      "sodium ascorbate",
+      "Natriumascorbat",
+      "natrijum askorbat",
+      "natrijev askorbat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e301-sodium-ascorbate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E302",
+    "name": "askorban vápenatý",
+    "nameEn": "calcium ascorbate",
+    "category": "antioxidant",
+    "risk": 0,
+    "note": "Vápenatá sůl vitaminu C; bez obav.",
+    "aliases": [
+      "askorban vápenatý",
+      "askorbát vápenatý",
+      "calcium ascorbate",
+      "Calciumascorbat",
+      "kalcijum askorbat",
+      "kalcijev askorbat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e302-calcium-ascorbate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E304",
+    "name": "estery mastných kyselin s kyselinou askorbovou",
+    "nameEn": "fatty acid esters of ascorbic acid",
+    "category": "antioxidant",
+    "risk": 0,
+    "note": "Askorbylpalmitát, tukově rozpustný vitamin C; bez obav.",
+    "aliases": [
+      "askorbylpalmitát",
+      "askorbylstearát",
+      "estery mastných kyselin s kyselinou askorbovou",
+      "ascorbyl palmitate",
+      "Ascorbylpalmitat",
+      "askorbil palmitat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e304-fatty-acid-esters-of-ascorbic-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E306",
+    "name": "extrakt s vysokým obsahem tokoferolů",
+    "nameEn": "tocopherol-rich extract",
+    "category": "antioxidant",
+    "risk": 0,
+    "note": "Přírodní vitamin E z rostlinných olejů; bez obav.",
+    "aliases": [
+      "tokoferoly",
+      "extrakt s vysokým obsahem tokoferolů",
+      "přírodní vitamin E",
+      "tocopherol-rich extract",
+      "mixed tocopherols",
+      "Tocopherol",
+      "tokoferoli",
+      "ekstrakt bogat tokoferolom"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e306-tocopherol-rich-extract",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E307",
+    "name": "alfa-tokoferol",
+    "nameEn": "alpha-tocopherol",
+    "category": "antioxidant",
+    "risk": 0,
+    "note": "Syntetický vitamin E; bez obav.",
+    "aliases": [
+      "alfa-tokoferol",
+      "vitamin E",
+      "alpha-tocopherol",
+      "Alpha-Tocopherol",
+      "alfa-tokoferol E307"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e307-alpha-tocopherol",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E308",
+    "name": "gama-tokoferol",
+    "nameEn": "gamma-tocopherol",
+    "category": "antioxidant",
+    "risk": 0,
+    "note": "Syntetická forma vitaminu E; bez obav.",
+    "aliases": [
+      "gama-tokoferol",
+      "gamma-tocopherol",
+      "Gamma-Tocopherol",
+      "gama-tokoferol E308"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e308-gamma-tocopherol",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E309",
+    "name": "delta-tokoferol",
+    "nameEn": "delta-tocopherol",
+    "category": "antioxidant",
+    "risk": 0,
+    "note": "Syntetická forma vitaminu E; bez obav.",
+    "aliases": [
+      "delta-tokoferol",
+      "delta-tocopherol",
+      "Delta-Tocopherol",
+      "delta-tokoferol E309"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e309-delta-tocopherol",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E310",
+    "name": "propylgallát",
+    "nameEn": "propyl gallate",
+    "category": "antioxidant",
+    "risk": 2,
+    "note": "Syntetický antioxidant tuků; možné alergické reakce, EFSA v roce 2014 snížila ADI a nevhodný pro malé děti.",
+    "aliases": [
+      "propylgallát",
+      "propyl gallate",
+      "Propylgallat",
+      "propil galat",
+      "propylgalát"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e310-propyl-gallate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E311",
+    "name": "oktylgallát",
+    "nameEn": "octyl gallate",
+    "category": "antioxidant",
+    "risk": 2,
+    "note": "Syntetický antioxidant; EFSA v roce 2015 nemohla potvrdit bezpečnost, v EU od roku 2018 vyřazen ze seznamu.",
+    "aliases": [
+      "oktylgallát",
+      "octyl gallate",
+      "Octylgallat",
+      "oktil galat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e311-octyl-gallate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E312",
+    "name": "dodecylgallát",
+    "nameEn": "dodecyl gallate",
+    "category": "antioxidant",
+    "risk": 2,
+    "note": "Syntetický antioxidant; EFSA v roce 2015 nemohla potvrdit bezpečnost, v EU od roku 2018 vyřazen ze seznamu.",
+    "aliases": [
+      "dodecylgallát",
+      "dodecyl gallate",
+      "Dodecylgallat",
+      "dodecil galat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e312-dodecyl-gallate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E315",
+    "name": "kyselina erythorbová",
+    "nameEn": "erythorbic acid",
+    "category": "antioxidant",
+    "risk": 0,
+    "note": "Izomer vitaminu C bez vitaminového účinku; bez obav.",
+    "aliases": [
+      "kyselina erythorbová",
+      "kyselina isoaskorbová",
+      "erythorbic acid",
+      "isoascorbic acid",
+      "Isoascorbinsäure",
+      "eritorbinska kiselina",
+      "izoaskorbinska kiselina"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e315-erythorbic-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E316",
+    "name": "erythorban sodný",
+    "nameEn": "sodium erythorbate",
+    "category": "antioxidant",
+    "risk": 0,
+    "note": "Sodná sůl kyseliny erythorbové, běžná v uzeninách; bez obav.",
+    "aliases": [
+      "erythorban sodný",
+      "isoaskorban sodný",
+      "sodium erythorbate",
+      "sodium isoascorbate",
+      "Natriumerythorbat",
+      "Natriumisoascorbat",
+      "natrijum eritorbat",
+      "natrijev eritorbat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e316-sodium-erythorbate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E319",
+    "name": "terc-butylhydrochinon",
+    "nameEn": "tertiary-butylhydroquinone (TBHQ)",
+    "category": "antioxidant",
+    "risk": 2,
+    "note": "Syntetický antioxidant tuků; EFSA 2004 stanovila ADI 0,7 mg/kg bez důkazů o karcinogenitě, studie na zvířatech a buňkách ale naznačují vliv na imunitu.",
+    "aliases": [
+      "terc-butylhydrochinon",
+      "TBHQ",
+      "tert-butylhydroquinone",
+      "tertiary-butylhydroquinone",
+      "Butylhydrochinon",
+      "terc-butilhidrokinon"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e319-tertiary-butylhydroquinone",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E320",
+    "name": "butylhydroxyanisol",
+    "nameEn": "butylated hydroxyanisole (BHA)",
+    "category": "antioxidant",
+    "risk": 3,
+    "note": "IARC jej řadí mezi možné karcinogeny (2B) a EU jej vede jako látku s podezřením na endokrinní účinky; ÖKO-TEST i dTest doporučují vyhnout se.",
+    "aliases": [
+      "butylhydroxyanisol",
+      "BHA",
+      "butylated hydroxyanisole",
+      "Butylhydroxyanisol",
+      "butil-hidroksianizol",
+      "butilhidroksianisol"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e320-butylated-hydroxyanisole",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E321",
+    "name": "butylhydroxytoluen",
+    "nameEn": "butylated hydroxytoluene (BHT)",
+    "category": "antioxidant",
+    "risk": 3,
+    "note": "Syntetický antioxidant s podezřením na endokrinní účinky; EFSA v roce 2012 ADI zvýšila na 0,25 mg/kg, děti s vysokou spotřebou ho mohou překračovat.",
+    "aliases": [
+      "butylhydroxytoluen",
+      "BHT",
+      "butylated hydroxytoluene",
+      "Butylhydroxytoluol",
+      "butil-hidroksitoluen",
+      "butilhidroksitoluen"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e321-butylated-hydroxytoluene",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E322",
+    "name": "lecitiny",
+    "nameEn": "lecithins",
+    "category": "emulgátor",
+    "risk": 0,
+    "note": "Přírodní emulgátor ze sóji, slunečnice nebo vajec; bez obav, sójový může být alergen.",
+    "aliases": [
+      "lecitin",
+      "lecitiny",
+      "sójový lecitin",
+      "slunečnicový lecitin",
+      "lecithin",
+      "lecithins",
+      "soy lecithin",
+      "Lecithin",
+      "Sojalecithin",
+      "Sonnenblumenlecithin",
+      "lecitin",
+      "sojin lecitin",
+      "suncokretov lecitin"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e322-lecithins",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E325",
+    "name": "mléčnan sodný",
+    "nameEn": "sodium lactate",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Sodná sůl kyseliny mléčné, konzervuje maso; bez obav, zvyšuje obsah sodíku.",
+    "aliases": [
+      "mléčnan sodný",
+      "laktát sodný",
+      "sodium lactate",
+      "Natriumlactat",
+      "natrijum laktat",
+      "natrijev laktat",
+      "mliečnan sodný"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e325-sodium-lactate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E326",
+    "name": "mléčnan draselný",
+    "nameEn": "potassium lactate",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Draselná sůl kyseliny mléčné; bez obav.",
+    "aliases": [
+      "mléčnan draselný",
+      "laktát draselný",
+      "potassium lactate",
+      "Kaliumlactat",
+      "kalijum laktat",
+      "kalijev laktat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e326-potassium-lactate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E327",
+    "name": "mléčnan vápenatý",
+    "nameEn": "calcium lactate",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Vápenatá sůl kyseliny mléčné; bez obav.",
+    "aliases": [
+      "mléčnan vápenatý",
+      "laktát vápenatý",
+      "calcium lactate",
+      "Calciumlactat",
+      "kalcijum laktat",
+      "kalcijev laktat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e327-calcium-lactate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E330",
+    "name": "kyselina citronová",
+    "nameEn": "citric acid",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Nejběžnější potravinářská kyselina; bez obav, ve větším množství poškozuje zubní sklovinu.",
+    "aliases": [
+      "kyselina citronová",
+      "kyselina citrónová",
+      "citric acid",
+      "Citronensäure",
+      "Zitronensäure",
+      "limunska kiselina",
+      "kyselina citrónová E330"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e330-citric-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E331",
+    "name": "citronany sodné",
+    "nameEn": "sodium citrates",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Sodné soli kyseliny citronové (tavicí soli, pufr); bez obav.",
+    "aliases": [
+      "citronan sodný",
+      "citronany sodné",
+      "citrát sodný",
+      "sodium citrate",
+      "sodium citrates",
+      "trisodium citrate",
+      "Natriumcitrat",
+      "natrijum citrat",
+      "natrijev citrat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e331-sodium-citrates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E332",
+    "name": "citronany draselné",
+    "nameEn": "potassium citrates",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Draselné soli kyseliny citronové; bez obav.",
+    "aliases": [
+      "citronan draselný",
+      "citronany draselné",
+      "citrát draselný",
+      "potassium citrate",
+      "Kaliumcitrat",
+      "kalijum citrat",
+      "kalijev citrat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e332-potassium-citrates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E333",
+    "name": "citronany vápenaté",
+    "nameEn": "calcium citrates",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Vápenaté soli kyseliny citronové; bez obav.",
+    "aliases": [
+      "citronan vápenatý",
+      "citronany vápenaté",
+      "citrát vápenatý",
+      "calcium citrate",
+      "Calciumcitrat",
+      "kalcijum citrat",
+      "kalcijev citrat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e333-calcium-citrates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E334",
+    "name": "kyselina vinná",
+    "nameEn": "tartaric acid",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Přirozená kyselina z hroznů; bez obav.",
+    "aliases": [
+      "kyselina vinná",
+      "kyselina L-vinná",
+      "tartaric acid",
+      "Weinsäure",
+      "vinska kiselina",
+      "kyselina vínna"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e334-tartaric-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E335",
+    "name": "vinany sodné",
+    "nameEn": "sodium tartrates",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Sodné soli kyseliny vinné; bez obav.",
+    "aliases": [
+      "vinan sodný",
+      "vinany sodné",
+      "sodium tartrate",
+      "Natriumtartrat",
+      "natrijum tartarat",
+      "natrijev tartarat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e335-sodium-tartrates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E336",
+    "name": "vinany draselné",
+    "nameEn": "potassium tartrates",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Vinný kámen používaný do kypřicích prášků; bez obav.",
+    "aliases": [
+      "vinan draselný",
+      "vinany draselné",
+      "vinný kámen",
+      "potassium tartrate",
+      "cream of tartar",
+      "Kaliumtartrat",
+      "Weinstein",
+      "kalijum tartarat",
+      "kalijev tartarat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e336-potassium-tartrates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E337",
+    "name": "vinan sodno-draselný",
+    "nameEn": "sodium potassium tartrate",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Seignettova sůl; bez obav.",
+    "aliases": [
+      "vinan sodno-draselný",
+      "Seignettova sůl",
+      "sodium potassium tartrate",
+      "Rochelle salt",
+      "Kaliumnatriumtartrat",
+      "natrijum-kalijum tartarat",
+      "kalijev natrijev tartarat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e337-sodium-potassium-tartrate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E338",
+    "name": "kyselina fosforečná",
+    "nameEn": "phosphoric acid",
+    "category": "regulátor kyselosti",
+    "risk": 2,
+    "note": "Kyselina v kolových nápojích; přispívá k vysokému příjmu fosforu, který EFSA v roce 2019 označila za rizikový u části populace, a poškozuje sklovinu.",
+    "aliases": [
+      "kyselina fosforečná",
+      "kyselina orthofosforečná",
+      "phosphoric acid",
+      "Phosphorsäure",
+      "fosforna kiselina",
+      "kyselina fosforečná E338"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e338-phosphoric-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E339",
+    "name": "fosforečnany sodné",
+    "nameEn": "sodium phosphates",
+    "category": "stabilizátor",
+    "risk": 2,
+    "note": "Fosfáty v tavených sýrech a uzeninách; EFSA v roce 2019 stanovila skupinový ADI a upozornila, že jej děti a dospívající mohou překračovat.",
+    "aliases": [
+      "fosforečnan sodný",
+      "fosforečnany sodné",
+      "fosfát sodný",
+      "sodium phosphate",
+      "sodium phosphates",
+      "Natriumphosphat",
+      "natrijum fosfat",
+      "natrijev fosfat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e339-sodium-phosphates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E340",
+    "name": "fosforečnany draselné",
+    "nameEn": "potassium phosphates",
+    "category": "stabilizátor",
+    "risk": 2,
+    "note": "Fosfáty; započítávají se do skupinového ADI fosforu, který část populace překračuje.",
+    "aliases": [
+      "fosforečnan draselný",
+      "fosforečnany draselné",
+      "fosfát draselný",
+      "potassium phosphate",
+      "potassium phosphates",
+      "Kaliumphosphat",
+      "kalijum fosfat",
+      "kalijev fosfat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e340-potassium-phosphates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E341",
+    "name": "fosforečnany vápenaté",
+    "nameEn": "calcium phosphates",
+    "category": "stabilizátor",
+    "risk": 2,
+    "note": "Fosfáty v kypřicích prášcích a doplňcích; započítávají se do skupinového ADI fosforu.",
+    "aliases": [
+      "fosforečnan vápenatý",
+      "fosforečnany vápenaté",
+      "fosfát vápenatý",
+      "calcium phosphate",
+      "calcium phosphates",
+      "Calciumphosphat",
+      "kalcijum fosfat",
+      "kalcijev fosfat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e341-calcium-phosphates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E343",
+    "name": "fosforečnany hořečnaté",
+    "nameEn": "magnesium phosphates",
+    "category": "stabilizátor",
+    "risk": 2,
+    "note": "Fosfáty; započítávají se do skupinového ADI fosforu.",
+    "aliases": [
+      "fosforečnan hořečnatý",
+      "fosforečnany hořečnaté",
+      "magnesium phosphate",
+      "magnesium phosphates",
+      "Magnesiumphosphat",
+      "magnezijum fosfat",
+      "magnezijev fosfat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e343-magnesium-phosphates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E350",
+    "name": "jablečnany sodné",
+    "nameEn": "sodium malates",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Sodné soli kyseliny jablečné; bez obav.",
+    "aliases": [
+      "jablečnan sodný",
+      "jablečnany sodné",
+      "malát sodný",
+      "sodium malate",
+      "Natriummalat",
+      "natrijum malat",
+      "natrijev malat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e350-sodium-malates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E351",
+    "name": "jablečnan draselný",
+    "nameEn": "potassium malate",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Draselná sůl kyseliny jablečné; bez obav.",
+    "aliases": [
+      "jablečnan draselný",
+      "malát draselný",
+      "potassium malate",
+      "Kaliummalat",
+      "kalijum malat",
+      "kalijev malat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e351-potassium-malate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E352",
+    "name": "jablečnany vápenaté",
+    "nameEn": "calcium malates",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Vápenaté soli kyseliny jablečné; bez obav.",
+    "aliases": [
+      "jablečnan vápenatý",
+      "jablečnany vápenaté",
+      "calcium malate",
+      "Calciummalat",
+      "kalcijum malat",
+      "kalcijev malat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e352-calcium-malates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E353",
+    "name": "kyselina metavinná",
+    "nameEn": "metatartaric acid",
+    "category": "stabilizátor",
+    "risk": 0,
+    "note": "Stabilizátor vína proti vysrážení vinného kamene; bez obav.",
+    "aliases": [
+      "kyselina metavinná",
+      "metatartaric acid",
+      "Metaweinsäure",
+      "metavinska kiselina"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e353-metatartaric-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E354",
+    "name": "vinan vápenatý",
+    "nameEn": "calcium tartrate",
+    "category": "stabilizátor",
+    "risk": 0,
+    "note": "Vápenatá sůl kyseliny vinné; bez obav.",
+    "aliases": [
+      "vinan vápenatý",
+      "calcium tartrate",
+      "Calciumtartrat",
+      "kalcijum tartarat",
+      "kalcijev tartarat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e354-calcium-tartrate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E355",
+    "name": "kyselina adipová",
+    "nameEn": "adipic acid",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Kyselina v instantních dezertech a nápojích; bez obav.",
+    "aliases": [
+      "kyselina adipová",
+      "adipic acid",
+      "Adipinsäure",
+      "adipinska kiselina"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e355-adipic-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E363",
+    "name": "kyselina jantarová",
+    "nameEn": "succinic acid",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Přirozená kyselina; bez obav.",
+    "aliases": [
+      "kyselina jantarová",
+      "succinic acid",
+      "Bernsteinsäure",
+      "jantarna kiselina",
+      "ćilibarna kiselina"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e363-succinic-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E380",
+    "name": "citronany amonné",
+    "nameEn": "triammonium citrate",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Amonná sůl kyseliny citronové; bez obav.",
+    "aliases": [
+      "citronan amonný",
+      "citronany amonné",
+      "triammonium citrate",
+      "ammonium citrate",
+      "Ammoniumcitrat",
+      "amonijum citrat",
+      "amonijev citrat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e380-triammonium-citrate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E385",
+    "name": "dvojsodnovápenatá sůl EDTA",
+    "nameEn": "calcium disodium EDTA",
+    "category": "antioxidant",
+    "risk": 2,
+    "note": "Chelatační látka v majonézách a konzervách; EFSA bez obav v limitech, ale při vysokém příjmu váže minerály.",
+    "aliases": [
+      "EDTA",
+      "dvojsodnovápenatá sůl EDTA",
+      "kalcium-dinatrium-EDTA",
+      "calcium disodium EDTA",
+      "Calciumdinatrium-EDTA",
+      "kalcijum dinatrijum EDTA",
+      "kalcijev dinatrijev EDTA",
+      "ethylendiamintetraacetát"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e385-calcium-disodium-ethylene-diamine-tetra-acetate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E392",
+    "name": "výtažky z rozmarýnu",
+    "nameEn": "extracts of rosemary",
+    "category": "antioxidant",
+    "risk": 0,
+    "note": "Přírodní antioxidant z rozmarýnu; bez obav.",
+    "aliases": [
+      "výtažek z rozmarýnu",
+      "extrakt z rozmarýnu",
+      "extrakt rozmarýnu",
+      "rosemary extract",
+      "extracts of rosemary",
+      "Rosmarinextrakt",
+      "ekstrakt ruzmarina",
+      "ekstrakt rozmarina"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e392-extracts-of-rosemary",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E400",
+    "name": "kyselina alginová",
+    "nameEn": "alginic acid",
+    "category": "zahušťovadlo",
+    "risk": 0,
+    "note": "Přírodní vláknina z hnědých řas; bez obav.",
+    "aliases": [
+      "kyselina alginová",
+      "alginic acid",
+      "Alginsäure",
+      "alginska kiselina",
+      "kyselina algínová"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e400-alginic-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E401",
+    "name": "alginát sodný",
+    "nameEn": "sodium alginate",
+    "category": "zahušťovadlo",
+    "risk": 0,
+    "note": "Sodná sůl kyseliny alginové z řas; bez obav.",
+    "aliases": [
+      "alginát sodný",
+      "alginan sodný",
+      "sodium alginate",
+      "Natriumalginat",
+      "natrijum alginat",
+      "natrijev alginat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e401-sodium-alginate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E402",
+    "name": "alginát draselný",
+    "nameEn": "potassium alginate",
+    "category": "zahušťovadlo",
+    "risk": 0,
+    "note": "Draselná sůl kyseliny alginové; bez obav.",
+    "aliases": [
+      "alginát draselný",
+      "alginan draselný",
+      "potassium alginate",
+      "Kaliumalginat",
+      "kalijum alginat",
+      "kalijev alginat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e402-potassium-alginate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E404",
+    "name": "alginát vápenatý",
+    "nameEn": "calcium alginate",
+    "category": "zahušťovadlo",
+    "risk": 0,
+    "note": "Vápenatá sůl kyseliny alginové; bez obav.",
+    "aliases": [
+      "alginát vápenatý",
+      "alginan vápenatý",
+      "calcium alginate",
+      "Calciumalginat",
+      "kalcijum alginat",
+      "kalcijev alginat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e404-calcium-alginate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E405",
+    "name": "propan-1,2-diol-alginát",
+    "nameEn": "propane-1,2-diol alginate",
+    "category": "zahušťovadlo",
+    "risk": 1,
+    "note": "Alginát s propylenglykolem, stabilizuje pěnu piva; EFSA bez obav v limitech.",
+    "aliases": [
+      "propan-1,2-diol-alginát",
+      "propylenglykolalginát",
+      "propane-1,2-diol alginate",
+      "propylene glycol alginate",
+      "Propylenglycolalginat",
+      "propilenglikol alginat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e405-propane-1-2-diol-alginate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E406",
+    "name": "agar",
+    "nameEn": "agar",
+    "category": "želírující látka",
+    "risk": 0,
+    "note": "Želírující vláknina z červených řas; bez obav.",
+    "aliases": [
+      "agar",
+      "agar-agar",
+      "Agar-Agar",
+      "agar E406"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e406-agar",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E407",
+    "name": "karagenan",
+    "nameEn": "carrageenan",
+    "category": "zahušťovadlo",
+    "risk": 2,
+    "note": "Zahušťovadlo z červených řas; EFSA 2018 stanovila dočasný ADI a žádá data, studie na zvířatech naznačují záněty střev, nevhodný do kojenecké výživy.",
+    "aliases": [
+      "karagenan",
+      "karagen",
+      "karagenany",
+      "carrageenan",
+      "Carrageen",
+      "karagenan E407",
+      "karagen E407"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e407-carrageenan",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E407a",
+    "name": "afinát řasy Eucheuma",
+    "nameEn": "processed Eucheuma seaweed",
+    "category": "zahušťovadlo",
+    "risk": 2,
+    "note": "Méně čištěná forma karagenanu se stejnými výhradami.",
+    "aliases": [
+      "afinát řasy Eucheuma",
+      "zpracovaná řasa Eucheuma",
+      "processed Eucheuma seaweed",
+      "PES",
+      "Eucheuma-Algen",
+      "prerađena alga Eucheuma"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e407a-processed-eucheuma-seaweed",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E410",
+    "name": "karubin",
+    "nameEn": "locust bean gum",
+    "category": "zahušťovadlo",
+    "risk": 0,
+    "note": "Moučka ze semen rohovníku (svatojánský chléb); bez obav.",
+    "aliases": [
+      "karubin",
+      "moučka ze svatojánského chleba",
+      "guma z karobu",
+      "locust bean gum",
+      "carob bean gum",
+      "Johannisbrotkernmehl",
+      "guma rogača",
+      "brašno sjemenki rogača",
+      "karobová guma"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e410-locust-bean-gum",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E412",
+    "name": "guma guar",
+    "nameEn": "guar gum",
+    "category": "zahušťovadlo",
+    "risk": 0,
+    "note": "Vláknina ze semen guaru; bez obav, ve velkém množství může nadýmat.",
+    "aliases": [
+      "guma guar",
+      "guar",
+      "guarová guma",
+      "guar gum",
+      "Guarkernmehl",
+      "guar guma",
+      "guarova guma"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e412-guar-gum",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E413",
+    "name": "tragant",
+    "nameEn": "tragacanth",
+    "category": "zahušťovadlo",
+    "risk": 0,
+    "note": "Přírodní pryskyřice z kozince; bez obav, vzácně alergie.",
+    "aliases": [
+      "tragant",
+      "tragacanth",
+      "Tragant",
+      "tragakant",
+      "tragant guma"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e413-tragacanth",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E414",
+    "name": "arabská guma",
+    "nameEn": "acacia gum (gum arabic)",
+    "category": "zahušťovadlo",
+    "risk": 0,
+    "note": "Přírodní pryskyřice akácie; bez obav.",
+    "aliases": [
+      "arabská guma",
+      "guma arabská",
+      "akáciová guma",
+      "gum arabic",
+      "acacia gum",
+      "Gummi arabicum",
+      "arapska guma",
+      "gumiarabika"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e414-acacia-gum",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E415",
+    "name": "xanthan",
+    "nameEn": "xanthan gum",
+    "category": "zahušťovadlo",
+    "risk": 0,
+    "note": "Zahušťovadlo z fermentace cukru; bez obav, ve velkém množství projímavý.",
+    "aliases": [
+      "xanthan",
+      "xantan",
+      "xanthanová guma",
+      "xanthan gum",
+      "Xanthan",
+      "ksantan",
+      "ksantan guma"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e415-xanthan-gum",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E416",
+    "name": "guma karaya",
+    "nameEn": "karaya gum",
+    "category": "zahušťovadlo",
+    "risk": 1,
+    "note": "Přírodní pryskyřice; EFSA bez obav v limitech, vzácně alergie.",
+    "aliases": [
+      "guma karaya",
+      "karaya",
+      "karaya gum",
+      "Karaya-Gummi",
+      "karaja guma"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e416-karaya-gum",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E417",
+    "name": "guma tara",
+    "nameEn": "tara gum",
+    "category": "zahušťovadlo",
+    "risk": 0,
+    "note": "Vláknina ze semen tary; bez obav.",
+    "aliases": [
+      "guma tara",
+      "tara",
+      "tara gum",
+      "Tarakernmehl",
+      "tara guma"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e417-tara-gum",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E418",
+    "name": "guma gellan",
+    "nameEn": "gellan gum",
+    "category": "zahušťovadlo",
+    "risk": 0,
+    "note": "Želírující látka z fermentace; bez obav.",
+    "aliases": [
+      "guma gellan",
+      "gellan",
+      "gellanová guma",
+      "gellan gum",
+      "Gellan",
+      "gelan guma"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e418-gellan-gum",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E420",
+    "name": "sorbitol",
+    "nameEn": "sorbitol",
+    "category": "sladidlo",
+    "risk": 1,
+    "note": "Cukerný alkohol; bezpečný, nad cca 20 g denně projímavý (povinné upozornění), nevhodný při intoleranci fruktózy.",
+    "aliases": [
+      "sorbitol",
+      "sorbitolový sirup",
+      "sorbit",
+      "sorbitol syrup",
+      "Sorbit",
+      "Sorbitol",
+      "sorbitol E420"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e420-sorbitol",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E421",
+    "name": "mannitol",
+    "nameEn": "mannitol",
+    "category": "sladidlo",
+    "risk": 1,
+    "note": "Cukerný alkohol; bezpečný, ve větším množství projímavý.",
+    "aliases": [
+      "mannitol",
+      "manitol",
+      "Mannit",
+      "Mannitol",
+      "manit"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e421-mannitol",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E422",
+    "name": "glycerol",
+    "nameEn": "glycerol",
+    "category": "zvlhčující látka",
+    "risk": 0,
+    "note": "Glycerin, přirozená součást tuků; bez obav.",
+    "aliases": [
+      "glycerol",
+      "glycerin",
+      "glycerine",
+      "Glycerin",
+      "Glycerol",
+      "glicerol",
+      "glicerin"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e422-glycerol",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E425",
+    "name": "konjak",
+    "nameEn": "konjac",
+    "category": "zahušťovadlo",
+    "risk": 1,
+    "note": "Glukomanan z hlízy konjaku; bezpečný, ale v želé cukrovinkách v EU zakázán kvůli riziku udušení.",
+    "aliases": [
+      "konjak",
+      "konjaková guma",
+      "konjakový glukomanan",
+      "konjac",
+      "konjac gum",
+      "glucomannan",
+      "Konjak",
+      "Konjakmehl",
+      "konjak guma",
+      "glukomanan"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e425-konjac",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E426",
+    "name": "sójová hemicelulóza",
+    "nameEn": "soybean hemicellulose",
+    "category": "emulgátor",
+    "risk": 0,
+    "note": "Vláknina ze sóji; bez obav, u alergiků na sóju možná reakce.",
+    "aliases": [
+      "sójová hemicelulóza",
+      "soybean hemicellulose",
+      "Sojabohnen-Polyose",
+      "sojina hemiceluloza"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e426-soybean-hemicellulose",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E428",
+    "name": "želatina",
+    "nameEn": "gelatine",
+    "category": "želírující látka",
+    "risk": 0,
+    "note": "Živočišná bílkovina z kůží a kostí; bez obav, nevhodná pro vegetariány.",
+    "aliases": [
+      "želatina",
+      "vepřová želatina",
+      "hovězí želatina",
+      "gelatine",
+      "gelatin",
+      "Gelatine",
+      "Speisegelatine",
+      "želatin",
+      "svinjski želatin",
+      "goveđi želatin"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e428-gelatine",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E431",
+    "name": "polyoxyethylen(40)stearát",
+    "nameEn": "polyoxyethylene (40) stearate",
+    "category": "emulgátor",
+    "risk": 1,
+    "note": "Syntetický emulgátor; EFSA bez obav v limitech.",
+    "aliases": [
+      "polyoxyethylen(40)stearát",
+      "polyoxyethylene (40) stearate",
+      "Polyoxyethylen(40)stearat",
+      "polioksietilen stearat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e431-polyoxyethylene-40-stearate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E432",
+    "name": "polysorbát 20",
+    "nameEn": "polysorbate 20",
+    "category": "emulgátor",
+    "risk": 2,
+    "note": "Syntetický emulgátor; EFSA 2015 bez obav v limitech, studie na zvířatech ale naznačují vliv polysorbátů na střevní mikrobiom.",
+    "aliases": [
+      "polysorbát 20",
+      "polyoxyethylensorbitanmonolaurát",
+      "polysorbate 20",
+      "Tween 20",
+      "Polysorbat 20",
+      "polisorbat 20"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e432-polyoxyethylene-sorbitan-monolaurate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E433",
+    "name": "polysorbát 80",
+    "nameEn": "polysorbate 80",
+    "category": "emulgátor",
+    "risk": 2,
+    "note": "Syntetický emulgátor; EFSA bez obav v limitech, studie na myších spojují polysorbát 80 se zánětem střev a změnami mikrobiomu.",
+    "aliases": [
+      "polysorbát 80",
+      "polyoxyethylensorbitanmonooleát",
+      "polysorbate 80",
+      "Tween 80",
+      "Polysorbat 80",
+      "polisorbat 80"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e433-polyoxyethylene-sorbitan-monooleate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E434",
+    "name": "polysorbát 40",
+    "nameEn": "polysorbate 40",
+    "category": "emulgátor",
+    "risk": 2,
+    "note": "Syntetický emulgátor ze skupiny polysorbátů se stejnými výhradami.",
+    "aliases": [
+      "polysorbát 40",
+      "polysorbate 40",
+      "Tween 40",
+      "Polysorbat 40",
+      "polisorbat 40"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e434-polyoxyethylene-sorbitan-monopalmitate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E435",
+    "name": "polysorbát 60",
+    "nameEn": "polysorbate 60",
+    "category": "emulgátor",
+    "risk": 2,
+    "note": "Syntetický emulgátor ze skupiny polysorbátů se stejnými výhradami.",
+    "aliases": [
+      "polysorbát 60",
+      "polysorbate 60",
+      "Tween 60",
+      "Polysorbat 60",
+      "polisorbat 60"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e435-polyoxyethylene-sorbitan-monostearate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E436",
+    "name": "polysorbát 65",
+    "nameEn": "polysorbate 65",
+    "category": "emulgátor",
+    "risk": 2,
+    "note": "Syntetický emulgátor ze skupiny polysorbátů se stejnými výhradami.",
+    "aliases": [
+      "polysorbát 65",
+      "polysorbate 65",
+      "Tween 65",
+      "Polysorbat 65",
+      "polisorbat 65"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e436-polyoxyethylene-sorbitan-tristearate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E440",
+    "name": "pektiny",
+    "nameEn": "pectins",
+    "category": "želírující látka",
+    "risk": 0,
+    "note": "Přírodní vláknina z jablek a citrusů; bez obav.",
+    "aliases": [
+      "pektin",
+      "pektiny",
+      "amidovaný pektin",
+      "pectin",
+      "pectins",
+      "amidated pectin",
+      "Pektin",
+      "pektin E440"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e440-pectins",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E442",
+    "name": "amonné soli fosfatidových kyselin",
+    "nameEn": "ammonium phosphatides",
+    "category": "emulgátor",
+    "risk": 1,
+    "note": "Emulgátor v čokoládě nahrazující lecitin; EFSA bez obav v limitech.",
+    "aliases": [
+      "amonné soli fosfatidových kyselin",
+      "amonium fosfatidy",
+      "ammonium phosphatides",
+      "Ammoniumphosphatide",
+      "amonijum fosfatidi",
+      "amonijevi fosfatidi"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e442-ammonium-phosphatides",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E444",
+    "name": "isobutyrát-acetát sacharózy",
+    "nameEn": "sucrose acetate isobutyrate",
+    "category": "stabilizátor",
+    "risk": 1,
+    "note": "Stabilizátor zákalu v nápojích; EFSA bez obav v limitech.",
+    "aliases": [
+      "isobutyrát-acetát sacharózy",
+      "sucrose acetate isobutyrate",
+      "SAIB",
+      "Saccharoseacetatisobutyrat",
+      "saharoza acetat izobutirat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e444-sucrose-acetate-isobutyrate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E445",
+    "name": "glycerolestery dřevných pryskyřic",
+    "nameEn": "glycerol esters of wood rosins",
+    "category": "stabilizátor",
+    "risk": 1,
+    "note": "Stabilizátor zákalu v nápojích; EFSA bez obav v limitech.",
+    "aliases": [
+      "glycerolestery dřevných pryskyřic",
+      "estery glycerolu s pryskyřicemi",
+      "glycerol esters of wood rosins",
+      "glycerol ester of rosin",
+      "Glycerinester aus Wurzelharz",
+      "glicerol estri smole"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e445-glycerol-esters-of-wood-rosins",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E450",
+    "name": "difosforečnany",
+    "nameEn": "diphosphates",
+    "category": "stabilizátor",
+    "risk": 2,
+    "note": "Fosfáty v uzeninách, kypřicích prášcích a tavených sýrech; EFSA 2019 upozornila na překračování skupinového ADI fosforu u dětí.",
+    "aliases": [
+      "difosforečnan",
+      "difosforečnany",
+      "difosfát",
+      "pyrofosforečnan",
+      "pyrofosfát",
+      "diphosphates",
+      "pyrophosphate",
+      "Diphosphate",
+      "Pyrophosphat",
+      "difosfati",
+      "pirofosfati"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e450-diphosphates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E451",
+    "name": "trifosforečnany",
+    "nameEn": "triphosphates",
+    "category": "stabilizátor",
+    "risk": 2,
+    "note": "Fosfáty vážící vodu v mase a rybách; započítávají se do skupinového ADI fosforu.",
+    "aliases": [
+      "trifosforečnan",
+      "trifosforečnany",
+      "trifosfát",
+      "triphosphates",
+      "Triphosphate",
+      "trifosfati",
+      "trifosfat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e451-triphosphates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E452",
+    "name": "polyfosforečnany",
+    "nameEn": "polyphosphates",
+    "category": "stabilizátor",
+    "risk": 2,
+    "note": "Fosfáty v uzeninách a tavených sýrech; započítávají se do skupinového ADI fosforu.",
+    "aliases": [
+      "polyfosforečnan",
+      "polyfosforečnany",
+      "polyfosfát",
+      "polyfosfáty",
+      "polyphosphates",
+      "Polyphosphate",
+      "polifosfati",
+      "polifosfat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e452-polyphosphates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E459",
+    "name": "beta-cyklodextrin",
+    "nameEn": "beta-cyclodextrin",
+    "category": "stabilizátor",
+    "risk": 0,
+    "note": "Cyklický oligosacharid ze škrobu; bez obav.",
+    "aliases": [
+      "beta-cyklodextrin",
+      "beta-cyclodextrin",
+      "Beta-Cyclodextrin",
+      "beta-ciklodekstrin"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e459-beta-cyclodextrin",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E460",
+    "name": "celulóza",
+    "nameEn": "cellulose",
+    "category": "zahušťovadlo",
+    "risk": 0,
+    "note": "Mikrokrystalická nebo prášková celulóza; nestravitelná vláknina, bez obav.",
+    "aliases": [
+      "celulóza",
+      "mikrokrystalická celulóza",
+      "prášková celulóza",
+      "cellulose",
+      "microcrystalline cellulose",
+      "Cellulose",
+      "mikrokristalna celuloza",
+      "celuloza"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e460-cellulose",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E461",
+    "name": "methylcelulóza",
+    "nameEn": "methyl cellulose",
+    "category": "zahušťovadlo",
+    "risk": 0,
+    "note": "Upravená celulóza; nestravitelná, bez obav.",
+    "aliases": [
+      "methylcelulóza",
+      "metylcelulóza",
+      "methyl cellulose",
+      "Methylcellulose",
+      "metilceluloza"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e461-methyl-cellulose",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E463",
+    "name": "hydroxypropylcelulóza",
+    "nameEn": "hydroxypropyl cellulose",
+    "category": "zahušťovadlo",
+    "risk": 0,
+    "note": "Upravená celulóza; bez obav.",
+    "aliases": [
+      "hydroxypropylcelulóza",
+      "hydroxypropyl cellulose",
+      "Hydroxypropylcellulose",
+      "hidroksipropil celuloza"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e463-hydroxypropyl-cellulose",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E464",
+    "name": "hydroxypropylmethylcelulóza",
+    "nameEn": "hydroxypropyl methyl cellulose",
+    "category": "zahušťovadlo",
+    "risk": 0,
+    "note": "Upravená celulóza (HPMC); bez obav.",
+    "aliases": [
+      "hydroxypropylmethylcelulóza",
+      "HPMC",
+      "hypromelóza",
+      "hydroxypropyl methyl cellulose",
+      "Hydroxypropylmethylcellulose",
+      "hidroksipropil metilceluloza"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e464-hydroxypropyl-methyl-cellulose",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E466",
+    "name": "karboxymethylcelulóza",
+    "nameEn": "carboxymethyl cellulose",
+    "category": "zahušťovadlo",
+    "risk": 1,
+    "note": "Upravená celulóza (CMC); EFSA bez obav, malá studie na lidech z roku 2021 ale naznačila vliv na střevní mikrobiom.",
+    "aliases": [
+      "karboxymethylcelulóza",
+      "sodná sůl karboxymethylcelulózy",
+      "CMC",
+      "celulózová guma",
+      "carboxymethyl cellulose",
+      "cellulose gum",
+      "Carboxymethylcellulose",
+      "Natriumcarboxymethylcellulose",
+      "karboksimetil celuloza",
+      "natrijum karboksimetilceluloza"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e466-carboxymethyl-cellulose",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E468",
+    "name": "zesíťovaná karboxymethylcelulóza",
+    "nameEn": "cross-linked carboxymethyl cellulose",
+    "category": "zahušťovadlo",
+    "risk": 0,
+    "note": "Upravená celulóza do doplňků stravy; bez obav.",
+    "aliases": [
+      "zesíťovaná karboxymethylcelulóza",
+      "kroskarmelóza",
+      "cross-linked carboxymethyl cellulose",
+      "croscarmellose",
+      "vernetzte Carboxymethylcellulose",
+      "umrežena karboksimetil celuloza"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e468-cross-linked-carboxymethyl-cellulose",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E470a",
+    "name": "sodné, draselné a vápenaté soli mastných kyselin",
+    "nameEn": "sodium, potassium and calcium salts of fatty acids",
+    "category": "emulgátor",
+    "risk": 0,
+    "note": "Soli mastných kyselin (mýdla); bez obav.",
+    "aliases": [
+      "soli mastných kyselin",
+      "sodné soli mastných kyselin",
+      "vápenaté soli mastných kyselin",
+      "stearan vápenatý",
+      "salts of fatty acids",
+      "calcium stearate",
+      "Natrium-, Kalium- und Calciumsalze der Speisefettsäuren",
+      "Calciumstearat",
+      "soli masnih kiselina",
+      "kalcijum stearat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e470a-sodium-potassium-and-calcium-salts-of-fatty-acids",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E470b",
+    "name": "hořečnaté soli mastných kyselin",
+    "nameEn": "magnesium salts of fatty acids",
+    "category": "protispékavá látka",
+    "risk": 0,
+    "note": "Stearan hořečnatý v tabletách a doplňcích; bez obav.",
+    "aliases": [
+      "hořečnaté soli mastných kyselin",
+      "stearan hořečnatý",
+      "magnesium stearate",
+      "magnesium salts of fatty acids",
+      "Magnesiumstearat",
+      "magnezijum stearat",
+      "magnezijev stearat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e470b-magnesium-salts-of-fatty-acids",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E471",
+    "name": "mono- a diglyceridy mastných kyselin",
+    "nameEn": "mono- and diglycerides of fatty acids",
+    "category": "emulgátor",
+    "risk": 1,
+    "note": "Nejběžnější emulgátor, často z palmového oleje; EFSA bez obav, znak vyšší míry zpracování.",
+    "aliases": [
+      "mono- a diglyceridy mastných kyselin",
+      "monoglyceridy",
+      "diglyceridy",
+      "mono a diglyceridy",
+      "mono- and diglycerides of fatty acids",
+      "monoglycerides",
+      "Mono- und Diglyceride von Speisefettsäuren",
+      "mono- i digliceridi masnih kiselina",
+      "monogliceridi",
+      "digliceridi"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e471-mono-and-diglycerides-of-fatty-acids",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E472a",
+    "name": "estery mono- a diglyceridů s kyselinou octovou",
+    "nameEn": "acetic acid esters of mono- and diglycerides",
+    "category": "emulgátor",
+    "risk": 0,
+    "note": "Emulgátor odvozený od tuků; bez obav.",
+    "aliases": [
+      "estery mono- a diglyceridů s kyselinou octovou",
+      "acetylované monoglyceridy",
+      "acetic acid esters of mono- and diglycerides",
+      "Essigsäureester von Mono- und Diglyceriden",
+      "estri sirćetne kiseline mono- i diglicerida"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e472a-acetic-acid-esters-of-mono-and-diglycerides-of-fatty-acids",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E472b",
+    "name": "estery mono- a diglyceridů s kyselinou mléčnou",
+    "nameEn": "lactic acid esters of mono- and diglycerides",
+    "category": "emulgátor",
+    "risk": 0,
+    "note": "Emulgátor odvozený od tuků; bez obav.",
+    "aliases": [
+      "estery mono- a diglyceridů s kyselinou mléčnou",
+      "laktylované monoglyceridy",
+      "lactic acid esters of mono- and diglycerides",
+      "Milchsäureester von Mono- und Diglyceriden",
+      "estri mlečne kiseline mono- i diglicerida"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e472b-lactic-acid-esters-of-mono-and-diglycerides-of-fatty-acids",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E472c",
+    "name": "estery mono- a diglyceridů s kyselinou citronovou",
+    "nameEn": "citric acid esters of mono- and diglycerides",
+    "category": "emulgátor",
+    "risk": 0,
+    "note": "Emulgátor odvozený od tuků; bez obav.",
+    "aliases": [
+      "estery mono- a diglyceridů s kyselinou citronovou",
+      "citrátové estery monoglyceridů",
+      "citric acid esters of mono- and diglycerides",
+      "Citronensäureester von Mono- und Diglyceriden",
+      "estri limunske kiseline mono- i diglicerida"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e472c-citric-acid-esters-of-mono-and-diglycerides-of-fatty-acids",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E472d",
+    "name": "estery mono- a diglyceridů s kyselinou vinnou",
+    "nameEn": "tartaric acid esters of mono- and diglycerides",
+    "category": "emulgátor",
+    "risk": 0,
+    "note": "Emulgátor odvozený od tuků; bez obav.",
+    "aliases": [
+      "estery mono- a diglyceridů s kyselinou vinnou",
+      "tartaric acid esters of mono- and diglycerides",
+      "Weinsäureester von Mono- und Diglyceriden",
+      "estri vinske kiseline mono- i diglicerida"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e472d-tartaric-acid-esters-of-mono-and-diglycerides-of-fatty-acids",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E472e",
+    "name": "estery mono- a diglyceridů s kyselinou mono- a diacetylvinnou",
+    "nameEn": "mono- and diacetyl tartaric acid esters of mono- and diglycerides (DATEM)",
+    "category": "emulgátor",
+    "risk": 1,
+    "note": "Emulgátor v průmyslovém pečivu (DATEM); EFSA bez obav, typický znak vysoce zpracovaného pečiva.",
+    "aliases": [
+      "DATEM",
+      "estery mono- a diglyceridů s kyselinou diacetylvinnou",
+      "diacetylvinné estery monoglyceridů",
+      "mono- and diacetyl tartaric acid esters of mono- and diglycerides",
+      "Diacetylweinsäureester von Mono- und Diglyceriden",
+      "estri diacetil vinske kiseline mono- i diglicerida"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e472e-mono-and-diacetyltartaric-acid-esters-of-mono-and-diglycerides-of-fatty-acids",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E472f",
+    "name": "směsné estery mono- a diglyceridů s kyselinou octovou a vinnou",
+    "nameEn": "mixed acetic and tartaric acid esters of mono- and diglycerides",
+    "category": "emulgátor",
+    "risk": 0,
+    "note": "Emulgátor odvozený od tuků; bez obav.",
+    "aliases": [
+      "směsné estery mono- a diglyceridů s kyselinou octovou a vinnou",
+      "mixed acetic and tartaric acid esters of mono- and diglycerides",
+      "gemischte Essig- und Weinsäureester von Mono- und Diglyceriden",
+      "mešoviti estri sirćetne i vinske kiseline mono- i diglicerida"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e472f-mixed-acetic-and-tartaric-acid-esters-of-mono-and-diglycerides-of-fatty-acids",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E473",
+    "name": "estery sacharózy s mastnými kyselinami",
+    "nameEn": "sucrose esters of fatty acids",
+    "category": "emulgátor",
+    "risk": 1,
+    "note": "Syntetický emulgátor; EFSA bez obav v limitech, ve velkém množství projímavý.",
+    "aliases": [
+      "estery sacharózy s mastnými kyselinami",
+      "sacharózové estery",
+      "sucrose esters of fatty acids",
+      "sucrose esters",
+      "Zuckerester",
+      "Saccharoseester",
+      "estri saharoze masnih kiselina"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e473-sucrose-esters-of-fatty-acids",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E474",
+    "name": "sacharoglyceridy",
+    "nameEn": "sucroglycerides",
+    "category": "emulgátor",
+    "risk": 1,
+    "note": "Emulgátor z cukru a tuků; EFSA bez obav v limitech.",
+    "aliases": [
+      "sacharoglyceridy",
+      "sucroglycerides",
+      "Zuckerglyceride",
+      "saharogliceridi"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e474-sucroglycerides",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E475",
+    "name": "polyglycerolestery mastných kyselin",
+    "nameEn": "polyglycerol esters of fatty acids",
+    "category": "emulgátor",
+    "risk": 1,
+    "note": "Syntetický emulgátor v pečivu a dezertech; EFSA bez obav v limitech.",
+    "aliases": [
+      "polyglycerolestery mastných kyselin",
+      "estery polyglycerolu s mastnými kyselinami",
+      "polyglycerol esters of fatty acids",
+      "Polyglycerinester von Speisefettsäuren",
+      "poliglicerol estri masnih kiselina"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e475-polyglycerol-esters-of-fatty-acids",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E476",
+    "name": "polyglycerolpolyricinoleát",
+    "nameEn": "polyglycerol polyricinoleate",
+    "category": "emulgátor",
+    "risk": 1,
+    "note": "Levná náhrada kakaového másla v čokoládě (PGPR); EFSA 2017 bez obav, znak nižší kvality čokolády.",
+    "aliases": [
+      "polyglycerolpolyricinoleát",
+      "PGPR",
+      "polyglycerol polyricinoleate",
+      "Polyglycerin-Polyricinoleat",
+      "poliglicerol poliricinoleat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e476-polyglycerol-polyricinoleate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E477",
+    "name": "estery propan-1,2-diolu s mastnými kyselinami",
+    "nameEn": "propane-1,2-diol esters of fatty acids",
+    "category": "emulgátor",
+    "risk": 1,
+    "note": "Syntetický emulgátor v pečivu a šlehačkách; EFSA bez obav v limitech.",
+    "aliases": [
+      "estery propan-1,2-diolu s mastnými kyselinami",
+      "propylenglykolestery mastných kyselin",
+      "propane-1,2-diol esters of fatty acids",
+      "propylene glycol esters of fatty acids",
+      "Propylenglycolester von Speisefettsäuren",
+      "propilen glikol estri masnih kiselina"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e477-propane-1-2-diol-esters-of-fatty-acids",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E481",
+    "name": "stearoyl-2-mléčnan sodný",
+    "nameEn": "sodium stearoyl-2-lactylate",
+    "category": "emulgátor",
+    "risk": 1,
+    "note": "Emulgátor v průmyslovém pečivu (SSL); EFSA bez obav v limitech.",
+    "aliases": [
+      "stearoyl-2-mléčnan sodný",
+      "stearoyllaktylát sodný",
+      "SSL",
+      "sodium stearoyl-2-lactylate",
+      "sodium stearoyl lactylate",
+      "Natriumstearoyl-2-lactylat",
+      "natrijum stearoil laktilat",
+      "natrijev stearoil-2-laktilat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e481-sodium-stearoyl-2-lactylate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E482",
+    "name": "stearoyl-2-mléčnan vápenatý",
+    "nameEn": "calcium stearoyl-2-lactylate",
+    "category": "emulgátor",
+    "risk": 1,
+    "note": "Emulgátor v průmyslovém pečivu (CSL); EFSA bez obav v limitech.",
+    "aliases": [
+      "stearoyl-2-mléčnan vápenatý",
+      "stearoyllaktylát vápenatý",
+      "CSL",
+      "calcium stearoyl-2-lactylate",
+      "calcium stearoyl lactylate",
+      "Calciumstearoyl-2-lactylat",
+      "kalcijum stearoil laktilat",
+      "kalcijev stearoil-2-laktilat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e482-calcium-stearoyl-2-lactylate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E483",
+    "name": "vinan stearylu",
+    "nameEn": "stearyl tartrate",
+    "category": "emulgátor",
+    "risk": 1,
+    "note": "Emulgátor v pečivu; EFSA nemohla pro nedostatek dat plně potvrdit bezpečnost.",
+    "aliases": [
+      "vinan stearylu",
+      "stearyltartrát",
+      "stearyl tartrate",
+      "Stearyltartrat",
+      "stearil tartarat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e483-stearyl-tartrate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E491",
+    "name": "sorbitanmonostearát",
+    "nameEn": "sorbitan monostearate",
+    "category": "emulgátor",
+    "risk": 1,
+    "note": "Syntetický emulgátor v cukrovinkách a polevách; EFSA bez obav v limitech.",
+    "aliases": [
+      "sorbitanmonostearát",
+      "sorbitan monostearate",
+      "Span 60",
+      "Sorbitanmonostearat",
+      "sorbitan monostearat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e491-sorbitan-monostearate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E492",
+    "name": "sorbitantristearát",
+    "nameEn": "sorbitan tristearate",
+    "category": "emulgátor",
+    "risk": 1,
+    "note": "Syntetický emulgátor v čokoládě proti šednutí; EFSA bez obav v limitech.",
+    "aliases": [
+      "sorbitantristearát",
+      "sorbitan tristearate",
+      "Span 65",
+      "Sorbitantristearat",
+      "sorbitan tristearat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e492-sorbitan-tristearate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E493",
+    "name": "sorbitanmonolaurát",
+    "nameEn": "sorbitan monolaurate",
+    "category": "emulgátor",
+    "risk": 1,
+    "note": "Syntetický emulgátor; EFSA bez obav v limitech.",
+    "aliases": [
+      "sorbitanmonolaurát",
+      "sorbitan monolaurate",
+      "Span 20",
+      "Sorbitanmonolaurat",
+      "sorbitan monolaurat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e493-sorbitan-monolaurate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E494",
+    "name": "sorbitanmonooleát",
+    "nameEn": "sorbitan monooleate",
+    "category": "emulgátor",
+    "risk": 1,
+    "note": "Syntetický emulgátor; EFSA bez obav v limitech.",
+    "aliases": [
+      "sorbitanmonooleát",
+      "sorbitan monooleate",
+      "Span 80",
+      "Sorbitanmonooleat",
+      "sorbitan monooleat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e494-sorbitan-monooleate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E495",
+    "name": "sorbitanmonopalmitát",
+    "nameEn": "sorbitan monopalmitate",
+    "category": "emulgátor",
+    "risk": 1,
+    "note": "Syntetický emulgátor; EFSA bez obav v limitech.",
+    "aliases": [
+      "sorbitanmonopalmitát",
+      "sorbitan monopalmitate",
+      "Span 40",
+      "Sorbitanmonopalmitat",
+      "sorbitan monopalmitat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e495-sorbitan-monopalmitate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E500",
+    "name": "uhličitany sodné",
+    "nameEn": "sodium carbonates",
+    "category": "kypřicí látka",
+    "risk": 0,
+    "note": "Jedlá soda a soda; bez obav.",
+    "aliases": [
+      "uhličitan sodný",
+      "hydrogenuhličitan sodný",
+      "jedlá soda",
+      "soda bikarbona",
+      "sodium carbonate",
+      "sodium bicarbonate",
+      "baking soda",
+      "Natriumcarbonat",
+      "Natron",
+      "Natriumhydrogencarbonat",
+      "natrijum bikarbonat",
+      "natrijev hidrogenkarbonat",
+      "soda bikarbona"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e500-sodium-carbonates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E501",
+    "name": "uhličitany draselné",
+    "nameEn": "potassium carbonates",
+    "category": "kypřicí látka",
+    "risk": 0,
+    "note": "Potaš; bez obav.",
+    "aliases": [
+      "uhličitan draselný",
+      "hydrogenuhličitan draselný",
+      "potaš",
+      "potassium carbonate",
+      "potassium bicarbonate",
+      "Kaliumcarbonat",
+      "Pottasche",
+      "kalijum karbonat",
+      "kalijev karbonat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e501-potassium-carbonates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E503",
+    "name": "uhličitany amonné",
+    "nameEn": "ammonium carbonates",
+    "category": "kypřicí látka",
+    "risk": 0,
+    "note": "Cukrářské droždí (amonium); při pečení se rozkládá, bez obav.",
+    "aliases": [
+      "uhličitan amonný",
+      "hydrogenuhličitan amonný",
+      "amonium",
+      "cukrářské droždí",
+      "ammonium carbonate",
+      "ammonium bicarbonate",
+      "Ammoniumcarbonat",
+      "Hirschhornsalz",
+      "amonijum bikarbonat",
+      "amonijev hidrogenkarbonat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e503-ammonium-carbonates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E504",
+    "name": "uhličitany hořečnaté",
+    "nameEn": "magnesium carbonates",
+    "category": "protispékavá látka",
+    "risk": 0,
+    "note": "Protispékavá látka v soli a cukru; bez obav.",
+    "aliases": [
+      "uhličitan hořečnatý",
+      "magnesium carbonate",
+      "Magnesiumcarbonat",
+      "magnezijum karbonat",
+      "magnezijev karbonat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e504-magnesium-carbonates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E507",
+    "name": "kyselina chlorovodíková",
+    "nameEn": "hydrochloric acid",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Technologická pomocná kyselina; v konečném výrobku neutralizována, bez obav.",
+    "aliases": [
+      "kyselina chlorovodíková",
+      "hydrochloric acid",
+      "Salzsäure",
+      "hlorovodonična kiselina",
+      "klorovodična kiselina"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e507-hydrochloric-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E508",
+    "name": "chlorid draselný",
+    "nameEn": "potassium chloride",
+    "category": "náhrada soli",
+    "risk": 0,
+    "note": "Náhrada kuchyňské soli; bez obav, pozor při onemocnění ledvin.",
+    "aliases": [
+      "chlorid draselný",
+      "potassium chloride",
+      "Kaliumchlorid",
+      "kalijum hlorid",
+      "kalijev klorid"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e508-potassium-chloride",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E509",
+    "name": "chlorid vápenatý",
+    "nameEn": "calcium chloride",
+    "category": "zpevňující látka",
+    "risk": 0,
+    "note": "Zpevňuje konzervovanou zeleninu a sýry; bez obav.",
+    "aliases": [
+      "chlorid vápenatý",
+      "calcium chloride",
+      "Calciumchlorid",
+      "kalcijum hlorid",
+      "kalcijev klorid"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e509-calcium-chloride",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E511",
+    "name": "chlorid hořečnatý",
+    "nameEn": "magnesium chloride",
+    "category": "zpevňující látka",
+    "risk": 0,
+    "note": "Srážedlo tofu (nigari); bez obav.",
+    "aliases": [
+      "chlorid hořečnatý",
+      "nigari",
+      "magnesium chloride",
+      "Magnesiumchlorid",
+      "magnezijum hlorid",
+      "magnezijev klorid"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e511-magnesium-chloride",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E512",
+    "name": "chlorid cínatý",
+    "nameEn": "stannous chloride",
+    "category": "antioxidant",
+    "risk": 1,
+    "note": "Antioxidant pouze pro konzervovaný chřest; EFSA bez obav v limitech.",
+    "aliases": [
+      "chlorid cínatý",
+      "stannous chloride",
+      "tin chloride",
+      "Zinn(II)-chlorid",
+      "kalaj hlorid",
+      "kositrov klorid"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e512-stannous-chloride",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E514",
+    "name": "sírany sodné",
+    "nameEn": "sodium sulphates",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Glauberova sůl, nosič barviv; bez obav.",
+    "aliases": [
+      "síran sodný",
+      "sírany sodné",
+      "sodium sulphate",
+      "sodium sulfate",
+      "Natriumsulfat",
+      "natrijum sulfat",
+      "natrijev sulfat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e514-sodium-sulphates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E515",
+    "name": "sírany draselné",
+    "nameEn": "potassium sulphates",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Náhrada soli a nosič; bez obav.",
+    "aliases": [
+      "síran draselný",
+      "sírany draselné",
+      "potassium sulphate",
+      "potassium sulfate",
+      "Kaliumsulfat",
+      "kalijum sulfat",
+      "kalijev sulfat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e515-potassium-sulphates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E516",
+    "name": "síran vápenatý",
+    "nameEn": "calcium sulphate",
+    "category": "zpevňující látka",
+    "risk": 0,
+    "note": "Sádra, srážedlo tofu a zdroj vápníku; bez obav.",
+    "aliases": [
+      "síran vápenatý",
+      "sádrovec",
+      "calcium sulphate",
+      "calcium sulfate",
+      "Calciumsulfat",
+      "kalcijum sulfat",
+      "kalcijev sulfat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e516-calcium-sulphate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E517",
+    "name": "síran amonný",
+    "nameEn": "ammonium sulphate",
+    "category": "stabilizátor",
+    "risk": 0,
+    "note": "Nosič a živina pro kvasinky; bez obav.",
+    "aliases": [
+      "síran amonný",
+      "ammonium sulphate",
+      "ammonium sulfate",
+      "Ammoniumsulfat",
+      "amonijum sulfat",
+      "amonijev sulfat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e517-ammonium-sulphate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E520",
+    "name": "síran hlinitý",
+    "nameEn": "aluminium sulphate",
+    "category": "zpevňující látka",
+    "risk": 2,
+    "note": "Obsahuje hliník, jehož tolerovatelný příjem je podle EFSA u části populace překračován; v EU povolen jen pro vaječné bílky a kandované ovoce.",
+    "aliases": [
+      "síran hlinitý",
+      "aluminium sulphate",
+      "aluminum sulfate",
+      "Aluminiumsulfat",
+      "aluminijum sulfat",
+      "aluminijev sulfat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e520-aluminium-sulphate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E521",
+    "name": "síran hlinito-sodný",
+    "nameEn": "aluminium sodium sulphate",
+    "category": "zpevňující látka",
+    "risk": 2,
+    "note": "Obsahuje hliník; v EU povolen jen v úzkém okruhu výrobků.",
+    "aliases": [
+      "síran hlinito-sodný",
+      "aluminium sodium sulphate",
+      "sodium aluminium sulfate",
+      "Aluminiumnatriumsulfat",
+      "aluminijum natrijum sulfat",
+      "natrijev aluminijev sulfat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e521-aluminium-sodium-sulphate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E522",
+    "name": "síran hlinito-draselný",
+    "nameEn": "aluminium potassium sulphate",
+    "category": "zpevňující látka",
+    "risk": 2,
+    "note": "Kamenec; obsahuje hliník, v EU povolen jen v úzkém okruhu výrobků.",
+    "aliases": [
+      "síran hlinito-draselný",
+      "kamenec",
+      "aluminium potassium sulphate",
+      "potassium alum",
+      "Aluminiumkaliumsulfat",
+      "Kalialaun",
+      "aluminijum kalijum sulfat",
+      "stipsa"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e522-aluminium-potassium-sulphate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E523",
+    "name": "síran hlinito-amonný",
+    "nameEn": "aluminium ammonium sulphate",
+    "category": "zpevňující látka",
+    "risk": 2,
+    "note": "Obsahuje hliník; v EU povolen jen v úzkém okruhu výrobků.",
+    "aliases": [
+      "síran hlinito-amonný",
+      "aluminium ammonium sulphate",
+      "ammonium alum",
+      "Aluminiumammoniumsulfat",
+      "aluminijum amonijum sulfat",
+      "amonijev aluminijev sulfat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e523-aluminium-ammonium-sulphate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E524",
+    "name": "hydroxid sodný",
+    "nameEn": "sodium hydroxide",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Louh používaný např. na preclíky a kakao; v potravině neutralizován, bez obav.",
+    "aliases": [
+      "hydroxid sodný",
+      "louh sodný",
+      "sodium hydroxide",
+      "Natriumhydroxid",
+      "Natronlauge",
+      "natrijum hidroksid",
+      "natrijev hidroksid"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e524-sodium-hydroxide",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E525",
+    "name": "hydroxid draselný",
+    "nameEn": "potassium hydroxide",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Louh draselný; v potravině neutralizován, bez obav.",
+    "aliases": [
+      "hydroxid draselný",
+      "louh draselný",
+      "potassium hydroxide",
+      "Kaliumhydroxid",
+      "kalijum hidroksid",
+      "kalijev hidroksid"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e525-potassium-hydroxide",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E526",
+    "name": "hydroxid vápenatý",
+    "nameEn": "calcium hydroxide",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Hašené vápno; bez obav.",
+    "aliases": [
+      "hydroxid vápenatý",
+      "hašené vápno",
+      "calcium hydroxide",
+      "Calciumhydroxid",
+      "kalcijum hidroksid",
+      "kalcijev hidroksid"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e526-calcium-hydroxide",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E527",
+    "name": "hydroxid amonný",
+    "nameEn": "ammonium hydroxide",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Čpavková voda používaná např. při výrobě kakaa; v potravině nezůstává, bez obav.",
+    "aliases": [
+      "hydroxid amonný",
+      "čpavková voda",
+      "ammonium hydroxide",
+      "Ammoniumhydroxid",
+      "amonijum hidroksid",
+      "amonijev hidroksid"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e527-ammonium-hydroxide",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E528",
+    "name": "hydroxid hořečnatý",
+    "nameEn": "magnesium hydroxide",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Mírné antacidum; bez obav.",
+    "aliases": [
+      "hydroxid hořečnatý",
+      "magnesium hydroxide",
+      "Magnesiumhydroxid",
+      "magnezijum hidroksid",
+      "magnezijev hidroksid"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e528-magnesium-hydroxide",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E529",
+    "name": "oxid vápenatý",
+    "nameEn": "calcium oxide",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Pálené vápno; v potravině se mění na hydroxid, bez obav.",
+    "aliases": [
+      "oxid vápenatý",
+      "pálené vápno",
+      "calcium oxide",
+      "Calciumoxid",
+      "kalcijum oksid",
+      "kalcijev oksid"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e529-calcium-oxide",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E530",
+    "name": "oxid hořečnatý",
+    "nameEn": "magnesium oxide",
+    "category": "protispékavá látka",
+    "risk": 0,
+    "note": "Protispékavá látka a zdroj hořčíku; bez obav.",
+    "aliases": [
+      "oxid hořečnatý",
+      "magnesium oxide",
+      "Magnesiumoxid",
+      "magnezijum oksid",
+      "magnezijev oksid"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e530-magnesium-oxide",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E535",
+    "name": "hexakyanoželeznatan sodný",
+    "nameEn": "sodium ferrocyanide",
+    "category": "protispékavá látka",
+    "risk": 1,
+    "note": "Protispékavá látka v soli; kyanid je pevně vázán, EFSA 2018 bez obav v limitech.",
+    "aliases": [
+      "hexakyanoželeznatan sodný",
+      "ferokyanid sodný",
+      "sodium ferrocyanide",
+      "Natriumferrocyanid",
+      "natrijum ferocijanid",
+      "natrijev ferocijanid"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e535-sodium-ferrocyanide",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E536",
+    "name": "hexakyanoželeznatan draselný",
+    "nameEn": "potassium ferrocyanide",
+    "category": "protispékavá látka",
+    "risk": 1,
+    "note": "Nejčastější protispékavá látka v kuchyňské soli; kyanid je pevně vázán, EFSA bez obav v limitech.",
+    "aliases": [
+      "hexakyanoželeznatan draselný",
+      "ferokyanid draselný",
+      "žlutá krevní sůl",
+      "potassium ferrocyanide",
+      "Kaliumferrocyanid",
+      "kalijum ferocijanid",
+      "kalijev ferocijanid"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e536-potassium-ferrocyanide",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E538",
+    "name": "hexakyanoželeznatan vápenatý",
+    "nameEn": "calcium ferrocyanide",
+    "category": "protispékavá látka",
+    "risk": 1,
+    "note": "Protispékavá látka v soli; kyanid je pevně vázán, EFSA bez obav v limitech.",
+    "aliases": [
+      "hexakyanoželeznatan vápenatý",
+      "ferokyanid vápenatý",
+      "calcium ferrocyanide",
+      "Calciumferrocyanid",
+      "kalcijum ferocijanid",
+      "kalcijev ferocijanid"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e538-calcium-ferrocyanide",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E541",
+    "name": "kyselý fosforečnan sodno-hlinitý",
+    "nameEn": "sodium aluminium phosphate, acidic",
+    "category": "kypřicí látka",
+    "risk": 2,
+    "note": "Kypřidlo obsahující hliník i fosfát; v EU povoleno jen do piškotových dortíků (scones).",
+    "aliases": [
+      "kyselý fosforečnan sodno-hlinitý",
+      "fosforečnan sodno-hlinitý",
+      "sodium aluminium phosphate",
+      "SALP",
+      "saures Natriumaluminiumphosphat",
+      "natrijum aluminijum fosfat",
+      "natrijev aluminijev fosfat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e541-sodium-aluminium-phosphate-acidic",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E551",
+    "name": "oxid křemičitý",
+    "nameEn": "silicon dioxide",
+    "category": "protispékavá látka",
+    "risk": 1,
+    "note": "Protispékavá látka v kořeních a instantních směsích; EFSA 2018 bez obav, ale žádá data o nanočásticích.",
+    "aliases": [
+      "oxid křemičitý",
+      "silika",
+      "silicon dioxide",
+      "silica",
+      "Siliciumdioxid",
+      "Kieselsäure",
+      "silicijum dioksid",
+      "silicijev dioksid"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e551-silicon-dioxide",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E552",
+    "name": "křemičitan vápenatý",
+    "nameEn": "calcium silicate",
+    "category": "protispékavá látka",
+    "risk": 1,
+    "note": "Protispékavá látka; EFSA 2018 nemohla pro nedostatek dat bezpečnost plně potvrdit.",
+    "aliases": [
+      "křemičitan vápenatý",
+      "calcium silicate",
+      "Calciumsilicat",
+      "kalcijum silikat",
+      "kalcijev silikat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e552-calcium-silicate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E553a",
+    "name": "křemičitan hořečnatý",
+    "nameEn": "magnesium silicate",
+    "category": "protispékavá látka",
+    "risk": 1,
+    "note": "Protispékavá látka; EFSA 2018 nemohla pro nedostatek dat bezpečnost plně potvrdit.",
+    "aliases": [
+      "křemičitan hořečnatý",
+      "trikřemičitan hořečnatý",
+      "magnesium silicate",
+      "magnesium trisilicate",
+      "Magnesiumsilicat",
+      "magnezijum silikat",
+      "magnezijev silikat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e553a-magnesium-silicate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E553b",
+    "name": "mastek",
+    "nameEn": "talc",
+    "category": "protispékavá látka",
+    "risk": 1,
+    "note": "Mastek na povrch cukrovinek a rýže; potravinářská kvalita bez azbestu, EFSA 2018 žádá další data.",
+    "aliases": [
+      "mastek",
+      "talek",
+      "talc",
+      "talcum",
+      "Talkum",
+      "talk",
+      "talk E553b"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e553b-talc",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E554",
+    "name": "křemičitan sodno-hlinitý",
+    "nameEn": "sodium aluminium silicate",
+    "category": "protispékavá látka",
+    "risk": 2,
+    "note": "Obsahuje hliník; v EU od roku 2014 povolen jen v omezeném rozsahu (nař. (EU) č. 380/2012).",
+    "aliases": [
+      "křemičitan sodno-hlinitý",
+      "hlinitokřemičitan sodný",
+      "sodium aluminium silicate",
+      "sodium aluminosilicate",
+      "Natriumaluminiumsilicat",
+      "natrijum aluminijum silikat",
+      "natrijev aluminijev silikat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e554-sodium-aluminium-silicate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E555",
+    "name": "křemičitan draselno-hlinitý",
+    "nameEn": "potassium aluminium silicate",
+    "category": "protispékavá látka",
+    "risk": 2,
+    "note": "Slída, nosič perleťových pigmentů; obsahuje hliník. V EU povolena jen jako nosič některých barviv (E171 je od roku 2022 v potravinách zakázán).",
+    "aliases": [
+      "křemičitan draselno-hlinitý",
+      "slída",
+      "potassium aluminium silicate",
+      "mica",
+      "Kaliumaluminiumsilicat",
+      "Glimmer",
+      "kalijum aluminijum silikat",
+      "liskun"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e555-potassium-aluminium-silicate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E570",
+    "name": "mastné kyseliny",
+    "nameEn": "fatty acids",
+    "category": "protispékavá látka",
+    "risk": 0,
+    "note": "Kyselina stearová a další mastné kyseliny; bez obav.",
+    "aliases": [
+      "mastné kyseliny",
+      "kyselina stearová",
+      "fatty acids",
+      "stearic acid",
+      "Fettsäuren",
+      "Stearinsäure",
+      "masne kiseline",
+      "stearinska kiselina"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e570-fatty-acids",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E574",
+    "name": "kyselina glukonová",
+    "nameEn": "gluconic acid",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Přirozená kyselina z glukózy; bez obav.",
+    "aliases": [
+      "kyselina glukonová",
+      "gluconic acid",
+      "Gluconsäure",
+      "glukonska kiselina"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e574-gluconic-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E575",
+    "name": "glukono-delta-lakton",
+    "nameEn": "glucono-delta-lactone",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Okyselovadlo v tofu a uzeninách; bez obav.",
+    "aliases": [
+      "glukono-delta-lakton",
+      "glukonolakton",
+      "GDL",
+      "glucono-delta-lactone",
+      "Glucono-delta-lacton",
+      "glukono-delta-lakton",
+      "glukonolakton"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e575-glucono-delta-lactone",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E576",
+    "name": "glukonan sodný",
+    "nameEn": "sodium gluconate",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Sodná sůl kyseliny glukonové; bez obav.",
+    "aliases": [
+      "glukonan sodný",
+      "glukonát sodný",
+      "sodium gluconate",
+      "Natriumgluconat",
+      "natrijum glukonat",
+      "natrijev glukonat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e576-sodium-gluconate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E577",
+    "name": "glukonan draselný",
+    "nameEn": "potassium gluconate",
+    "category": "regulátor kyselosti",
+    "risk": 0,
+    "note": "Draselná sůl kyseliny glukonové; bez obav.",
+    "aliases": [
+      "glukonan draselný",
+      "glukonát draselný",
+      "potassium gluconate",
+      "Kaliumgluconat",
+      "kalijum glukonat",
+      "kalijev glukonat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e577-potassium-gluconate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E578",
+    "name": "glukonan vápenatý",
+    "nameEn": "calcium gluconate",
+    "category": "zpevňující látka",
+    "risk": 0,
+    "note": "Vápenatá sůl kyseliny glukonové; bez obav.",
+    "aliases": [
+      "glukonan vápenatý",
+      "glukonát vápenatý",
+      "calcium gluconate",
+      "Calciumgluconat",
+      "kalcijum glukonat",
+      "kalcijev glukonat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e578-calcium-gluconate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E579",
+    "name": "glukonan železnatý",
+    "nameEn": "ferrous gluconate",
+    "category": "stabilizátor",
+    "risk": 0,
+    "note": "Stabilizuje barvu černých oliv; bez obav.",
+    "aliases": [
+      "glukonan železnatý",
+      "glukonát železnatý",
+      "ferrous gluconate",
+      "iron gluconate",
+      "Eisen(II)-gluconat",
+      "gvožđe glukonat",
+      "željezov glukonat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e579-ferrous-gluconate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E585",
+    "name": "mléčnan železnatý",
+    "nameEn": "ferrous lactate",
+    "category": "stabilizátor",
+    "risk": 0,
+    "note": "Stabilizuje barvu černých oliv; bez obav.",
+    "aliases": [
+      "mléčnan železnatý",
+      "laktát železnatý",
+      "ferrous lactate",
+      "iron lactate",
+      "Eisen(II)-lactat",
+      "gvožđe laktat",
+      "željezov laktat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e585-ferrous-lactate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E620",
+    "name": "kyselina glutamová",
+    "nameEn": "glutamic acid",
+    "category": "zvýrazňovač chuti",
+    "risk": 2,
+    "note": "Zvýrazňovač chuti typický pro vysoce zpracované potraviny; EFSA 2017 stanovila skupinový ADI, který část populace překračuje.",
+    "aliases": [
+      "kyselina glutamová",
+      "kyselina L-glutamová",
+      "glutamic acid",
+      "Glutaminsäure",
+      "glutaminska kiselina",
+      "kyselina glutámová"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e620-glutamic-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E621",
+    "name": "glutaman sodný",
+    "nameEn": "monosodium glutamate",
+    "category": "zvýrazňovač chuti",
+    "risk": 2,
+    "note": "Zvýrazňovač chuti typický pro vysoce zpracované potraviny; u citlivých osob může vyvolat nevolnost nebo bolest hlavy.",
+    "aliases": [
+      "glutaman sodný",
+      "glutamát sodný",
+      "MSG",
+      "mononatrium-glutamát",
+      "natrium-glutamát",
+      "monosodium glutamate",
+      "Mononatriumglutamat",
+      "Natriumglutamat",
+      "natrijum glutaminat",
+      "natrijev glutaminat",
+      "mononatrijum glutaminat",
+      "glutamát"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e621-monosodium-glutamate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E622",
+    "name": "glutaman draselný",
+    "nameEn": "monopotassium glutamate",
+    "category": "zvýrazňovač chuti",
+    "risk": 2,
+    "note": "Draselná obdoba glutamanu sodného; započítává se do skupinového ADI glutamátů.",
+    "aliases": [
+      "glutaman draselný",
+      "glutamát draselný",
+      "monopotassium glutamate",
+      "Monokaliumglutamat",
+      "kalijum glutaminat",
+      "kalijev glutaminat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e622-monopotassium-glutamate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E623",
+    "name": "glutaman vápenatý",
+    "nameEn": "calcium diglutamate",
+    "category": "zvýrazňovač chuti",
+    "risk": 2,
+    "note": "Vápenatá obdoba glutamanu sodného; započítává se do skupinového ADI glutamátů.",
+    "aliases": [
+      "glutaman vápenatý",
+      "glutamát vápenatý",
+      "calcium diglutamate",
+      "Calciumdiglutamat",
+      "kalcijum glutaminat",
+      "kalcijev diglutaminat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e623-calcium-diglutamate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E624",
+    "name": "glutaman amonný",
+    "nameEn": "monoammonium glutamate",
+    "category": "zvýrazňovač chuti",
+    "risk": 2,
+    "note": "Amonná obdoba glutamanu sodného; započítává se do skupinového ADI glutamátů.",
+    "aliases": [
+      "glutaman amonný",
+      "glutamát amonný",
+      "monoammonium glutamate",
+      "Monoammoniumglutamat",
+      "amonijum glutaminat",
+      "amonijev glutaminat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e624-monoammonium-glutamate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E625",
+    "name": "glutaman hořečnatý",
+    "nameEn": "magnesium diglutamate",
+    "category": "zvýrazňovač chuti",
+    "risk": 2,
+    "note": "Hořečnatá obdoba glutamanu sodného; započítává se do skupinového ADI glutamátů.",
+    "aliases": [
+      "glutaman hořečnatý",
+      "glutamát hořečnatý",
+      "magnesium diglutamate",
+      "Magnesiumdiglutamat",
+      "magnezijum glutaminat",
+      "magnezijev diglutaminat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e625-magnesium-diglutamate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E626",
+    "name": "kyselina guanylová",
+    "nameEn": "guanylic acid",
+    "category": "zvýrazňovač chuti",
+    "risk": 1,
+    "note": "Purinový zvýrazňovač chuti; nevhodný pro osoby s dnou, znak vysoce zpracovaných potravin.",
+    "aliases": [
+      "kyselina guanylová",
+      "guanylic acid",
+      "Guanylsäure",
+      "guanilna kiselina"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e626-guanylic-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E627",
+    "name": "guanylan sodný",
+    "nameEn": "disodium guanylate",
+    "category": "zvýrazňovač chuti",
+    "risk": 1,
+    "note": "Purinový zvýrazňovač chuti používaný s glutamátem; nevhodný pro osoby s dnou.",
+    "aliases": [
+      "guanylan sodný",
+      "guanylát sodný",
+      "dinatrium-guanylát",
+      "disodium guanylate",
+      "Dinatriumguanylat",
+      "dinatrijum guanilat",
+      "dinatrijev guanilat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e627-disodium-guanylate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E628",
+    "name": "guanylan draselný",
+    "nameEn": "dipotassium guanylate",
+    "category": "zvýrazňovač chuti",
+    "risk": 1,
+    "note": "Purinový zvýrazňovač chuti; nevhodný pro osoby s dnou.",
+    "aliases": [
+      "guanylan draselný",
+      "guanylát draselný",
+      "dipotassium guanylate",
+      "Dikaliumguanylat",
+      "dikalijum guanilat",
+      "dikalijev guanilat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e628-dipotassium-guanylate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E629",
+    "name": "guanylan vápenatý",
+    "nameEn": "calcium guanylate",
+    "category": "zvýrazňovač chuti",
+    "risk": 1,
+    "note": "Purinový zvýrazňovač chuti; nevhodný pro osoby s dnou.",
+    "aliases": [
+      "guanylan vápenatý",
+      "guanylát vápenatý",
+      "calcium guanylate",
+      "Calciumguanylat",
+      "kalcijum guanilat",
+      "kalcijev guanilat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e629-calcium-guanylate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E630",
+    "name": "kyselina inosinová",
+    "nameEn": "inosinic acid",
+    "category": "zvýrazňovač chuti",
+    "risk": 1,
+    "note": "Purinový zvýrazňovač chuti; nevhodný pro osoby s dnou.",
+    "aliases": [
+      "kyselina inosinová",
+      "inosinic acid",
+      "Inosinsäure",
+      "inozinska kiselina"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e630-inosinic-acid",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E631",
+    "name": "inosinan sodný",
+    "nameEn": "disodium inosinate",
+    "category": "zvýrazňovač chuti",
+    "risk": 1,
+    "note": "Purinový zvýrazňovač chuti používaný s glutamátem; nevhodný pro osoby s dnou.",
+    "aliases": [
+      "inosinan sodný",
+      "inosinát sodný",
+      "dinatrium-inosinát",
+      "disodium inosinate",
+      "Dinatriuminosinat",
+      "dinatrijum inozinat",
+      "dinatrijev inozinat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e631-disodium-inosinate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E632",
+    "name": "inosinan draselný",
+    "nameEn": "dipotassium inosinate",
+    "category": "zvýrazňovač chuti",
+    "risk": 1,
+    "note": "Purinový zvýrazňovač chuti; nevhodný pro osoby s dnou.",
+    "aliases": [
+      "inosinan draselný",
+      "inosinát draselný",
+      "dipotassium inosinate",
+      "Dikaliuminosinat",
+      "dikalijum inozinat",
+      "dikalijev inozinat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e632-dipotassium-inosinate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E633",
+    "name": "inosinan vápenatý",
+    "nameEn": "calcium inosinate",
+    "category": "zvýrazňovač chuti",
+    "risk": 1,
+    "note": "Purinový zvýrazňovač chuti; nevhodný pro osoby s dnou.",
+    "aliases": [
+      "inosinan vápenatý",
+      "inosinát vápenatý",
+      "calcium inosinate",
+      "Calciuminosinat",
+      "kalcijum inozinat",
+      "kalcijev inozinat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e633-calcium-inosinate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E634",
+    "name": "5'-ribonukleotidy vápenaté",
+    "nameEn": "calcium 5'-ribonucleotides",
+    "category": "zvýrazňovač chuti",
+    "risk": 1,
+    "note": "Směs purinových zvýrazňovačů chuti; nevhodná pro osoby s dnou.",
+    "aliases": [
+      "5'-ribonukleotidy vápenaté",
+      "ribonukleotidy vápenaté",
+      "calcium 5'-ribonucleotides",
+      "Calcium-5'-ribonucleotid",
+      "kalcijum 5'-ribonukleotidi",
+      "kalcijevi 5'-ribonukleotidi"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e634-calcium-5-ribonucleotides",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E635",
+    "name": "5'-ribonukleotidy sodné",
+    "nameEn": "disodium 5'-ribonucleotides",
+    "category": "zvýrazňovač chuti",
+    "risk": 1,
+    "note": "Směs guanylanu a inosinanu sodného zesilující účinek glutamátu; nevhodná pro osoby s dnou.",
+    "aliases": [
+      "5'-ribonukleotidy sodné",
+      "ribonukleotidy sodné",
+      "dinatrium-5'-ribonukleotidy",
+      "disodium 5'-ribonucleotides",
+      "Dinatrium-5'-ribonucleotid",
+      "dinatrijum 5'-ribonukleotidi",
+      "dinatrijevi 5'-ribonukleotidi"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e635-disodium-5-ribonucleotides",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E640",
+    "name": "glycin a jeho sodná sůl",
+    "nameEn": "glycine and its sodium salt",
+    "category": "zvýrazňovač chuti",
+    "risk": 0,
+    "note": "Aminokyselina používaná jako zvýrazňovač a sladidlo; bez obav.",
+    "aliases": [
+      "glycin",
+      "glycin a jeho sodná sůl",
+      "glycinát sodný",
+      "glycine",
+      "sodium glycinate",
+      "Glycin",
+      "Natriumglycinat",
+      "glicin",
+      "natrijum glicinat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e640-glycine-and-its-sodium-salt",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E650",
+    "name": "octan zinečnatý",
+    "nameEn": "zinc acetate",
+    "category": "zvýrazňovač chuti",
+    "risk": 0,
+    "note": "Zdroj zinku ve žvýkačkách; bez obav v limitech.",
+    "aliases": [
+      "octan zinečnatý",
+      "zinc acetate",
+      "Zinkacetat",
+      "cink acetat",
+      "cinkov acetat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e650-zinc-acetate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E900",
+    "name": "dimethylpolysiloxan",
+    "nameEn": "dimethyl polysiloxane",
+    "category": "odpěňovač",
+    "risk": 1,
+    "note": "Silikonový odpěňovač ve fritovacích olejích a džusech; EFSA 2020 bez obav v limitech.",
+    "aliases": [
+      "dimethylpolysiloxan",
+      "polydimethylsiloxan",
+      "silikonový olej",
+      "dimethyl polysiloxane",
+      "polydimethylsiloxane",
+      "Dimethylpolysiloxan",
+      "dimetilpolisiloksan",
+      "dimetil polisiloksan"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e900-dimethyl-polysiloxane",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E901",
+    "name": "včelí vosk",
+    "nameEn": "beeswax",
+    "category": "lešticí látka",
+    "risk": 0,
+    "note": "Přírodní vosk na lesk cukrovinek a ovoce; bez obav, není veganský.",
+    "aliases": [
+      "včelí vosk",
+      "bílý včelí vosk",
+      "žlutý včelí vosk",
+      "beeswax",
+      "Bienenwachs",
+      "pčelinji vosak"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e901-beeswax",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E902",
+    "name": "kandelilový vosk",
+    "nameEn": "candelilla wax",
+    "category": "lešticí látka",
+    "risk": 0,
+    "note": "Rostlinný vosk na lesk cukrovinek; bez obav.",
+    "aliases": [
+      "kandelilový vosk",
+      "candelilla wax",
+      "Candelillawachs",
+      "kandelila vosak"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e902-candelilla-wax",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E903",
+    "name": "karnaubský vosk",
+    "nameEn": "carnauba wax",
+    "category": "lešticí látka",
+    "risk": 0,
+    "note": "Rostlinný vosk z palmy na lesk cukrovinek; bez obav.",
+    "aliases": [
+      "karnaubský vosk",
+      "karnauba",
+      "carnauba wax",
+      "Carnaubawachs",
+      "karnauba vosak"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e903-carnauba-wax",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E904",
+    "name": "šelak",
+    "nameEn": "shellac",
+    "category": "lešticí látka",
+    "risk": 0,
+    "note": "Pryskyřice z výměšků červce lakového na lesk cukrovinek a ovoce; bez obav, není veganský.",
+    "aliases": [
+      "šelak",
+      "shellac",
+      "Schellack",
+      "šelak E904"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e904-shellac",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E905",
+    "name": "mikrokrystalický vosk",
+    "nameEn": "microcrystalline wax",
+    "category": "lešticí látka",
+    "risk": 1,
+    "note": "Vosk z ropy na povrch cukrovinek a žvýkaček; EFSA 2013 bez obav v limitech.",
+    "aliases": [
+      "mikrokrystalický vosk",
+      "microcrystalline wax",
+      "mikrokristallines Wachs",
+      "mikrokristalni vosak"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e905-microcrystalline-wax",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E914",
+    "name": "oxidovaný polyethylenový vosk",
+    "nameEn": "oxidised polyethylene wax",
+    "category": "lešticí látka",
+    "risk": 1,
+    "note": "Syntetický vosk na povrch citrusů; EFSA bez obav v limitech.",
+    "aliases": [
+      "oxidovaný polyethylenový vosk",
+      "oxidised polyethylene wax",
+      "oxidiertes Polyethylenwachs",
+      "oksidirani polietilenski vosak"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e914-oxidised-polyethylene-wax",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E920",
+    "name": "L-cystein",
+    "nameEn": "L-cysteine",
+    "category": "látka zlepšující mouku",
+    "risk": 0,
+    "note": "Aminokyselina zlepšující těsto; bez obav, může být živočišného původu.",
+    "aliases": [
+      "L-cystein",
+      "cystein",
+      "L-cysteine",
+      "cysteine",
+      "L-Cystein",
+      "L-cistein",
+      "cistein"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e920-l-cysteine",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E941",
+    "name": "dusík",
+    "nameEn": "nitrogen",
+    "category": "balicí plyn",
+    "risk": 0,
+    "note": "Inertní plyn pro ochrannou atmosféru balení; bez obav.",
+    "aliases": [
+      "dusík",
+      "nitrogen",
+      "Stickstoff",
+      "azot",
+      "dušik"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e941-nitrogen",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E942",
+    "name": "oxid dusný",
+    "nameEn": "nitrous oxide",
+    "category": "hnací plyn",
+    "risk": 0,
+    "note": "Hnací plyn ve šlehačce ve spreji; bez obav.",
+    "aliases": [
+      "oxid dusný",
+      "rajský plyn",
+      "nitrous oxide",
+      "Distickstoffmonoxid",
+      "Lachgas",
+      "azot-suboksid",
+      "dušikov oksidul"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e942-nitrous-oxide",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E948",
+    "name": "kyslík",
+    "nameEn": "oxygen",
+    "category": "balicí plyn",
+    "risk": 0,
+    "note": "Balicí plyn pro čerstvé maso; bez obav.",
+    "aliases": [
+      "kyslík",
+      "oxygen",
+      "Sauerstoff",
+      "kiseonik",
+      "kisik"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e948-oxygen",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E950",
+    "name": "acesulfam K",
+    "nameEn": "acesulfame K",
+    "category": "sladidlo",
+    "risk": 2,
+    "note": "Intenzivní syntetické sladidlo; EFSA 2025 zvýšila ADI na 15 mg/kg, WHO 2023 ale nedoporučuje náhradní sladidla pro regulaci hmotnosti.",
+    "aliases": [
+      "acesulfam K",
+      "acesulfam draselný",
+      "acesulfame K",
+      "acesulfame potassium",
+      "Acesulfam K",
+      "Acesulfam-K",
+      "acesulfam kalijum",
+      "acesulfam kalij"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e950-acesulfame-k",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E951",
+    "name": "aspartam",
+    "nameEn": "aspartame",
+    "category": "sladidlo",
+    "risk": 2,
+    "note": "Intenzivní sladidlo; EFSA 2013 bez obav v limitech, IARC 2023 zařadil jako možný karcinogen (2B), nevhodný při fenylketonurii.",
+    "aliases": [
+      "aspartam",
+      "aspartame",
+      "Aspartam",
+      "aspartam E951",
+      "zdroj fenylalaninu"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e951-aspartame",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E952",
+    "name": "cyklamát",
+    "nameEn": "cyclamates",
+    "category": "sladidlo",
+    "risk": 2,
+    "note": "Intenzivní sladidlo zakázané v USA; v EU platí ADI 7 mg/kg (SCF 2000), nové hodnocení EFSA ještě probíhá. Děti pijící hodně slazených nápojů se mohou k limitu přiblížit.",
+    "aliases": [
+      "cyklamát",
+      "kyselina cyklamová",
+      "cyklamát sodný",
+      "cyklamát vápenatý",
+      "cyclamate",
+      "cyclamic acid",
+      "sodium cyclamate",
+      "Cyclamat",
+      "Natriumcyclamat",
+      "ciklamat",
+      "natrijum ciklamat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e952-cyclamates",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E953",
+    "name": "isomalt",
+    "nameEn": "isomalt",
+    "category": "sladidlo",
+    "risk": 1,
+    "note": "Cukerný alkohol; bezpečný, ve větším množství projímavý.",
+    "aliases": [
+      "isomalt",
+      "izomalt",
+      "Isomalt",
+      "isomalt E953"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e953-isomalt",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E954",
+    "name": "sacharin",
+    "nameEn": "saccharin",
+    "category": "sladidlo",
+    "risk": 2,
+    "note": "Nejstarší syntetické sladidlo; EFSA 2024 bez obav v limitech, u citlivých osob kovová pachuť a diskutovaný vliv na mikrobiom.",
+    "aliases": [
+      "sacharin",
+      "sacharin sodný",
+      "sacharin draselný",
+      "saccharin",
+      "sodium saccharin",
+      "Saccharin",
+      "Natriumsaccharin",
+      "saharin",
+      "natrijum saharin"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e954-saccharin",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E955",
+    "name": "sukralóza",
+    "nameEn": "sucralose",
+    "category": "sladidlo",
+    "risk": 2,
+    "note": "Chlorované intenzivní sladidlo; EFSA bez obav v limitech, při zahřívání nad 120 °C může uvolňovat chlorované látky.",
+    "aliases": [
+      "sukralóza",
+      "sucralose",
+      "Sucralose",
+      "sukraloza",
+      "sukralóza E955"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e955-sucralose",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E957",
+    "name": "thaumatin",
+    "nameEn": "thaumatin",
+    "category": "sladidlo",
+    "risk": 0,
+    "note": "Přírodní sladká bílkovina z afrického ovoce; EFSA 2021 bez obav.",
+    "aliases": [
+      "thaumatin",
+      "taumatin",
+      "Thaumatin",
+      "taumatin E957"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e957-thaumatin",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E959",
+    "name": "neohesperidin DC",
+    "nameEn": "neohesperidine DC",
+    "category": "sladidlo",
+    "risk": 1,
+    "note": "Sladidlo z citrusů; EFSA bez obav v limitech.",
+    "aliases": [
+      "neohesperidin DC",
+      "neohesperidin dihydrochalkon",
+      "neohesperidine DC",
+      "neohesperidine dihydrochalcone",
+      "Neohesperidin DC",
+      "neohesperidin dihidrohalkon"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e959-neohesperidine-dc",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E960",
+    "name": "steviol-glykosidy",
+    "nameEn": "steviol glycosides",
+    "category": "sladidlo",
+    "risk": 1,
+    "note": "Sladidlo čištěné z listů stévie; EFSA bez obav v limitech, často kombinované s jinými sladidly.",
+    "aliases": [
+      "steviol-glykosidy",
+      "steviolglykosidy",
+      "stévie",
+      "stevie",
+      "rebaudiosid A",
+      "steviol glycosides",
+      "stevia",
+      "rebaudioside A",
+      "Steviolglycoside",
+      "Stevia",
+      "steviol glikozidi",
+      "stevija"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e960-steviol-glycosides",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E961",
+    "name": "neotam",
+    "nameEn": "neotame",
+    "category": "sladidlo",
+    "risk": 2,
+    "note": "Velmi intenzivní syntetické sladidlo odvozené od aspartamu; EFSA bez obav v limitech.",
+    "aliases": [
+      "neotam",
+      "neotame",
+      "Neotam",
+      "neotam E961"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e961-neotame",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E962",
+    "name": "sůl aspartamu-acesulfamu",
+    "nameEn": "salt of aspartame-acesulfame",
+    "category": "sladidlo",
+    "risk": 2,
+    "note": "Kombinace aspartamu a acesulfamu K se stejnými výhradami jako obě složky.",
+    "aliases": [
+      "sůl aspartamu-acesulfamu",
+      "aspartam-acesulfam",
+      "salt of aspartame-acesulfame",
+      "aspartame-acesulfame salt",
+      "Aspartam-Acesulfamsalz",
+      "so aspartam-acesulfama"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e962-salt-of-aspartame-acesulfame",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E964",
+    "name": "sirup z polyglycitolu",
+    "nameEn": "polyglycitol syrup",
+    "category": "sladidlo",
+    "risk": 1,
+    "note": "Směs cukerných alkoholů; bezpečná, ve větším množství projímavá.",
+    "aliases": [
+      "sirup z polyglycitolu",
+      "polyglycitol",
+      "polyglycitol syrup",
+      "Polyglycitolsirup",
+      "poliglicitolni sirup"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e964-polyglycitol-syrup",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E965",
+    "name": "maltitol",
+    "nameEn": "maltitol",
+    "category": "sladidlo",
+    "risk": 1,
+    "note": "Cukerný alkohol v „bez cukru“ cukrovinkách; bezpečný, ve větším množství projímavý a má glykemický index.",
+    "aliases": [
+      "maltitol",
+      "maltitolový sirup",
+      "maltitol syrup",
+      "Maltit",
+      "Maltitol",
+      "maltitol E965"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e965-maltitol",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E966",
+    "name": "laktitol",
+    "nameEn": "lactitol",
+    "category": "sladidlo",
+    "risk": 1,
+    "note": "Cukerný alkohol z laktózy; bezpečný, ve větším množství projímavý.",
+    "aliases": [
+      "laktitol",
+      "lactitol",
+      "Lactit",
+      "Lactitol",
+      "laktitol E966"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e966-lactitol",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E967",
+    "name": "xylitol",
+    "nameEn": "xylitol",
+    "category": "sladidlo",
+    "risk": 1,
+    "note": "Březový cukr; bezpečný, ve větším množství projímavý, pro psy toxický.",
+    "aliases": [
+      "xylitol",
+      "březový cukr",
+      "xylit",
+      "Xylit",
+      "Xylitol",
+      "ksilitol"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e967-xylitol",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E968",
+    "name": "erythritol",
+    "nameEn": "erythritol",
+    "category": "sladidlo",
+    "risk": 1,
+    "note": "Cukerný alkohol; EFSA 2023 stanovila ADI 0,5 g/kg kvůli projímavému účinku a upozornila, že velcí konzumenti ho mohou překročit. Observační studie z roku 2023 naznačila souvislost se srdečně-cévními příhodami, potvrzení chybí.",
+    "aliases": [
+      "erythritol",
+      "erytritol",
+      "Erythrit",
+      "Erythritol",
+      "eritritol"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e968-erythritol",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E969",
+    "name": "advantam",
+    "nameEn": "advantame",
+    "category": "sladidlo",
+    "risk": 2,
+    "note": "Velmi intenzivní syntetické sladidlo odvozené od aspartamu; EFSA 2013 bez obav v limitech.",
+    "aliases": [
+      "advantam",
+      "advantame",
+      "Advantam",
+      "advantam E969"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e969-advantame",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E1200",
+    "name": "polydextróza",
+    "nameEn": "polydextrose",
+    "category": "plnidlo",
+    "risk": 0,
+    "note": "Syntetická vláknina a plnidlo; bez obav, ve větším množství projímavá.",
+    "aliases": [
+      "polydextróza",
+      "polydextrose",
+      "Polydextrose",
+      "polidekstroza"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e1200-polydextrose",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E1400",
+    "name": "dextrin",
+    "nameEn": "dextrin",
+    "category": "modifikovaný škrob",
+    "risk": 0,
+    "note": "Pražený škrob; bez obav.",
+    "aliases": [
+      "dextrin",
+      "pražený škrob",
+      "dextrin",
+      "roasted starch",
+      "Dextrin",
+      "dekstrin"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e1400-dextrin",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E1404",
+    "name": "oxidovaný škrob",
+    "nameEn": "oxidised starch",
+    "category": "modifikovaný škrob",
+    "risk": 0,
+    "note": "Modifikovaný škrob; EFSA 2017 bez obav.",
+    "aliases": [
+      "oxidovaný škrob",
+      "oxidised starch",
+      "oxidized starch",
+      "oxidierte Stärke",
+      "oksidirani skrob",
+      "oksidovani skrob"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e1404-oxidised-starch",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E1410",
+    "name": "fosforečnan škrobu",
+    "nameEn": "monostarch phosphate",
+    "category": "modifikovaný škrob",
+    "risk": 0,
+    "note": "Modifikovaný škrob; EFSA 2017 bez obav.",
+    "aliases": [
+      "fosforečnan škrobu",
+      "monostarch phosphate",
+      "Monostärkephosphat",
+      "monoskrobni fosfat",
+      "monoškrobni fosfat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e1410-monostarch-phosphate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E1412",
+    "name": "zesíťovaný fosforečnan škrobu",
+    "nameEn": "distarch phosphate",
+    "category": "modifikovaný škrob",
+    "risk": 0,
+    "note": "Modifikovaný škrob; EFSA 2017 bez obav.",
+    "aliases": [
+      "zesíťovaný fosforečnan škrobu",
+      "distarch phosphate",
+      "Distärkephosphat",
+      "diskrobni fosfat",
+      "diškrobni fosfat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e1412-distarch-phosphate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E1413",
+    "name": "fosforečnan zesíťovaného fosforečnanu škrobu",
+    "nameEn": "phosphated distarch phosphate",
+    "category": "modifikovaný škrob",
+    "risk": 0,
+    "note": "Modifikovaný škrob; EFSA 2017 bez obav.",
+    "aliases": [
+      "fosforečnan zesíťovaného fosforečnanu škrobu",
+      "phosphated distarch phosphate",
+      "phosphatiertes Distärkephosphat",
+      "fosfatirani diskrobni fosfat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e1413-phosphated-distarch-phosphate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E1414",
+    "name": "acetylovaný zesíťovaný fosforečnan škrobu",
+    "nameEn": "acetylated distarch phosphate",
+    "category": "modifikovaný škrob",
+    "risk": 0,
+    "note": "Modifikovaný škrob; EFSA 2017 bez obav.",
+    "aliases": [
+      "acetylovaný zesíťovaný fosforečnan škrobu",
+      "acetylated distarch phosphate",
+      "acetyliertes Distärkephosphat",
+      "acetilirani diskrobni fosfat",
+      "acetilovani diškrobni fosfat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e1414-acetylated-distarch-phosphate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E1420",
+    "name": "acetylovaný škrob",
+    "nameEn": "acetylated starch",
+    "category": "modifikovaný škrob",
+    "risk": 0,
+    "note": "Modifikovaný škrob; EFSA 2017 bez obav.",
+    "aliases": [
+      "acetylovaný škrob",
+      "acetylated starch",
+      "acetylierte Stärke",
+      "acetilirani skrob",
+      "acetilovani škrob"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e1420-acetylated-starch",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E1422",
+    "name": "acetylovaný zesíťovaný adipan škrobu",
+    "nameEn": "acetylated distarch adipate",
+    "category": "modifikovaný škrob",
+    "risk": 0,
+    "note": "Nejběžnější modifikovaný škrob v omáčkách a jogurtech; EFSA 2017 bez obav.",
+    "aliases": [
+      "acetylovaný zesíťovaný adipan škrobu",
+      "acetylated distarch adipate",
+      "acetyliertes Distärkeadipat",
+      "acetilirani diskrobni adipat",
+      "acetilovani diškrobni adipat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e1422-acetylated-distarch-adipate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E1440",
+    "name": "hydroxypropylškrob",
+    "nameEn": "hydroxypropyl starch",
+    "category": "modifikovaný škrob",
+    "risk": 0,
+    "note": "Modifikovaný škrob; EFSA 2017 bez obav.",
+    "aliases": [
+      "hydroxypropylškrob",
+      "hydroxypropylovaný škrob",
+      "hydroxypropyl starch",
+      "Hydroxypropylstärke",
+      "hidroksipropil skrob",
+      "hidroksipropil škrob"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e1440-hydroxypropyl-starch",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E1442",
+    "name": "hydroxypropylovaný zesíťovaný fosforečnan škrobu",
+    "nameEn": "hydroxypropyl distarch phosphate",
+    "category": "modifikovaný škrob",
+    "risk": 0,
+    "note": "Modifikovaný škrob typický pro instantní a mražené výrobky; EFSA 2017 bez obav.",
+    "aliases": [
+      "hydroxypropylovaný zesíťovaný fosforečnan škrobu",
+      "hydroxypropyl distarch phosphate",
+      "Hydroxypropyldistärkephosphat",
+      "hidroksipropil diskrobni fosfat",
+      "hidroksipropil diškrobni fosfat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e1442-hydroxypropyl-distarch-phosphate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E1450",
+    "name": "oktenyljantaran sodno-škrobový",
+    "nameEn": "starch sodium octenyl succinate",
+    "category": "modifikovaný škrob",
+    "risk": 0,
+    "note": "Modifikovaný škrob s emulgačními vlastnostmi; EFSA bez obav.",
+    "aliases": [
+      "oktenyljantaran sodno-škrobový",
+      "sodná sůl oktenylsukcinátu škrobu",
+      "starch sodium octenyl succinate",
+      "OSA starch",
+      "Stärkenatriumoctenylsuccinat",
+      "natrijum oktenil sukcinat skroba",
+      "škrobni natrijev oktenilsukcinat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e1450-starch-sodium-octenyl-succinate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E1451",
+    "name": "acetylovaný oxidovaný škrob",
+    "nameEn": "acetylated oxidised starch",
+    "category": "modifikovaný škrob",
+    "risk": 0,
+    "note": "Modifikovaný škrob; EFSA 2017 bez obav.",
+    "aliases": [
+      "acetylovaný oxidovaný škrob",
+      "acetylated oxidised starch",
+      "acetylierte oxidierte Stärke",
+      "acetilirani oksidirani skrob",
+      "acetilovani oksidovani škrob"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e1451-acetylated-oxidised-starch",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E1452",
+    "name": "oktenyljantaran hlinito-škrobový",
+    "nameEn": "starch aluminium octenyl succinate",
+    "category": "modifikovaný škrob",
+    "risk": 1,
+    "note": "Modifikovaný škrob obsahující hliník; v EU povolen jen pro zapouzdřené vitaminy v doplňcích stravy.",
+    "aliases": [
+      "oktenyljantaran hlinito-škrobový",
+      "starch aluminium octenyl succinate",
+      "Stärkealuminiumoctenylsuccinat",
+      "aluminijum oktenil sukcinat skroba"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e1452-starch-aluminium-octenyl-succinate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E1505",
+    "name": "triethyl-citrát",
+    "nameEn": "triethyl citrate",
+    "category": "nosič",
+    "risk": 0,
+    "note": "Nosič aromat a stabilizátor pěny ze sušeného bílku; bez obav.",
+    "aliases": [
+      "triethyl-citrát",
+      "triethylcitrát",
+      "triethyl citrate",
+      "Triethylcitrat",
+      "trietil citrat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e1505-triethyl-citrate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E1510",
+    "name": "ethanol",
+    "nameEn": "ethanol",
+    "category": "nosič",
+    "risk": 1,
+    "note": "Líh jako nosič aromat; v malém množství bez obav, u dětských sladkostí stojí za pozornost.",
+    "aliases": [
+      "ethanol",
+      "etanol",
+      "líh",
+      "ethylalkohol",
+      "alkohol",
+      "ethyl alcohol",
+      "alcohol",
+      "Ethanol",
+      "Ethylalkohol",
+      "Alkohol",
+      "etil alkohol",
+      "alkohol"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e1510-ethanol",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E1518",
+    "name": "glyceryl-triacetát",
+    "nameEn": "glyceryl triacetate (triacetin)",
+    "category": "nosič",
+    "risk": 0,
+    "note": "Triacetin, nosič aromat ve žvýkačkách; bez obav.",
+    "aliases": [
+      "glyceryl-triacetát",
+      "triacetin",
+      "glyceryl triacetate",
+      "Triacetin",
+      "Glycerintriacetat",
+      "gliceril triacetat"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e1518-glyceryl-triacetate",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  },
+  {
+    "code": "E1520",
+    "name": "propan-1,2-diol",
+    "nameEn": "propane-1,2-diol (propylene glycol)",
+    "category": "nosič",
+    "risk": 1,
+    "note": "Propylenglykol jako nosič aromat a barviv; EFSA 2018 bez obav v limitech, nejvyšší příjem u dětí se k ADI blíží, ale nepřekračuje ho.",
+    "aliases": [
+      "propan-1,2-diol",
+      "propylenglykol",
+      "propylene glycol",
+      "propane-1,2-diol",
+      "Propylenglycol",
+      "1,2-Propandiol",
+      "propilen glikol",
+      "propilenglikol"
+    ],
+    "sources": [
+      "https://world.openfoodfacts.org/additive/e1520-propane-1-2-diol",
+      "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+    ]
+  }
+]
