@@ -11,9 +11,11 @@ i Claude API volá přímo z telefonu. Klíč Claude se vloží jednou do Profil
 app/            Expo (React Native) aplikace; `npx expo export -p web` z ní dělá statický web
 app/src/core/   jádro: Open Food Facts, pravidla, posudky AI, překlady, cache (bývalý server)
 app/src/core/data/   tabulky E-čísel, nežádoucích přísad, alergenů a zdravotních textů
+app/scripts/    kouřový test a kontrola schémat (klíč jen v git-ignorovaném app/scripts/.env)
 .github/workflows/pages.yml   build a nasazení na GitHub Pages při každém push do main
-server/         původní Node server (Fly.io); po ověření webové verze se maže
 ```
+
+Původní Node server pro Fly.io byl 25. 10. 2026 smazán; zůstává v historii gitu (commit „Snapshot před převodem na web bez serveru“).
 
 ## 1. Jak verdikt vzniká
 
@@ -86,14 +88,13 @@ mkdir -p dist-web/kup-nekup && cp -r dist/. dist-web/kup-nekup/
 npx serve dist-web -l 3000    # http://localhost:3000/kup-nekup/ (konfigurace „web-export“)
 ```
 
-Kouřový test jádra proti skutečnému API (asi 0,1 USD), klíč jen z proměnné prostředí:
+Skripty proti skutečnému API čtou klíč ze souboru `app/scripts/.env` (řádek `ANTHROPIC_API_KEY=sk-ant-…`; soubor je v .gitignore a Expo ho do sestavení nikdy nedává), nebo z proměnné prostředí:
 
 ```bash
 cd app
-node --env-file=../server/.env --import tsx scripts/smoke.ts
+npm run smoke               # kouřový test jádra, asi 0,1 USD; SMOKE_DEEP=1 přidá důkladný průzkum (0,3–0,4 USD)
+npm run check:tools         # velikost přísných schémat nástrojů AI (API je odmítá až za běhu); asi cent
 ```
-
-Kontrola velikosti přísných schémat nástrojů AI (API je odmítá až za běhu; asi cent): `npm run check:tools` se stejným klíčem v prostředí.
 
 Při změně datových tabulek v `app/src/core/data/` se cache produktů obnoví sama (verze dat je hash tabulek).
 

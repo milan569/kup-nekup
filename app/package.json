@@ -16,7 +16,6 @@
     "expo-image-manipulator": "~58.0.15",
     "expo-image-picker": "~58.0.10",
     "expo-status-bar": "~58.0.4",
-    "expo-updates": "~58.0.18",
     "idb-keyval": "^6.3.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
@@ -41,7 +40,8 @@
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "export:web": "expo export -p web",
-    "check:tools": "tsx scripts/check-tools.ts"
+    "check:tools": "node --env-file-if-exists=scripts/.env --import tsx scripts/check-tools.ts",
+    "smoke": "node --env-file-if-exists=scripts/.env --import tsx scripts/smoke.ts"
   },
   "private": true
 }

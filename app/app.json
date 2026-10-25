@@ -56,18 +56,6 @@
         }
       ],
       "expo-font"
-    ],
-    "runtimeVersion": {
-      "policy": "sdkVersion"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "bc04395f-e91d-4a7f-9b1a-023c63eadf7f"
-      }
-    },
-    "owner": "msch0l2",
-    "updates": {
-      "url": "https://u.expo.dev/bc04395f-e91d-4a7f-9b1a-023c63eadf7f"
-    }
+    ]
   }
 }
