@@ -54,6 +54,17 @@ async function main(): Promise<void> {
   const q2 = await lookup.quickInsight({ product: r.product, assessment: r.assessment, profile });
   console.log("cached", q2.cached, "ms", q2.ms);
 
+  if (process.env.SMOKE_DEEP === "1") {
+    // the deep research with alternatives enrichment: 0.2–0.4 USD, 1–3 minutes
+    step("insight (deep)");
+    const d = await lookup.insight({ product: r.product, assessment: r.assessment, profile });
+    console.log(d.insight.verdict, "|", d.insight.headline, "| sources", d.insight.sources.length, "| ms", d.ms);
+    for (const a of d.insight.alternatives ?? []) {
+      console.log(` - ${a.name} (${a.brand ?? "?"}) ean=${a.ean ?? "-"} verdict=${a.verdict ?? "-"}/${a.verdictSource ?? "-"} img=${a.imageUrl ? "yes" : "no"} src=${a.sourceUrl ? "yes" : "no"}`);
+    }
+    console.log("dropped worse:", d.insight.alternativesDropped ?? 0, "| enrichVersion", d.insight.enrichVersion);
+  }
+
   console.log(`\nestimated spend: ${total.toFixed(4)} USD`);
 }
 
