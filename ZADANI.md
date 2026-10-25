@@ -316,3 +316,14 @@ Cokoli z toho lze přidat později, ale první verze se na to nespoléhá.
 2. Začít fází 0, nebo rovnou fází 1?
 3. Osobní profil (alergie, diety) v první verzi?
 4. Které řetězce zahrnout jako první?
+
+## 18. Změna architektury: web bez serveru (rozhodnuto 25. 10. 2026)
+
+Nahrazuje body §11 „Server“ a §14 o umístění klíče. Důvody: méně účtů a předplatných (Fly.io, Expo), vlastní ikona na ploše bez Apple Developer účtu a Expo Go, žádné náklady mimo kontrolu.
+
+- Aplikace je statický web (`npx expo export -p web`) na GitHub Pages ve veřejném repozitáři `milan569/kup-nekup`; na iPhonu se přidá na plochu. Nasazení dělá GitHub Actions při každém push do `main`.
+- Logika serveru se přesunula do `app/src/core` (čistý TypeScript). Open Food Facts i Claude API volá telefon přímo (SDK s `dangerouslyAllowBrowser`).
+- Klíč Claude žije jen v telefonu (IndexedDB), zadává se v Profilu a posílá se výhradně na api.anthropic.com. Nikdy není v repozitáři ani v sestavení. Ochrana útraty: denní strop v aplikaci (odhad, výchozí 5 USD), měsíční limit v Claude Console, vypnuté automatické dobíjení; API kredity z plánu Max (100/200 USD měsíčně) po propojení organizace.
+- Cache (produkty, posudky, překlady) je per zařízení v IndexedDB, ne sdílená. Textové hledání OFF jde přes staré API a při výpadku přes jedno vyhledávání Haiku omezené na openfoodfacts.org; fotky alternativ z e-shopů odpadly (bez CORS).
+- Známá omezení: dlouhý průzkum potřebuje zapnutou obrazovku (iOS uspí webovou aplikaci); Safari maže úložiště nepoužívané 7 dní (klíč se pak vloží znovu).
+- Server, Fly.io a EAS Update se ruší po ověření webové verze na iPhonu; kód serveru zůstává v historii gitu (commit „Snapshot před převodem na web bez serveru“).
