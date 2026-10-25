@@ -1,0 +1,14 @@
+node_modules/
+.env
+.env.*
+!.env.example
+dist/
+*.sqlite
+*.sqlite-journal
+.expo/
+.DS_Store
+*.log
+*.sqlite-wal
+*.sqlite-shm
+/data/
+.claude/settings.local.json

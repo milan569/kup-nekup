@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "server",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["tsx", "watch", "server/src/index.ts"],
+      "port": 8787
+    },
+    {
+      "name": "app-web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "app", "run", "web", "--", "--port", "8081"],
+      "port": 8081
+    }
+  ]
+}

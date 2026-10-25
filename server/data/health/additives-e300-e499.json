@@ -1,0 +1,1141 @@
+[
+  {
+    "id": "E300",
+    "excess": "Jde o vitamin C, který tělo potřebuje. Z potravin, kde slouží jako antioxidant, se nadbytku prakticky nelze dosáhnout. Až dávky z doplňků nad zhruba 1 g denně mohou u citlivých lidí vyvolat průjem nebo pálení žáhy a u mužů jsou v observačních studiích spojovány s častějšími ledvinovými kameny. Vitamin C také zvyšuje vstřebávání železa.",
+    "occasional": "Zcela bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2015)",
+    "groups": "lidé s hemochromatózou (přetížení železem) a se sklonem k ledvinovým kamenům – týká se hlavně vysokých dávek z doplňků",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2015.4087"
+    ]
+  },
+  {
+    "id": "E301",
+    "excess": "Sodná sůl vitaminu C, v těle se chová stejně jako kyselina askorbová. V uzeninách pomáhá omezit vznik nitrosaminů z dusitanů, což je spíš přínos. Nepříznivé účinky by připadaly v úvahu jen u velmi vysokých dávek z doplňků (průjem, u citlivých ledvinové kameny); sodíku do jídla přidává zanedbatelně.",
+    "occasional": "Zcela bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2015)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2015.4087"
+    ]
+  },
+  {
+    "id": "E302",
+    "excess": "Vápenatá sůl vitaminu C; v těle se rozkládá na vitamin C a vápník. Z potravin nadbytek nehrozí. Nepříznivé účinky, jako je průjem, by připadaly v úvahu jen u vysokých dávek z doplňků stravy.",
+    "occasional": "Zcela bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2015)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2015.4087"
+    ]
+  },
+  {
+    "id": "E304",
+    "excess": "V trávicím traktu se rozkládá na vitamin C a kyselinu palmitovou či stearovou, tedy běžné mastné kyseliny z tuků. Toxikologických dat je málo, proto EFSA (2015) ADI nestanovila, při současném použití ale nevidí důvod k obavám. Škodlivé účinky u lidí popsány nejsou.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI nestanovena pro nedostatek dat; při současném použití bez obav (EFSA 2015)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2015.4289"
+    ]
+  },
+  {
+    "id": "E306",
+    "excess": "Přírodní vitamin E z rostlinných olejů. Riziko představují jen vysoké dávky z doplňků (stovky mg denně dlouhodobě): mohou zhoršovat srážlivost krve a zvyšovat riziko krvácení, zvlášť při užívání léků na ředění krve. Z potravin, kde slouží jako antioxidant, se takových dávek dosáhnout nedá.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "horní tolerovatelný příjem vitaminu E 300 mg denně pro dospělé (SCF 2003)",
+    "groups": "lidé užívající léky proti srážení krve (např. warfarin) – týká se vysokých dávek z doplňků",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2015.4247"
+    ]
+  },
+  {
+    "id": "E307",
+    "excess": "Vitamin E. Riziko představují jen vysoké dávky z doplňků užívané dlouhodobě: zhoršují srážlivost krve a zvyšují riziko krvácení, zvlášť s léky na ředění krve. Velká klinická studie u mužů (SELECT) s dávkou 400 IU denně zaznamenala mírně vyšší výskyt rakoviny prostaty. Z potravin, kde slouží jako antioxidant, se takových dávek dosáhnout nedá.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "horní tolerovatelný příjem vitaminu E 300 mg denně pro dospělé (SCF 2003)",
+    "groups": "lidé užívající léky proti srážení krve (např. warfarin) – týká se vysokých dávek z doplňků",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2015.4247"
+    ]
+  },
+  {
+    "id": "E308",
+    "excess": "Forma vitaminu E s menší vitaminovou aktivitou než alfa-tokoferol, do potravin se přidává v malém množství jako antioxidant. EFSA (2015) považovala data o gama-tokoferolu za omezená, jeho použití je ale malé a tokoferoly jako přídatné látky podle ní nepředstavují riziko. Nepříznivé účinky z potravin u lidí popsány nejsou.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2015.4247"
+    ]
+  },
+  {
+    "id": "E309",
+    "excess": "Forma vitaminu E s menší vitaminovou aktivitou než alfa-tokoferol, do potravin se přidává v malém množství jako antioxidant. EFSA (2015) považovala data o delta-tokoferolu za omezená, jeho použití je ale malé a tokoferoly jako přídatné látky podle ní nepředstavují riziko. Nepříznivé účinky z potravin u lidí popsány nejsou.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2015.4247"
+    ]
+  },
+  {
+    "id": "E310",
+    "excess": "Syntetický antioxidant tuků. EFSA (2014) stanovila nízkou ADI s velkou rezervou, protože chybí dlouhodobé studie; u pokusných zvířat se nepříznivé účinky objevily až při mnohem vyšších dávkách. U lidí je prokázána kontaktní alergie (hlavně z kosmetiky), po požití jsou reakce vzácné. Dospělí s vysokou spotřebou mohou ADI překračovat.",
+    "occasional": "Občasná konzumace nepředstavuje riziko; dlouhodobě je rozumné nejíst výrobky s ním denně.",
+    "occasionalLevel": 1,
+    "limit": "ADI 0,5 mg/kg tělesné hmotnosti denně (EFSA 2014)",
+    "groups": "lidé s alergií na galláty",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2014.3642"
+    ]
+  },
+  {
+    "id": "E311",
+    "excess": "Syntetický antioxidant příbuzný propylgallátu. EFSA (2015) neměla dost toxikologických dat, aby jeho bezpečnost potvrdila, a výrobci chybějící studie nedodali, proto ho EU v roce 2018 vyřadila ze seznamu povolených látek. Konkrétní škodlivé účinky z potravin u lidí prokázány nejsou; galláty mohou vyvolat kontaktní alergii.",
+    "occasional": "Jednorázově pravděpodobně neublíží, ale v EU není povolen a jeho bezpečnost nebyla potvrzena – takovým výrobkům je lepší se vyhnout.",
+    "occasionalLevel": 3,
+    "limit": "v EU nepovolen od roku 2018 (nařízení Komise (EU) 2018/1481)",
+    "groups": "lidé s alergií na galláty",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2015.4248"
+    ]
+  },
+  {
+    "id": "E312",
+    "excess": "Syntetický antioxidant příbuzný propylgallátu. EFSA (2015) neměla dost toxikologických dat, aby jeho bezpečnost potvrdila, a výrobci chybějící studie nedodali, proto ho EU v roce 2018 vyřadila ze seznamu povolených látek. Konkrétní škodlivé účinky z potravin u lidí prokázány nejsou; galláty mohou vyvolat kontaktní alergii.",
+    "occasional": "Jednorázově pravděpodobně neublíží, ale v EU není povolen a jeho bezpečnost nebyla potvrzena – takovým výrobkům je lepší se vyhnout.",
+    "occasionalLevel": 3,
+    "limit": "v EU nepovolen od roku 2018 (nařízení Komise (EU) 2018/1481)",
+    "groups": "lidé s alergií na galláty",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2015.4086"
+    ]
+  },
+  {
+    "id": "E315",
+    "excess": "Izomer vitaminu C bez vitaminového účinku, používá se hlavně v uzeninách a rybích výrobcích, kde urychluje vybarvení masa a omezuje vznik nitrosaminů. EFSA (2016) potvrdila ADI; u zvířat se nepříznivý účinek (nižší přírůstek hmotnosti) objevil až při velmi vysokých dávkách a příjem z potravin ADI v žádné skupině nepřekračuje.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI 6 mg/kg tělesné hmotnosti denně (E315 a E316, EFSA 2016)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2016.4360"
+    ]
+  },
+  {
+    "id": "E316",
+    "excess": "Sodná sůl kyseliny erythorbové, izomeru vitaminu C bez vitaminového účinku. V uzeninách urychluje vybarvení masa a omezuje vznik nitrosaminů. EFSA (2016) potvrdila ADI; u zvířat se nepříznivý účinek (nižší přírůstek hmotnosti) objevil až při velmi vysokých dávkách a příjem z potravin ADI v žádné skupině nepřekračuje.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI 6 mg/kg tělesné hmotnosti denně (E315 a E316, EFSA 2016)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2016.4360"
+    ]
+  },
+  {
+    "id": "E319",
+    "excess": "Syntetický antioxidant tuků (fritovací oleje, snacky). Ve velmi vysokých dávkách měl u pokusných zvířat nepříznivé účinky, EFSA (2004) ale při hodnocení nenašla důkazy o genotoxicitě ani karcinogenitě a stanovila ADI. Novější studie na myších a buňkách naznačují, že může oslabovat imunitní odpověď – u lidí to prokázáno není, jde o podezření.",
+    "occasional": "Občasná konzumace v povoleném množství nepředstavuje riziko; denně je lepší ho nepřijímat.",
+    "occasionalLevel": 1,
+    "limit": "ADI 0,7 mg/kg tělesné hmotnosti denně (EFSA 2004)",
+    "groups": "",
+    "sources": []
+  },
+  {
+    "id": "E320",
+    "excess": "Syntetický antioxidant tuků. Ve vysokých dávkách vyvolával u potkanů a křečků nádory předžaludku, proto ho IARC řadí mezi možné karcinogeny (skupina 2B); člověk předžaludek nemá a EFSA (2011) tento nález pro lidi nepovažuje za rozhodující. ADI odvodila z účinků na mláďata potkanů (zpomalený růst). Prověřuje se podezření na hormonální (endokrinní) účinky.",
+    "occasional": "Jednorázově nejde o problém; kvůli nejistotám je rozumné přijímat ho jen výjimečně a dávat přednost výrobkům bez něj.",
+    "occasionalLevel": 2,
+    "limit": "ADI 1,0 mg/kg tělesné hmotnosti denně (EFSA 2011)",
+    "groups": "děti a těhotné ženy (preventivně kvůli podezření na hormonální účinky)",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2011.2392"
+    ]
+  },
+  {
+    "id": "E321",
+    "excess": "Syntetický antioxidant tuků. U pokusných zvířat ve vysokých dávkách zvětšoval játra a ovlivňoval štítnou žlázu i srážlivost krve; ADI vychází ze studií rozmnožování potkanů. EFSA (2012) ho nepovažuje za genotoxický a IARC ho nezařadila mezi karcinogeny (skupina 3). Děti s vysokou spotřebou mohou v některých zemích ADI překračovat; podezření na hormonální účinky se prověřuje.",
+    "occasional": "Jednorázově nejde o problém; při pravidelné konzumaci je rozumné ho omezit, hlavně u dětí.",
+    "occasionalLevel": 2,
+    "limit": "ADI 0,25 mg/kg tělesné hmotnosti denně (EFSA 2012)",
+    "groups": "děti (při vysoké spotřebě možné překročení ADI)",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2012.2588"
+    ]
+  },
+  {
+    "id": "E322",
+    "excess": "Přirozená součást buněčných membrán, běžně obsažená ve vejcích či sóji. EFSA (2017) nevidí důvod k obavám ani u dětí, a to ani kvůli cholinu, který lecitin obsahuje. Velmi vysoké dávky z doplňků mohou způsobit trávicí potíže. Sójový lecitin může obsahovat stopy sójové bílkoviny a výjimečně vyvolat reakci u alergiků, vaječný lecitin u alergiků na vejce.",
+    "occasional": "Zcela bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2017)",
+    "groups": "alergici na sóju nebo vejce (podle původu lecitinu)",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.4742"
+    ]
+  },
+  {
+    "id": "E325",
+    "excess": "Sodná sůl kyseliny mléčné, která v těle běžně vzniká a dál se odbourává. Sama o sobě riziko nepředstavuje. Ve zpracovaném mase jen přispívá k celkovému příjmu sodíku, jehož dlouhodobý nadbytek zvyšuje krevní tlak.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "",
+    "groups": "lidé s vysokým krevním tlakem, kteří omezují sodík",
+    "sources": []
+  },
+  {
+    "id": "E326",
+    "excess": "Draselná sůl kyseliny mléčné; laktát i draslík tělo běžně zpracovává. U zdravých lidí riziko nepředstavuje. Draslík z ní je podstatný jen pro lidi s pokročilým onemocněním ledvin, kteří musí jeho příjem hlídat.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "",
+    "groups": "lidé s pokročilým onemocněním ledvin (draslík)",
+    "sources": []
+  },
+  {
+    "id": "E327",
+    "excess": "Vápenatá sůl kyseliny mléčné, používá se i jako zdroj vápníku. Z potravin riziko nepředstavuje; nadbytek vápníku by připadal v úvahu jen při velmi vysokých dávkách z doplňků.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "",
+    "groups": "",
+    "sources": []
+  },
+  {
+    "id": "E330",
+    "excess": "Přirozená součást ovoce a látkové přeměny v těle; jako přídatná látka nemá toxické účinky. Častý kontakt s kyselými nápoji a bonbóny ale narušuje zubní sklovinu (eroze) a u citlivých lidí může dráždit žaludek nebo zhoršovat pálení žáhy.",
+    "occasional": "Bez obav. Jen u kyselých nápojů a bonbónů je dobré myslet na zuby.",
+    "occasionalLevel": 0,
+    "limit": "",
+    "groups": "lidé s refluxem nebo citlivým žaludkem",
+    "sources": []
+  },
+  {
+    "id": "E331",
+    "excess": "Sodné soli kyseliny citronové, v medicíně se používají i ke snížení kyselosti moči. Samy škodlivé nejsou; ve velkém množství přidávají sodík. Citrany také zvyšují vstřebávání hliníku z trávicího traktu, což je podstatné hlavně pro lidi se selháním ledvin.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "",
+    "groups": "lidé s onemocněním ledvin, lidé omezující sodík",
+    "sources": []
+  },
+  {
+    "id": "E332",
+    "excess": "Draselné soli kyseliny citronové, v medicíně se podávají i jako prevence ledvinových kamenů. Z potravin riziko nepředstavují; draslík je podstatný jen pro lidi s pokročilým onemocněním ledvin nebo užívající léky, které draslík zadržují.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "",
+    "groups": "lidé s pokročilým onemocněním ledvin (draslík)",
+    "sources": []
+  },
+  {
+    "id": "E333",
+    "excess": "Vápenaté soli kyseliny citronové, běžný a dobře vstřebatelný zdroj vápníku v doplňcích. Z potravin riziko nepředstavují; nadbytek vápníku (zácpa, u citlivých ledvinové kameny) připadá v úvahu jen při velmi vysokých dávkách doplňků.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "",
+    "groups": "",
+    "sources": []
+  },
+  {
+    "id": "E334",
+    "excess": "Přirozená kyselina z hroznů a vína. EFSA (2020) ve studiích nezjistila toxické účinky, ani na ledviny, a ADI výrazně zvýšila; příjem z potravin ji nepřekračuje. Ve větším množství může jako jiné kyseliny dráždit trávicí trakt a narušovat zubní sklovinu.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "skupinová ADI 240 mg/kg tělesné hmotnosti denně, vyjádřeno jako kyselina vinná (EFSA 2020)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2020.6030"
+    ]
+  },
+  {
+    "id": "E335",
+    "excess": "Sodné soli kyseliny vinné. Patří do stejné skupiny jako kyselina vinná; EFSA (2020) u nich nezjistila toxické účinky a příjem z potravin skupinovou ADI nepřekračuje. Ve velkém množství přidávají sodík.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "skupinová ADI 240 mg/kg tělesné hmotnosti denně, vyjádřeno jako kyselina vinná (EFSA 2020)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2020.6030"
+    ]
+  },
+  {
+    "id": "E336",
+    "excess": "Vinný kámen, součást kypřicích prášků. V běžném množství bez obav (EFSA 2020). Vinný kámen je ale velmi bohatý na draslík: po snědení velkého množství najednou (např. lžic jako domácí „detox“) byly popsány případy nebezpečně vysoké hladiny draslíku v krvi s poruchami srdečního rytmu.",
+    "occasional": "Bez obav v množství obvyklém v pečivu. Samotný vinný kámen nejezte ve velkých dávkách.",
+    "occasionalLevel": 0,
+    "limit": "skupinová ADI 240 mg/kg tělesné hmotnosti denně, vyjádřeno jako kyselina vinná (EFSA 2020)",
+    "groups": "lidé s onemocněním ledvin (draslík)",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2020.6030"
+    ]
+  },
+  {
+    "id": "E337",
+    "excess": "Seignettova sůl; dříve se používala i jako projímadlo, ve velkých dávkách tedy působí projímavě. V množství používaném v potravinách je bez obav – EFSA (2020) u vinanů nezjistila toxické účinky a příjem z potravin skupinovou ADI nepřekračuje.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "skupinová ADI 240 mg/kg tělesné hmotnosti denně, vyjádřeno jako kyselina vinná (EFSA 2020)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2020.6030"
+    ]
+  },
+  {
+    "id": "E338",
+    "excess": "Okyseluje hlavně kolové nápoje a přispívá k příjmu fosforu; EFSA (2019) zjistila, že děti a dospívající mohou skupinovou ADI pro fosfor překračovat. Dlouhodobý nadbytek fosforu zatěžuje ledviny a je spojován s ukládáním vápníku v cévách – u zdravých lidí hlavně z observačních dat. Kyselé nápoje narušují sklovinu; pití koly je u žen spojováno s nižší hustotou kostí.",
+    "occasional": "Občasná sklenice koly nevadí; problémem je každodenní pití, hlavně kvůli zubům a celkovému příjmu fosforu.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 40 mg/kg tělesné hmotnosti denně, vyjádřeno jako fosfor (EFSA 2019)",
+    "groups": "lidé se sníženou funkcí ledvin, děti a dospívající, ženy ohrožené osteoporózou",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2019.5674"
+    ]
+  },
+  {
+    "id": "E339",
+    "excess": "Sodné fosfáty v tavených sýrech, uzeninách a pečivu. Fosfor z přídatných látek se vstřebává lépe než ten přirozeně obsažený v potravinách. EFSA (2019) zjistila, že děti a dospívající mohou skupinovou ADI pro fosfor překračovat. Dlouhodobý nadbytek fosforu zatěžuje ledviny a je spojován s ukládáním vápníku v cévách a srdečně-cévními chorobami; u zdravých lidí jde hlavně o observační data.",
+    "occasional": "Občasný tavený sýr, uzenina nebo pečivo nevadí; vyhýbat se je dobré každodennímu příjmu z více zpracovaných potravin.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 40 mg/kg tělesné hmotnosti denně, vyjádřeno jako fosfor (EFSA 2019)",
+    "groups": "lidé se sníženou funkcí ledvin (ADI pro ně neplatí), děti a dospívající s vysokou spotřebou zpracovaných potravin",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2019.5674"
+    ]
+  },
+  {
+    "id": "E340",
+    "excess": "Draselné fosfáty. Fosfor z přídatných látek se vstřebává lépe než ten přirozeně obsažený v potravinách. EFSA (2019) zjistila, že děti a dospívající mohou skupinovou ADI pro fosfor překračovat. Dlouhodobý nadbytek fosforu zatěžuje ledviny a je spojován s ukládáním vápníku v cévách; u zdravých lidí jde hlavně o observační data. Draslík je podstatný pro lidi s onemocněním ledvin.",
+    "occasional": "Občasný tavený sýr, uzenina nebo pečivo nevadí; vyhýbat se je dobré každodennímu příjmu z více zpracovaných potravin.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 40 mg/kg tělesné hmotnosti denně, vyjádřeno jako fosfor (EFSA 2019)",
+    "groups": "lidé se sníženou funkcí ledvin (ADI pro ně neplatí), děti a dospívající s vysokou spotřebou zpracovaných potravin",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2019.5674"
+    ]
+  },
+  {
+    "id": "E341",
+    "excess": "Vápenaté fosfáty v kypřicích prášcích, protispékavých látkách a obohacených potravinách; zároveň dodávají vápník. Započítávají se do skupinové ADI pro fosfor, kterou děti a dospívající s vysokou spotřebou zpracovaných potravin podle EFSA (2019) mohou překračovat. Dlouhodobý nadbytek fosforu zatěžuje ledviny; u zdravých lidí jsou důkazy o dalších škodách hlavně observační.",
+    "occasional": "Občasný tavený sýr, uzenina nebo pečivo nevadí; vyhýbat se je dobré každodennímu příjmu z více zpracovaných potravin.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 40 mg/kg tělesné hmotnosti denně, vyjádřeno jako fosfor (EFSA 2019)",
+    "groups": "lidé se sníženou funkcí ledvin (ADI pro ně neplatí), děti a dospívající s vysokou spotřebou zpracovaných potravin",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2019.5674"
+    ]
+  },
+  {
+    "id": "E343",
+    "excess": "Hořečnaté fosfáty, používané hlavně jako protispékavé látky a zdroj hořčíku. Započítávají se do skupinové ADI pro fosfor, kterou děti a dospívající s vysokou spotřebou zpracovaných potravin podle EFSA (2019) mohou překračovat. Dlouhodobý nadbytek fosforu zatěžuje ledviny; u zdravých lidí jsou důkazy o dalších škodách hlavně observační.",
+    "occasional": "Občasný tavený sýr, uzenina nebo pečivo nevadí; vyhýbat se je dobré každodennímu příjmu z více zpracovaných potravin.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 40 mg/kg tělesné hmotnosti denně, vyjádřeno jako fosfor (EFSA 2019)",
+    "groups": "lidé se sníženou funkcí ledvin (ADI pro ně neplatí), děti a dospívající s vysokou spotřebou zpracovaných potravin",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2019.5674"
+    ]
+  },
+  {
+    "id": "E350",
+    "excess": "Sodné soli kyseliny jablečné, která je přirozenou součástí ovoce a látkové přeměny v těle. Toxické účinky nejsou známy; ve velkém množství přidávají jen sodík.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "",
+    "groups": "",
+    "sources": []
+  },
+  {
+    "id": "E351",
+    "excess": "Draselná sůl kyseliny jablečné, která je přirozenou součástí ovoce a látkové přeměny v těle. Toxické účinky nejsou známy; draslík je podstatný jen pro lidi s pokročilým onemocněním ledvin.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "",
+    "groups": "lidé s pokročilým onemocněním ledvin (draslík)",
+    "sources": []
+  },
+  {
+    "id": "E352",
+    "excess": "Vápenaté soli kyseliny jablečné, která je přirozenou součástí ovoce a látkové přeměny v těle. Toxické účinky nejsou známy; dodávají i malé množství vápníku.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "",
+    "groups": "",
+    "sources": []
+  },
+  {
+    "id": "E353",
+    "excess": "Používá se ve víně, aby se nevysrážel vinný kámen. V těle se rozkládá na kyselinu vinnou, proto ji EFSA (2020) zahrnula do skupinové ADI vinanů a při současném použití nevidí důvod k obavám.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "zahrnuta do skupinové ADI 240 mg/kg tělesné hmotnosti denně, vyjádřeno jako kyselina vinná (EFSA 2020)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2020.6031"
+    ]
+  },
+  {
+    "id": "E354",
+    "excess": "Vápenatá sůl kyseliny vinné. Patří do stejné skupiny jako kyselina vinná; EFSA (2020) u vinanů nezjistila toxické účinky a příjem z potravin skupinovou ADI nepřekračuje.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "skupinová ADI 240 mg/kg tělesné hmotnosti denně, vyjádřeno jako kyselina vinná (EFSA 2020)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2020.6030"
+    ]
+  },
+  {
+    "id": "E355",
+    "excess": "Kyselina používaná v instantních dezertech, nápojích a želé. Při běžném příjmu nejsou u lidí známy nepříznivé účinky. Ve velkém množství může jako jiné kyseliny dráždit trávicí trakt a narušovat zubní sklovinu.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "skupinová ADI 5 mg/kg tělesné hmotnosti denně pro kyselinu adipovou a její soli (JECFA 1977)",
+    "groups": "",
+    "sources": []
+  },
+  {
+    "id": "E363",
+    "excess": "Přirozený meziprodukt látkové přeměny v buňkách, vyskytuje se i v potravinách. V množství používaném v potravinách nejsou známy nepříznivé účinky; ve velkém množství může jako jiné kyseliny dráždit trávicí trakt.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "",
+    "groups": "",
+    "sources": []
+  },
+  {
+    "id": "E380",
+    "excess": "Amonné soli kyseliny citronové. V těle se rozkládají na citrát a amonné ionty, které játra běžně zpracují. V množství používaném v potravinách nejsou známy nepříznivé účinky.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "",
+    "groups": "",
+    "sources": []
+  },
+  {
+    "id": "E385",
+    "excess": "Chelatační látka, která váže kovy a brání žluknutí (majonézy, konzervy). Z trávicího traktu se vstřebává jen málo. Ve vysokých dávkách váže minerály, hlavně zinek, a u pokusných zvířat vedla k jejich nedostatku. Nitrožilně podávaná EDTA (léčba otravy olovem) může ve vysokých dávkách poškodit ledviny – to se ale potravin netýká. EFSA ji znovu hodnotí.",
+    "occasional": "Občasná konzumace nevadí; v povoleném množství nepředstavuje známé riziko.",
+    "occasionalLevel": 1,
+    "limit": "ADI 2,5 mg/kg tělesné hmotnosti denně (JECFA 1973)",
+    "groups": "",
+    "sources": []
+  },
+  {
+    "id": "E392",
+    "excess": "Přírodní antioxidant z rozmarýnu (hlavně kyselina karnosová a karnosol). Přidává se v malém množství a jeho příjem z přídatné látky bývá nižší než z rozmarýnu jako koření. Nepříznivé účinky u lidí z potravin popsány nejsou; údajů o dlouhodobém podávání vysokých dávek je ale málo.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "dočasná ADI 0,3 mg/kg tělesné hmotnosti denně, vyjádřeno jako kyselina karnosová a karnosol (JECFA 2016)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2018.5373"
+    ]
+  },
+  {
+    "id": "E400",
+    "excess": "Rozpustná vláknina z hnědých mořských řas. Nevstřebává se, ve střevě bobtná a ve velkém množství může způsobit nadýmání nebo měkčí stolici. Algináty se používají i v lécích proti pálení žáhy; EFSA (2017) nevidí důvod k obavám, jen u kojenců a malých dětí by příjem neměl dosahovat léčebných dávek.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2017)",
+    "groups": "kojenci a malé děti (jen při velmi vysokém příjmu)",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.5049"
+    ]
+  },
+  {
+    "id": "E401",
+    "excess": "Sodná sůl kyseliny alginové, rozpustné vlákniny z hnědých řas. Nevstřebává se, ve střevě bobtná a ve velkém množství může způsobit nadýmání nebo měkčí stolici. Algináty se používají i v lécích proti pálení žáhy; EFSA (2017) nevidí důvod k obavám, jen u kojenců a malých dětí by příjem neměl dosahovat léčebných dávek.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2017)",
+    "groups": "kojenci a malé děti (jen při velmi vysokém příjmu)",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.5049"
+    ]
+  },
+  {
+    "id": "E402",
+    "excess": "Draselná sůl kyseliny alginové, rozpustné vlákniny z hnědých řas. Nevstřebává se, ve střevě bobtná a ve velkém množství může způsobit nadýmání nebo měkčí stolici. Algináty se používají i v lécích proti pálení žáhy; EFSA (2017) nevidí důvod k obavám, jen u kojenců a malých dětí by příjem neměl dosahovat léčebných dávek.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2017)",
+    "groups": "kojenci a malé děti (jen při velmi vysokém příjmu)",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.5049"
+    ]
+  },
+  {
+    "id": "E404",
+    "excess": "Vápenatá sůl kyseliny alginové, rozpustné vlákniny z hnědých řas. Nevstřebává se, ve střevě bobtná a ve velkém množství může způsobit nadýmání nebo měkčí stolici. Algináty se používají i v lécích proti pálení žáhy; EFSA (2017) nevidí důvod k obavám, jen u kojenců a malých dětí by příjem neměl dosahovat léčebných dávek.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2017)",
+    "groups": "kojenci a malé děti (jen při velmi vysokém příjmu)",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.5049"
+    ]
+  },
+  {
+    "id": "E405",
+    "excess": "Alginát navázaný na propylenglykol; stabilizuje pivní pěnu a dresinky. V těle se rozkládá na alginát (vlákninu) a propylenglykol. EFSA (2018) odvodila ADI podle uvolněného propylenglykolu a zjistila, že příjem z potravin ji v žádné skupině nepřekračuje; celkový příjem propylenglykolu z více přídatných látek se ale teprve posuzuje. Škodlivé účinky u lidí popsány nejsou.",
+    "occasional": "Občasná konzumace nepředstavuje riziko.",
+    "occasionalLevel": 1,
+    "limit": "ADI 55 mg/kg tělesné hmotnosti denně (EFSA 2018)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2018.5371"
+    ]
+  },
+  {
+    "id": "E406",
+    "excess": "Želírující vláknina z červených řas. Nevstřebává se a ve střevě bobtná, ve velkém množství proto působí projímavě nebo nadýmavě (dříve se používala i jako projímadlo). EFSA (2016) nevidí při běžném použití důvod k obavám.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2016)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2016.4645"
+    ]
+  },
+  {
+    "id": "E407",
+    "excess": "Zahušťovadlo z červených řas. EFSA (2018) ponechala ADI jen jako dočasnou kvůli mezerám v datech. Záněty střeva u zvířat vyvolávala hlavně degradovaná forma (poligenan), která není povolena; malá pilotní studie u lidí s ulcerózní kolitidou naznačila častější relapsy. Francouzské observační studie ho spojily s diabetem 2. typu a rakovinou prsu – příčinnost neprokázána.",
+    "occasional": "Občasná konzumace (smetanové dezerty, uzeniny) je v pořádku; lidé se zánětem střev ho mohou zkusit omezit.",
+    "occasionalLevel": 1,
+    "limit": "dočasná skupinová ADI 75 mg/kg tělesné hmotnosti denně (E407 a E407a, EFSA 2018)",
+    "groups": "lidé se zánětlivým onemocněním střev (Crohnova choroba, ulcerózní kolitida), kojenci a malé děti",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2018.5238"
+    ]
+  },
+  {
+    "id": "E407a",
+    "excess": "Méně přečištěná forma karagenanu, obsahuje i zbytky řasy (např. celulózu). EFSA (2018) ji hodnotí společně s karagenanem a ponechala jim společnou ADI jen jako dočasnou. Platí stejné výhrady: záněty střeva u zvířat hlavně po degradované formě, malá pilotní studie u lidí s ulcerózní kolitidou a observační souvislosti s diabetem a rakovinou prsu bez prokázané příčinnosti.",
+    "occasional": "Občasná konzumace je v pořádku; lidé se zánětem střev ho mohou zkusit omezit.",
+    "occasionalLevel": 1,
+    "limit": "dočasná skupinová ADI 75 mg/kg tělesné hmotnosti denně (E407 a E407a, EFSA 2018)",
+    "groups": "lidé se zánětlivým onemocněním střev (Crohnova choroba, ulcerózní kolitida), kojenci a malé děti",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2018.5238"
+    ]
+  },
+  {
+    "id": "E410",
+    "excess": "Vláknina ze semen rohovníku. Nevstřebává se, ve střevě ji zčásti fermentují bakterie a ve velkém množství může nadýmat. Používá se i v kojeneckých mlékách proti ublinkávání. EFSA (2017) nevidí při běžném použití důvod k obavám.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2017)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.4646"
+    ]
+  },
+  {
+    "id": "E412",
+    "excess": "Rozpustná vláknina ze semen guaru. Ve velkém množství způsobuje nadýmání a plynatost, zároveň mírně zpomaluje vstřebávání cukrů a může snižovat cholesterol. Dřívější tablety na hubnutí s vysokým obsahem guaru, které po polknutí bobtnaly, způsobovaly ucpání jícnu. EFSA (2017) při běžném použití nevidí důvod k obavám.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2017)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.4669"
+    ]
+  },
+  {
+    "id": "E413",
+    "excess": "Přírodní pryskyřice z keřů kozince, chová se jako vláknina a ve velkém množství může nadýmat. Vzácně jsou popsány alergické reakce (kožní, astma), většinou při pracovním kontaktu. EFSA (2017) při běžném použití nevidí důvod k obavám.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2017)",
+    "groups": "lidé s alergií na tragant (vzácné)",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.4789"
+    ]
+  },
+  {
+    "id": "E414",
+    "excess": "Rozpustná vláknina z pryskyřice akácií, ve střevě slouží jako potrava pro bakterie. Dospělí ve studiích dobře snášeli i 30 g denně po dobu až 18 dní, jen někteří měli plynatost. EFSA (2017) při běžném použití nevidí důvod k obavám.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2017)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.4741"
+    ]
+  },
+  {
+    "id": "E415",
+    "excess": "Zahušťovadlo vznikající fermentací cukru bakteriemi. Nevstřebává se; ve velkém množství působí projímavě a nadýmavě – dávky kolem 15 g denně (u dospělého) lidé ve studiích snášeli, někteří ale měli břišní potíže. EFSA (2017) nevidí důvod k obavám. V USA bylo zahušťovadlo na bázi xanthanu spojeno s nekrotizující enterokolitidou u nedonošených dětí.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2017)",
+    "groups": "nedonošené děti (zahušťovadla s xanthanem jen podle lékaře)",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.4909"
+    ]
+  },
+  {
+    "id": "E416",
+    "excess": "Přírodní pryskyřice stromů rodu Sterculia, používá se i jako objemové projímadlo. Ve větším množství proto působí projímavě; u dospělých se břišní potíže objevovaly kolem 7 g denně. Vzácně vyvolává alergické reakce. EFSA (2016) při běžném použití nevidí důvod k obavám.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit; příjem by neměl přesáhnout 7 g denně u dospělého (EFSA 2016)",
+    "groups": "lidé s alergií na karayu (vzácné)",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2016.4598"
+    ]
+  },
+  {
+    "id": "E417",
+    "excess": "Vláknina ze semen keře tara, chemicky podobná karubinu a guaru. Nevstřebává se; ve velkém množství může nadýmat. EFSA (2017) nevidí při běžném použití důvod k obavám.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2017)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.4863"
+    ]
+  },
+  {
+    "id": "E418",
+    "excess": "Želírující látka vznikající fermentací bakteriemi. Nevstřebává se a ve střevě ji zčásti fermentují bakterie; ve velmi vysokých dávkách může působit projímavě. EFSA (2018) nevidí důvod k obavám ani při vysokém odhadovaném příjmu u batolat.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2018)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2018.5296"
+    ]
+  },
+  {
+    "id": "E420",
+    "excess": "Cukerný alkohol, který se v tenkém střevě vstřebává jen zčásti; zbytek v tlustém střevě váže vodu a kvasí. Ve větším množství proto způsobuje nadýmání, plynatost a průjem – u dospělých obvykle od zhruba 20 g denně, u citlivých i méně. Výrobky s více než 10 % polyolů musí v EU nést upozornění na projímavé účinky. Na rozdíl od cukru nepoškozuje zuby.",
+    "occasional": "Občas (žvýkačky, bonbóny bez cukru) bez problémů; větší množství najednou se může projevit průjmem.",
+    "occasionalLevel": 1,
+    "limit": "",
+    "groups": "lidé s dědičnou nesnášenlivostí fruktózy, lidé s dráždivým tračníkem (FODMAP), malé děti",
+    "sources": []
+  },
+  {
+    "id": "E421",
+    "excess": "Cukerný alkohol, který se ve střevě vstřebává ještě hůř než sorbitol, takže projímavě působí už v menších dávkách; ve vysokých dávkách se dokonce používá k vyprázdnění střeva před vyšetřením. Ve větším množství způsobuje nadýmání a průjem. Výrobky s více než 10 % polyolů musí v EU nést upozornění na projímavé účinky.",
+    "occasional": "Občas v malém množství bez problémů; větší množství najednou se může projevit průjmem.",
+    "occasionalLevel": 1,
+    "limit": "",
+    "groups": "lidé s dráždivým tračníkem (FODMAP), malé děti",
+    "sources": []
+  },
+  {
+    "id": "E422",
+    "excess": "Přirozená součást tuků, tělo ho běžně zpracovává; v běžných potravinách EFSA (2017) nevidí důvod k obavám. Ve vysoké dávce najednou ale působí farmakologicky – bolest hlavy, nevolnost, u malých dětí i šok, pokles cukru v krvi a bezvědomí (popsáno po ledových tříštích). EFSA (2026) zjistila, že běžná porce tříště může akutní limit překročit ve všech věkových skupinách.",
+    "occasional": "V pečivu nebo cukrovinkách bez obav. U ledových tříští (slush) může být problém i jedna porce, hlavně pro malé děti.",
+    "occasionalLevel": 1,
+    "limit": "ADI není nutné stanovit (EFSA 2017); akutní referenční dávka 125 mg/kg tělesné hmotnosti na jednu porci (EFSA 2026)",
+    "groups": "malé děti (ledové tříště s glycerolem)",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.4720",
+      "https://doi.org/10.2903/j.efsa.2026.10057"
+    ]
+  },
+  {
+    "id": "E425",
+    "excess": "Glukomanan z hlízy konjaku – rozpustná vláknina, která ve vodě silně bobtná a zvyšuje pocit sytosti. Dávky kolem 3 g denně vyvolávaly u části dospělých průjem nebo zácpu. Hlavní riziko je mechanické: nerozžvýkané želé nebo tablety zapité malým množstvím vody mohou ucpat hrdlo či jícen. Proto je v EU zakázán v želé cukrovinkách.",
+    "occasional": "Konjakové nudle i občasná konzumace jsou v pořádku; doplňky s glukomananem vždy zapíjejte dostatkem vody.",
+    "occasionalLevel": 1,
+    "limit": "ADI není nutné stanovit (EFSA 2017); v EU zakázán v želé cukrovinkách včetně mini-kelímků",
+    "groups": "malé děti a senioři, lidé s potížemi s polykáním (riziko udušení)",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.4864"
+    ]
+  },
+  {
+    "id": "E426",
+    "excess": "Vláknina ze sóji; nevstřebává se a ve střevě ji fermentují bakterie, ve velkém množství tedy může nadýmat. EFSA (2017) nevidí důvod k obavám a skutečný příjem považuje za zanedbatelný. Může ale obsahovat zbytky sójových bílkovin, které mohou vyvolat alergickou reakci.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2017)",
+    "groups": "alergici na sóju",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.4721"
+    ]
+  },
+  {
+    "id": "E428",
+    "excess": "Bílkovina z kůží a kostí zvířat, tělo ji tráví jako jiné bílkoviny. Nadbytek z potravin riziko nepředstavuje. Vzácně vyvolává alergii; reagovat na ni mohou i lidé s alergií na alfa-gal (alergie na savčí maso, obvykle po přisátí klíštěte).",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "",
+    "groups": "lidé s alergií na želatinu nebo alfa-gal (savčí maso)",
+    "sources": []
+  },
+  {
+    "id": "E431",
+    "excess": "Syntetický emulgátor, v potravinách se používá jen vzácně. Hodnocení jeho bezpečnosti vychází ze starších studií a novějších dat je málo. Konkrétní škodlivé účinky při běžném příjmu u lidí popsány nejsou.",
+    "occasional": "Občasná konzumace nepředstavuje známé riziko.",
+    "occasionalLevel": 1,
+    "limit": "",
+    "groups": "",
+    "sources": []
+  },
+  {
+    "id": "E432",
+    "excess": "Syntetický emulgátor ze skupiny polysorbátů, hodnocený společně s nimi; EFSA (2015) stanovila skupinovou ADI podle studií na potkanech, kde se škodlivé účinky objevily až při velmi vysokých dávkách. Pokusy na myších s příbuzným polysorbátem 80 naznačují vliv na střevní mikrobiom a mírný zánět; u lidí to prokázáno není a pro polysorbát 20 chybějí vlastní data.",
+    "occasional": "Občasná konzumace nepředstavuje riziko; každodenní příjem z více výrobků je rozumné omezit.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 25 mg/kg tělesné hmotnosti denně (E432–E436, EFSA 2015)",
+    "groups": "lidé se zánětlivým onemocněním střev (preventivně, důkazy zatím jen z pokusů)",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2015.4152"
+    ]
+  },
+  {
+    "id": "E433",
+    "excess": "Syntetický emulgátor (zmrzliny, omáčky). Ve studii na myších vedl v dávkách vyšších, než je běžný příjem, k narušení ochranné hlenové vrstvy střeva, změnám mikrobiomu, mírnému zánětu a metabolickým změnám, u náchylných myší ke kolitidě. U lidí to prokázáno není. EFSA (2015) stanovila skupinovou ADI; u batolat s vysokou spotřebou se k ní příjem blíží.",
+    "occasional": "Občasná konzumace nepředstavuje riziko; každodenní příjem z více výrobků je rozumné omezit.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 25 mg/kg tělesné hmotnosti denně (E432–E436, EFSA 2015)",
+    "groups": "lidé se zánětlivým onemocněním střev (preventivně, důkazy zatím jen z pokusů)",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2015.4152"
+    ]
+  },
+  {
+    "id": "E434",
+    "excess": "Syntetický emulgátor ze skupiny polysorbátů, hodnocený společně s nimi; EFSA (2015) stanovila skupinovou ADI podle studií na potkanech, kde se škodlivé účinky objevily až při velmi vysokých dávkách. Pokusy na myších s příbuzným polysorbátem 80 naznačují vliv na střevní mikrobiom a mírný zánět; u lidí to prokázáno není a pro polysorbát 40 chybějí vlastní data.",
+    "occasional": "Občasná konzumace nepředstavuje riziko; každodenní příjem z více výrobků je rozumné omezit.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 25 mg/kg tělesné hmotnosti denně (E432–E436, EFSA 2015)",
+    "groups": "lidé se zánětlivým onemocněním střev (preventivně, důkazy zatím jen z pokusů)",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2015.4152"
+    ]
+  },
+  {
+    "id": "E435",
+    "excess": "Syntetický emulgátor ze skupiny polysorbátů, hodnocený společně s nimi; EFSA (2015) stanovila skupinovou ADI podle studií na potkanech, kde se škodlivé účinky objevily až při velmi vysokých dávkách. Pokusy na myších s příbuzným polysorbátem 80 naznačují vliv na střevní mikrobiom a mírný zánět; u lidí to prokázáno není a pro polysorbát 60 chybějí vlastní data.",
+    "occasional": "Občasná konzumace nepředstavuje riziko; každodenní příjem z více výrobků je rozumné omezit.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 25 mg/kg tělesné hmotnosti denně (E432–E436, EFSA 2015)",
+    "groups": "lidé se zánětlivým onemocněním střev (preventivně, důkazy zatím jen z pokusů)",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2015.4152"
+    ]
+  },
+  {
+    "id": "E436",
+    "excess": "Syntetický emulgátor ze skupiny polysorbátů, hodnocený společně s nimi; EFSA (2015) stanovila skupinovou ADI podle studií na potkanech, kde se škodlivé účinky objevily až při velmi vysokých dávkách. Pokusy na myších s příbuzným polysorbátem 80 naznačují vliv na střevní mikrobiom a mírný zánět; u lidí to prokázáno není a pro polysorbát 65 chybějí vlastní data.",
+    "occasional": "Občasná konzumace nepředstavuje riziko; každodenní příjem z více výrobků je rozumné omezit.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 25 mg/kg tělesné hmotnosti denně (E432–E436, EFSA 2015)",
+    "groups": "lidé se zánětlivým onemocněním střev (preventivně, důkazy zatím jen z pokusů)",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2015.4152"
+    ]
+  },
+  {
+    "id": "E440",
+    "excess": "Rozpustná vláknina z jablek a citrusů, přirozeně obsažená v ovoci. Nevstřebává se a ve střevě ji fermentují bakterie; ve velkém množství může nadýmat. Ve větších dávkách (kolem 6 g denně) naopak pomáhá udržovat normální hladinu cholesterolu – jde o zdravotní tvrzení schválené v EU.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2017)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.4866"
+    ]
+  },
+  {
+    "id": "E442",
+    "excess": "Emulgátor do čokolády, náhrada lecitinu. EFSA (2016) ponechala ADI a závažné účinky (genotoxicitu, karcinogenitu, vliv na rozmnožování) u zvířat nezjistila; jen batolata by v nejhorším scénáři mohla ADI překročit. Obsahuje fosfor, který se započítává do celkového příjmu fosfátů.",
+    "occasional": "Občasná konzumace nepředstavuje riziko.",
+    "occasionalLevel": 1,
+    "limit": "ADI 30 mg/kg tělesné hmotnosti denně (EFSA 2016)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2016.4597"
+    ]
+  },
+  {
+    "id": "E444",
+    "excess": "Stabilizátor zákalu v ochucených nealkoholických nápojích. EFSA (2016) na základě dlouhodobých studií na zvířatech, včetně karcinogenity a vývojové toxicity, ADI zvýšila na dvojnásobek; příjem z potravin ji v žádné skupině nepřekračuje. Škodlivé účinky u lidí popsány nejsou.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI 20 mg/kg tělesné hmotnosti denně (EFSA 2016)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2016.4489"
+    ]
+  },
+  {
+    "id": "E445",
+    "excess": "Stabilizátor zákalu v ochucených nápojích, vyráběný z pryskyřice borovic. EFSA (2023) na základě nových studií na potkanech stanovila ADI a při povoleném použití nevidí důvod k obavám; ADI platí jen pro výrobky ze dvou určených druhů borovic. Škodlivé účinky u lidí popsány nejsou.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI 10 mg/kg tělesné hmotnosti denně (EFSA 2023)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2018.5370",
+      "https://doi.org/10.2903/j.efsa.2023.8110"
+    ]
+  },
+  {
+    "id": "E450",
+    "excess": "Fosfáty v kypřicích prášcích, uzeninách a tavených sýrech. Fosfor z přídatných látek se vstřebává lépe než ten přirozeně obsažený v potravinách. EFSA (2019) zjistila, že děti a dospívající mohou skupinovou ADI pro fosfor překračovat. Dlouhodobý nadbytek fosforu zatěžuje ledviny a je spojován s ukládáním vápníku v cévách; u zdravých lidí jde hlavně o observační data.",
+    "occasional": "Občasný tavený sýr, uzenina nebo pečivo nevadí; vyhýbat se je dobré každodennímu příjmu z více zpracovaných potravin.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 40 mg/kg tělesné hmotnosti denně, vyjádřeno jako fosfor (EFSA 2019)",
+    "groups": "lidé se sníženou funkcí ledvin (ADI pro ně neplatí), děti a dospívající s vysokou spotřebou zpracovaných potravin",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2019.5674"
+    ]
+  },
+  {
+    "id": "E451",
+    "excess": "Fosfáty, které v mase a rybách vážou vodu (výrobek pak obsahuje víc vody). Fosfor z přídatných látek se vstřebává lépe než ten přirozeně obsažený v potravinách. EFSA (2019) zjistila, že děti a dospívající mohou skupinovou ADI pro fosfor překračovat. Dlouhodobý nadbytek fosforu zatěžuje ledviny a je spojován s ukládáním vápníku v cévách; u zdravých lidí jde hlavně o observační data.",
+    "occasional": "Občasný tavený sýr, uzenina nebo pečivo nevadí; vyhýbat se je dobré každodennímu příjmu z více zpracovaných potravin.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 40 mg/kg tělesné hmotnosti denně, vyjádřeno jako fosfor (EFSA 2019)",
+    "groups": "lidé se sníženou funkcí ledvin (ADI pro ně neplatí), děti a dospívající s vysokou spotřebou zpracovaných potravin",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2019.5674"
+    ]
+  },
+  {
+    "id": "E452",
+    "excess": "Fosfáty v uzeninách, tavených sýrech a mražených rybách. Fosfor z přídatných látek se vstřebává lépe než ten přirozeně obsažený v potravinách. EFSA (2019) zjistila, že děti a dospívající mohou skupinovou ADI pro fosfor překračovat. Dlouhodobý nadbytek fosforu zatěžuje ledviny a je spojován s ukládáním vápníku v cévách; u zdravých lidí jde hlavně o observační data.",
+    "occasional": "Občasný tavený sýr, uzenina nebo pečivo nevadí; vyhýbat se je dobré každodennímu příjmu z více zpracovaných potravin.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 40 mg/kg tělesné hmotnosti denně, vyjádřeno jako fosfor (EFSA 2019)",
+    "groups": "lidé se sníženou funkcí ledvin (ADI pro ně neplatí), děti a dospívající s vysokou spotřebou zpracovaných potravin",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2019.5674"
+    ]
+  },
+  {
+    "id": "E459",
+    "excess": "Kruhový oligosacharid ze škrobu. Vstřebává se jen minimálně a v tlustém střevě ho rozkládají bakterie. U potkanů vedly vysoké dávky jen k adaptivnímu zvětšení slepého střeva, karcinogenita ani genotoxicita zjištěny nebyly. EFSA (2016) ale upozornila, že u lidí věrných určitým výrobkům může příjem ADI překračovat.",
+    "occasional": "Občasná konzumace nepředstavuje riziko.",
+    "occasionalLevel": 1,
+    "limit": "ADI 5 mg/kg tělesné hmotnosti denně (EFSA 2016)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2016.4628"
+    ]
+  },
+  {
+    "id": "E460",
+    "excess": "Nestravitelná vláknina z rostlinných buněčných stěn; nevstřebává se a odchází stolicí. Ve velkém množství může nadýmat nebo měnit stolici. EFSA (2018) nezjistila genotoxicitu, karcinogenitu ani vliv na rozmnožování. Francouzská observační studie spojila vyšší příjem přidané celulózy s mírně vyšším rizikem srdečně-cévních nemocí; příčinnost neprokázána.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2018)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2018.5047"
+    ]
+  },
+  {
+    "id": "E461",
+    "excess": "Upravená celulóza, která se nevstřebává. Ve střevě váže vodu, proto se používá i jako objemové projímadlo; ve velkém množství tedy změkčuje stolici nebo nadýmá. EFSA (2018) ji hodnotí společně s ostatními celulózami jako bezpečnou a ADI nepovažuje za nutnou.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2018)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2018.5047"
+    ]
+  },
+  {
+    "id": "E463",
+    "excess": "Upravená celulóza, která se nevstřebává a odchází stolicí. Ve velmi velkém množství může mít mírně projímavý účinek. EFSA (2018) ji hodnotí společně s ostatními celulózami jako bezpečnou a ADI nepovažuje za nutnou.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2018)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2018.5047"
+    ]
+  },
+  {
+    "id": "E464",
+    "excess": "Upravená celulóza (hypromelóza), využívá se i na rostlinné kapsle a v bezlepkovém pečivu. Nevstřebává se; ve velkém množství může působit projímavě. EFSA (2018) ji hodnotí společně s ostatními celulózami jako bezpečnou a ADI nepovažuje za nutnou.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2018)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2018.5047"
+    ]
+  },
+  {
+    "id": "E466",
+    "excess": "Upravená celulóza; EFSA (2018) ji hodnotí jako bezpečnou. Ve studii na myších ve vysokých dávkách narušovala střevní hlen a mikrobiom a vedla k mírnému zánětu; malá studie u zdravých lidí s dávkou 15 g denně ukázala úbytek některých prospěšných bakterií a břišní potíže. Francouzská observační studie ji spojila s vyšším rizikem srdečně-cévních nemocí; příčinnost neprokázána.",
+    "occasional": "Občasná konzumace nepředstavuje riziko; každodenní příjem z více výrobků je rozumné omezit.",
+    "occasionalLevel": 1,
+    "limit": "ADI není nutné stanovit (EFSA 2018)",
+    "groups": "lidé se zánětlivým onemocněním střev (preventivně)",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2018.5047"
+    ]
+  },
+  {
+    "id": "E468",
+    "excess": "Zesíťovaná karboxymethylcelulóza; v tabletách a doplňcích stravy pomáhá jejich rychlému rozpadu. Nevstřebává se a v množstvích obsažených v tabletách nemá významný účinek. EFSA (2018) ji hodnotí společně s ostatními celulózami jako bezpečnou a ADI nepovažuje za nutnou.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2018)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2018.5047"
+    ]
+  },
+  {
+    "id": "E470a",
+    "excess": "Sodné, draselné a vápenaté soli mastných kyselin (v podstatě mýdla). V trávicím traktu se rozkládají na běžné mastné kyseliny z tuků, hlavně palmitovou a stearovou, a příslušný minerál. EFSA (2018) je při běžném použití považuje za bezpečné.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2018)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2018.5180"
+    ]
+  },
+  {
+    "id": "E470b",
+    "excess": "Stearan hořečnatý a další hořečnaté soli mastných kyselin, hlavně v tabletách a doplňcích. V těle se rozkládají na kyselinu stearovou a hořčík. EFSA (2018) je hodnotí jako bezpečné. Tvrzení, že stearan hořečnatý oslabuje imunitu, vychází z pokusů na izolovaných buňkách a u lidí prokázáno nebylo.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2018)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2018.5180"
+    ]
+  },
+  {
+    "id": "E471",
+    "excess": "V trávicím traktu se rozkládá na glycerol a mastné kyseliny jako běžný tuk; EFSA (2017) nevidí důvod k obavám. Může obsahovat zbytky kontaminantů z rafinace olejů (glycidylestery, 3-MCPD) a ze ztužených tuků i trans-tuky, které EU od roku 2021 omezuje. Francouzská observační studie spojila vyšší příjem s vyšším rizikem srdečně-cévních nemocí a rakoviny; příčinnost neprokázána.",
+    "occasional": "Občasná konzumace nepředstavuje riziko; ve velkém množství ukazuje spíš na vysoce zpracovanou stravu.",
+    "occasionalLevel": 1,
+    "limit": "ADI není nutné stanovit (EFSA 2017)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.5045"
+    ]
+  },
+  {
+    "id": "E472a",
+    "excess": "Emulgátor z mono- a diglyceridů mastných kyselin a kyseliny octové. V trávicím traktu se rozkládá na glycerol, mastné kyseliny a kyselinu octové, tedy běžné složky potravy. EFSA (2020) nevidí při současném použití důvod k obavám a ADI nepovažuje za nutnou.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2020)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2020.6032"
+    ]
+  },
+  {
+    "id": "E472b",
+    "excess": "Emulgátor z mono- a diglyceridů a kyseliny mléčné. V trávicím traktu se rozkládá na glycerol, mastné kyseliny a kyselinu mléčnou; EFSA (2020) nevidí důvod k obavám a ADI nepovažuje za nutnou. Francouzská observační studie spojila jeho vyšší příjem s vyšším rizikem srdečně-cévních nemocí a mozkové mrtvice; příčinnost neprokázána.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2020)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2020.6032"
+    ]
+  },
+  {
+    "id": "E472c",
+    "excess": "Emulgátor z mono- a diglyceridů a kyseliny citronové. V trávicím traktu se rozkládá na glycerol, mastné kyseliny a kyselinu citronovou; EFSA (2020) nevidí důvod k obavám a ADI nepovažuje za nutnou. Francouzská observační studie spojila jeho vyšší příjem s vyšším rizikem srdečně-cévních nemocí; příčinnost neprokázána.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2020)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2020.6032"
+    ]
+  },
+  {
+    "id": "E472d",
+    "excess": "Emulgátor z mono- a diglyceridů a kyseliny vinné. V trávicím traktu se rozkládá na glycerol, mastné kyseliny a kyselinu vinnou. EFSA (2020) odvodila jeho ADI od skupinové ADI vinanů a při současném použití nevidí důvod k obavám. Škodlivé účinky u lidí popsány nejsou.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI 480 mg/kg tělesné hmotnosti denně (EFSA 2020)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2020.6032"
+    ]
+  },
+  {
+    "id": "E472e",
+    "excess": "Emulgátor v průmyslovém pečivu (DATEM). V trávicím traktu se rozkládá na glyceridy, kyselinu vinnou a octovou. EFSA (2020) stanovila vysokou ADI a při současném použití nevidí důvod k obavám. Francouzská observační studie zaznamenala u vyššího příjmu slabou souvislost s diabetem 2. typu; příčinnost neprokázána.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI 600 mg/kg tělesné hmotnosti denně (EFSA 2020)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2020.6032"
+    ]
+  },
+  {
+    "id": "E472f",
+    "excess": "Emulgátor z mono- a diglyceridů a kyseliny octové a vinné. V trávicím traktu se rozkládá na glyceridy, kyselinu octovou a vinnou. EFSA (2020) odvodila jeho ADI od skupinové ADI vinanů a při současném použití nevidí důvod k obavám. Škodlivé účinky u lidí popsány nejsou.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI 600 mg/kg tělesné hmotnosti denně (EFSA 2020)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2020.6032"
+    ]
+  },
+  {
+    "id": "E473",
+    "excess": "Emulgátor z cukru a mastných kyselin; v trávicím traktu se zčásti rozkládá na sacharózu a mastné kyseliny. Škodlivé účinky u lidí popsány nejsou, ale odhady příjmu podle EFSA (2018, 2023) skupinovou ADI u mnoha skupin obyvatel, hlavně dětí, překračovaly.",
+    "occasional": "Občasná konzumace nepředstavuje riziko; každodenní příjem z více výrobků je rozumné omezit, hlavně u dětí.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 40 mg/kg tělesné hmotnosti denně (E473 a E474, EFSA 2004)",
+    "groups": "děti s vysokou spotřebou zpracovaných potravin",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2023.7961"
+    ]
+  },
+  {
+    "id": "E474",
+    "excess": "Směs esterů sacharózy s mono- a diglyceridy; v trávicím traktu se rozkládá na cukr, glycerol a mastné kyseliny. Má společnou skupinovou ADI se sacharózovými estery (E473), jejichž odhadovaný příjem u dětí podle EFSA překračoval. Škodlivé účinky u lidí popsány nejsou.",
+    "occasional": "Občasná konzumace nepředstavuje riziko.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 40 mg/kg tělesné hmotnosti denně (E473 a E474, EFSA 2004)",
+    "groups": "děti s vysokou spotřebou zpracovaných potravin",
+    "sources": []
+  },
+  {
+    "id": "E475",
+    "excess": "Emulgátor z polyglycerolu a mastných kyselin (pečivo, dezerty). Prakticky se nevstřebává a v trávicím traktu se rozkládá na polyglyceroly a mastné kyseliny. EFSA (2017) nezjistila nepříznivé účinky v žádné testované dávce a ADI nepovažuje za nutnou.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI není nutné stanovit (EFSA 2017)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.5089"
+    ]
+  },
+  {
+    "id": "E476",
+    "excess": "Emulgátor v čokoládě, umožňuje ušetřit kakaové máslo. EFSA (2017) na základě dlouhodobé studie na potkanech ADI zvýšila a příjem z potravin ji nepřekračuje. Škodlivé účinky u lidí popsány nejsou; jeho přítomnost vypovídá spíš o levnější receptuře než o zdravotním riziku.",
+    "occasional": "Bez obav, i při pravidelné konzumaci.",
+    "occasionalLevel": 0,
+    "limit": "ADI 25 mg/kg tělesné hmotnosti denně (EFSA 2017)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.4743"
+    ]
+  },
+  {
+    "id": "E477",
+    "excess": "Emulgátor v pečivu a šlehačkách. V těle se rozkládá na mastné kyseliny a propylenglykol, podle kterého se odvozuje ADI. EFSA (2018) zjistila, že příjem z potravin ADI v žádné skupině nepřekračuje; chybí ale dlouhodobé studie přímo s touto látkou a celkový příjem propylenglykolu z více zdrojů se teprve posuzuje.",
+    "occasional": "Občasná konzumace nepředstavuje riziko.",
+    "occasionalLevel": 1,
+    "limit": "ADI 80 mg/kg tělesné hmotnosti denně (odpovídá 25 mg/kg vyjádřeno jako propylenglykol, EFSA 2018)",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2018.5497"
+    ]
+  },
+  {
+    "id": "E481",
+    "excess": "Emulgátor v průmyslovém pečivu. V trávicím traktu se rozkládá na kyselinu stearovou a mléčnou, tedy běžné složky potravy. Škodlivé účinky u lidí popsány nejsou, ale odhady příjmu u batolat a dětí s vysokou spotřebou pečiva podle EFSA (2013) skupinovou ADI v některých zemích překračovaly.",
+    "occasional": "Občasná konzumace nepředstavuje riziko; u dětí je rozumné nepřehánět průmyslové pečivo.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 22 mg/kg tělesné hmotnosti denně (E481 a E482, EFSA 2013)",
+    "groups": "batolata a děti s vysokou spotřebou pečiva",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2013.3144"
+    ]
+  },
+  {
+    "id": "E482",
+    "excess": "Emulgátor v průmyslovém pečivu. V trávicím traktu se rozkládá na kyselinu stearovou, mléčnou a vápník. Škodlivé účinky u lidí popsány nejsou, ale odhady příjmu u batolat a dětí s vysokou spotřebou pečiva podle EFSA (2013) skupinovou ADI v některých zemích překračovaly.",
+    "occasional": "Občasná konzumace nepředstavuje riziko; u dětí je rozumné nepřehánět průmyslové pečivo.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 22 mg/kg tělesné hmotnosti denně (E481 a E482, EFSA 2013)",
+    "groups": "batolata a děti s vysokou spotřebou pečiva",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2013.3144"
+    ]
+  },
+  {
+    "id": "E483",
+    "excess": "Emulgátor do pečiva, v praxi se používá málo. EFSA (2020) nemohla jeho bezpečnost posoudit: chyběly toxikologické studie i důkaz, že se v trávicím traktu úplně rozkládá na kyselinu vinnou a stearylalkohol, a starší limit z roku 1978 proto nepotvrdila. Konkrétní škodlivé účinky u lidí popsány nejsou.",
+    "occasional": "Občasná konzumace pravděpodobně nevadí, bezpečnost ale nebyla potvrzena.",
+    "occasionalLevel": 1,
+    "limit": "",
+    "groups": "",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2020.6033"
+    ]
+  },
+  {
+    "id": "E491",
+    "excess": "Syntetický emulgátor (polevy, cukrovinky, sušené droždí). V trávicím traktu se zčásti rozkládá na sorbitan a mastnou kyselinu. EFSA (2017) odvodila skupinovou ADI ze studií na potkanech, kde se účinky objevily až při vysokých dávkách. Průměrný příjem ji nepřekračuje, u části batolat a dětí s vysokou spotřebou se k ní ale může přiblížit či ji překročit. Škodlivé účinky u lidí popsány nejsou.",
+    "occasional": "Občasná konzumace nepředstavuje riziko; u dětí je rozumné nepřehánět sladkosti s polevami.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 10 mg/kg tělesné hmotnosti denně, vyjádřeno jako sorbitan (E491–E495, EFSA 2017)",
+    "groups": "batolata a děti s vysokou spotřebou",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.4788"
+    ]
+  },
+  {
+    "id": "E492",
+    "excess": "Syntetický emulgátor, v čokoládě a polevách brání šednutí. V trávicím traktu se zčásti rozkládá na sorbitan a mastnou kyselinu. EFSA (2017) odvodila skupinovou ADI ze studií na potkanech, kde se účinky objevily až při vysokých dávkách. Průměrný příjem ji nepřekračuje, u části batolat a dětí s vysokou spotřebou se k ní ale může přiblížit či ji překročit. Škodlivé účinky u lidí popsány nejsou.",
+    "occasional": "Občasná konzumace nepředstavuje riziko; u dětí je rozumné nepřehánět sladkosti s polevami.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 10 mg/kg tělesné hmotnosti denně, vyjádřeno jako sorbitan (E491–E495, EFSA 2017)",
+    "groups": "batolata a děti s vysokou spotřebou",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.4788"
+    ]
+  },
+  {
+    "id": "E493",
+    "excess": "Syntetický emulgátor ze skupiny sorbitanových esterů. V trávicím traktu se zčásti rozkládá na sorbitan a mastnou kyselinu. EFSA (2017) odvodila skupinovou ADI ze studií na potkanech, kde se účinky objevily až při vysokých dávkách. Průměrný příjem ji nepřekračuje, u části batolat a dětí s vysokou spotřebou se k ní ale může přiblížit či ji překročit. Škodlivé účinky u lidí popsány nejsou.",
+    "occasional": "Občasná konzumace nepředstavuje riziko; u dětí je rozumné nepřehánět sladkosti s polevami.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 10 mg/kg tělesné hmotnosti denně, vyjádřeno jako sorbitan (E491–E495, EFSA 2017)",
+    "groups": "batolata a děti s vysokou spotřebou",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.4788"
+    ]
+  },
+  {
+    "id": "E494",
+    "excess": "Syntetický emulgátor ze skupiny sorbitanových esterů. V trávicím traktu se zčásti rozkládá na sorbitan a mastnou kyselinu. EFSA (2017) odvodila skupinovou ADI ze studií na potkanech, kde se účinky objevily až při vysokých dávkách. Průměrný příjem ji nepřekračuje, u části batolat a dětí s vysokou spotřebou se k ní ale může přiblížit či ji překročit. Škodlivé účinky u lidí popsány nejsou.",
+    "occasional": "Občasná konzumace nepředstavuje riziko; u dětí je rozumné nepřehánět sladkosti s polevami.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 10 mg/kg tělesné hmotnosti denně, vyjádřeno jako sorbitan (E491–E495, EFSA 2017)",
+    "groups": "batolata a děti s vysokou spotřebou",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.4788"
+    ]
+  },
+  {
+    "id": "E495",
+    "excess": "Syntetický emulgátor ze skupiny sorbitanových esterů. V trávicím traktu se zčásti rozkládá na sorbitan a mastnou kyselinu. EFSA (2017) odvodila skupinovou ADI ze studií na potkanech, kde se účinky objevily až při vysokých dávkách. Průměrný příjem ji nepřekračuje, u části batolat a dětí s vysokou spotřebou se k ní ale může přiblížit či ji překročit. Škodlivé účinky u lidí popsány nejsou.",
+    "occasional": "Občasná konzumace nepředstavuje riziko; u dětí je rozumné nepřehánět sladkosti s polevami.",
+    "occasionalLevel": 1,
+    "limit": "skupinová ADI 10 mg/kg tělesné hmotnosti denně, vyjádřeno jako sorbitan (E491–E495, EFSA 2017)",
+    "groups": "batolata a děti s vysokou spotřebou",
+    "sources": [
+      "https://doi.org/10.2903/j.efsa.2017.4788"
+    ]
+  }
+]
