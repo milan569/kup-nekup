@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="%LANG_ISO_CODE%">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <!-- viewport-fit=cover: safe-area insets (notch, home indicator) reach the app on web -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
+    <title>%WEB_TITLE%</title>
+    <meta name="description" content="V obchodě odpoví na otázku „Mám to koupit?“ – čárový kód, fotka etikety, pravidla a posudek AI." />
+    <meta name="theme-color" content="#1F6F43" />
+    <!-- home-screen web app on iPhone: own icon, no browser chrome -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Kup / Nekup" />
+    <!-- relative paths: the same file works at / in development and at /kup-nekup/ on GitHub Pages -->
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+    <style id="expo-reset">
+      /* These styles make the body full-height */
+      html,
+      body {
+        height: 100%;
+      }
+      /* These styles disable body scrolling if you are using <ScrollView> */
+      body {
+        overflow: hidden;
+        background-color: #f6f6f4;
+        /* no rubber-band bounce in the standalone app */
+        overscroll-behavior: none;
+      }
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #121212;
+        }
+      }
+      /* These styles make the root element full-height */
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>Aplikace potřebuje zapnutý JavaScript.</noscript>
+    <!-- The root element for your Expo app. -->
+    <div id="root"></div>
+  </body>
+</html>

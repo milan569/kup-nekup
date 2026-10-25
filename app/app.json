@@ -32,7 +32,15 @@
       ]
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/favicon.png",
+      "name": "Kup / Nekup",
+      "shortName": "Kup/Nekup",
+      "lang": "cs",
+      "themeColor": "#1F6F43",
+      "backgroundColor": "#F6F6F4",
+      "description": "V obchodě odpoví na otázku „Mám to koupit?“"
     },
     "plugins": [
       [
