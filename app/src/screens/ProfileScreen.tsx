@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { Platform, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import type { UserProfile } from "../api/types";
 import { Button } from "../components/Button";
@@ -19,7 +19,7 @@ type ListKey = keyof Pick<UserProfile, "countries" | "stores" | "allergens" | "d
 export function ProfileScreen() {
   const t = useTheme();
   const navigation = useNavigation<RootNavigation>();
-  const { profile, updateProfile, hasClaudeKey } = useProfile();
+  const { profile, updateProfile, hasClaudeKey, photoScan, setPhotoScan } = useProfile();
 
   const toggle = (key: ListKey, value: string) => {
     const list = profile[key];
@@ -83,6 +83,20 @@ export function ProfileScreen() {
           onChange={(v) => updateProfile({ tone: v ? "serious" : "humor" })}
         />
         <ToggleRow label="Zobrazovat udržitelnost" value={profile.showSustainability} onChange={(v) => updateProfile({ showSustainability: v })} />
+
+        {Platform.OS === "web" ? (
+          <>
+            <SectionTitle>Sken</SectionTitle>
+            <ToggleRow
+              label="Sken bez dotazu na kameru"
+              hint="Místo živé kamery fotíte fotoaparátem iPhonu. Aplikace se pak při spuštění neptá na kameru; každý sken stojí dvě klepnutí navíc."
+              value={photoScan}
+              onChange={(v) => {
+                setPhotoScan(v).catch(() => undefined);
+              }}
+            />
+          </>
+        ) : null}
 
         <SectionTitle>Aplikace</SectionTitle>
         <Button

@@ -60,7 +60,7 @@ U alkoholu má vtipný režim vlastní stupnici (`ALCOHOL_HUMOR` ve `verdicts.ts
 ## 2. Aplikace na iPhonu
 
 1. V Safari otevřete https://milan569.github.io/kup-nekup/ a přes Sdílet → **Přidat na plochu** si ji dejte na plochu jako samostatnou aplikaci s ikonou.
-2. Při prvním skenu povolte kameru.
+2. Při skenu povolte kameru. iPhone se u aplikace na ploše ptá při každém spuštění; kdo to nechce, zapne **Profil → Sken bez dotazu na kameru** a fotí fotoaparátem iPhonu (viz Řešení problémů).
 3. Na iPhonu se přihlaste do https://platform.claude.com, v **Keys & access → Create key** vytvořte klíč třeba „Kup-nekup iPhone“, zkopírujte ho a v aplikaci vložte do **Profil → Zadat Claude API klíč → Uložit a otestovat**. Klíč zůstává jen v telefonu a posílá se výhradně na api.anthropic.com. Kdykoli ho můžete v Console zrušit.
 
 Bez klíče funguje čárový kód a pravidla. Fotky etiket, posudky AI, překlady a hledání podle názvu při výpadku databáze potřebují klíč.
@@ -131,8 +131,8 @@ Odhady vycházejí z ceníku Claude Opus 5.5 a webového vyhledávání. Levněj
 | Na ploše je stará verze | Zavřete aplikaci (přejetím nahoru v přepínači) a otevřete znovu; při nasazení trvá 2–4 minuty, než je nová verze online. |
 | „Něco se pokazilo“ s tlačítkem Načíst znovu | Chyba při vykreslení, nejčastěji starý záznam v historii. Načtěte znovu; když se to opakuje u jednoho výrobku, smažte ho v Historii podržením prstu. |
 | „Kamera nejde spustit“ | Kameru drží jiná aplikace nebo stream po odemknutí nenaběhl. Zavřete ostatní aplikace s kamerou nebo klepněte na Zkusit znovu; fotku lze vždy nahrát z galerie. |
-| Kamera se ptá o povolení při každém spuštění | Vlastnost iPhonu: aplikaci na ploše nejde kameru povolit natrvalo a po delší době v pozadí ji iOS spustí znovu. Aplikace se ptá jen jednou a bez klepnutí navíc. Zkuste Nastavení → Safari → Kamera → Povolit; u některých verzí iOS pak platí i pro aplikaci na ploše. |
-| Kód se nečte, nebo se přečetl špatně | Držte telefon 15–20 cm od kódu (z blízka hlavní kamera nezaostří, makro režim webová aplikace nemá) a nechte kód v záběru asi vteřinu: kód platí až po dvou shodných čteních. Tlačítko 2× vpravo nahoře obraz přiblíží, 1× ho vrátí. |
+| Kamera se ptá o povolení při každém spuštění | Vlastnost iPhonu: aplikaci na ploše nejde kameru povolit natrvalo (nastavení Safari na ni neplatí) a po delší době v pozadí ji iOS spustí znovu. Aplikace se ptá jen jednou za spuštění. Úplně bez dotazu: **Profil → Sken bez dotazu na kameru**. Místo živé kamery pak fotíte fotoaparátem iPhonu (spoušť a „Použít fotku“, tedy dvě klepnutí navíc na sken); čárový kód z fotky přečte telefon sám a zdarma, etiketu bez kódu AI. Živý sken jde kdykoli zapnout tlačítkem na obrazovce Sken. |
+| Kód se nečte, nebo se přečetl špatně | Držte telefon 15–20 cm od kódu (z blízka hlavní kamera nezaostří, makro režim webová aplikace nemá) a nechte kód v záběru asi vteřinu: kód platí až po dvou shodných čteních. Tlačítko 2× vpravo nahoře obraz přiblíží, 1× ho vrátí. Když to nejde, zapněte v Profilu Sken bez dotazu na kameru: fotoaparát iPhonu ostří sám a fotí v plném rozlišení. |
 
 ## 6. Známá omezení
 

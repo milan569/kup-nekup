@@ -16,7 +16,7 @@ function resizeFor(width: number, height: number): { width: number } | { height:
 }
 
 /** Pixel size of a local image without decoding it onto a canvas (a 24 MP gallery photo can exceed Safari's canvas limit). */
-function imageSize(uri: string): Promise<{ width: number; height: number }> {
+export function imageSize(uri: string): Promise<{ width: number; height: number }> {
   return new Promise((resolve, reject) => Image.getSize(uri, (width, height) => resolve({ width, height }), reject));
 }
 
@@ -55,13 +55,16 @@ export class PermissionDeniedError extends Error {
   }
 }
 
-/** Opens the system camera for one photo. Resolves with a local uri, or null when the user cancelled. */
+/**
+ * Opens the system camera for one photo. Resolves with a local uri, or null when the user cancelled.
+ * On the web this is a file input with `capture`: the browser never asks for camera permission.
+ */
 export async function takeLabelPhoto(): Promise<string | null> {
   const perm = await ImagePicker.requestCameraPermissionsAsync();
   if (!perm.granted) {
     throw new PermissionDeniedError("Aplikace nemá přístup ke kameře. Povolte ho v Nastavení.");
   }
-  const res = await ImagePicker.launchCameraAsync({ mediaTypes: ["images"], quality: 1 });
+  const res = await ImagePicker.launchCameraAsync({ mediaTypes: ["images"], quality: 1, cameraType: ImagePicker.CameraType.back });
   if (res.canceled || !res.assets?.length) return null;
   return res.assets[0].uri;
 }

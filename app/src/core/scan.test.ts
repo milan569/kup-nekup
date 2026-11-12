@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { ScanVoter } from "./scan";
+import { ScanVoter, isUnknownCodeProduct, pickScannedCode } from "./scan";
+import type { ProductData } from "./types";
 
 describe("ScanVoter", () => {
   it("confirms a code only on the second agreeing read", () => {
@@ -36,5 +37,34 @@ describe("ScanVoter", () => {
     expect(v.read("a", 0)).toBe(false);
     expect(v.read("a", 100)).toBe(false);
     expect(v.read("a", 200)).toBe(true);
+  });
+});
+
+describe("pickScannedCode", () => {
+  it("prefers the maker's code over the shop's scale label", () => {
+    expect(pickScannedCode(["2832038003696", "8594026123314"])).toBe("8594026123314");
+  });
+
+  it("returns the scale label when it is the only code", () => {
+    expect(pickScannedCode(["2832038003696"])).toBe("2832038003696");
+  });
+
+  it("ignores values that are not product codes", () => {
+    expect(pickScannedCode(["", "abc", "1234567", " 20012345 "])).toBe("20012345");
+    expect(pickScannedCode([])).toBeNull();
+    expect(pickScannedCode(["https://example.com"])).toBeNull();
+  });
+});
+
+describe("isUnknownCodeProduct", () => {
+  const unknown: ProductData = { id: "8594026123314", ean: "8594026123314", name: "Neznámý produkt", categoryTags: [], source: "off", dataCompleteness: "minimal", fetchedAt: "" };
+
+  it("recognises the placeholder of an unknown code", () => {
+    expect(isUnknownCodeProduct(unknown)).toBe(true);
+  });
+
+  it("does not match a real product or a photo result", () => {
+    expect(isUnknownCodeProduct({ ...unknown, name: "Tatranky", dataCompleteness: "full" })).toBe(false);
+    expect(isUnknownCodeProduct({ ...unknown, id: "photo:abc", source: "photo" })).toBe(false);
   });
 });

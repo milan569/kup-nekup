@@ -3,6 +3,7 @@ import { EMPTY_PROFILE, type Tone, type UserProfile } from "./api/types";
 import { setClaudeApiKey } from "./api/client";
 import { clearClaudeKey, loadClaudeKey, saveClaudeKey } from "./storage/claudeKey";
 import { loadProfile, saveProfile } from "./storage/profile";
+import { loadPhotoScan, savePhotoScan } from "./storage/scanMode";
 import { loadSpend } from "./storage/spend";
 
 interface ProfileContextValue {
@@ -15,6 +16,9 @@ interface ProfileContextValue {
   claudeKey: string;
   hasClaudeKey: boolean;
   setClaudeKey: (key: string) => Promise<void>;
+  /** scan with single photos from the system camera instead of the live camera (web: no permission prompt) */
+  photoScan: boolean;
+  setPhotoScan: (photo: boolean) => Promise<void>;
 }
 
 const ProfileContext = createContext<ProfileContextValue | null>(null);
@@ -24,12 +28,14 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
   const [hasProfile, setHasProfile] = useState(false);
   const [profile, setProfile] = useState<UserProfile>(EMPTY_PROFILE);
   const [claudeKey, setKeyState] = useState("");
+  const [photoScan, setPhotoScanState] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
     (async () => {
-      const [stored, key] = await Promise.all([loadProfile(), loadClaudeKey(), loadSpend()]);
+      const [stored, key, photo] = await Promise.all([loadProfile(), loadClaudeKey(), loadPhotoScan(), loadSpend()]);
       if (cancelled) return;
+      setPhotoScanState(photo);
       setClaudeApiKey(key);
       setKeyState(key);
       if (stored) {
@@ -64,9 +70,14 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
     else await clearClaudeKey();
   }, []);
 
+  const setPhotoScan = useCallback(async (photo: boolean) => {
+    setPhotoScanState(photo);
+    await savePhotoScan(photo);
+  }, []);
+
   const value = useMemo(
-    () => ({ ready, hasProfile, profile, updateProfile, replaceProfile, claudeKey, hasClaudeKey: !!claudeKey, setClaudeKey }),
-    [ready, hasProfile, profile, updateProfile, replaceProfile, claudeKey, setClaudeKey],
+    () => ({ ready, hasProfile, profile, updateProfile, replaceProfile, claudeKey, hasClaudeKey: !!claudeKey, setClaudeKey, photoScan, setPhotoScan }),
+    [ready, hasProfile, profile, updateProfile, replaceProfile, claudeKey, setClaudeKey, photoScan, setPhotoScan],
   );
 
   return <ProfileContext.Provider value={value}>{children}</ProfileContext.Provider>;

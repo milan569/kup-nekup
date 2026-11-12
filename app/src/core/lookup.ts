@@ -94,6 +94,8 @@ const PhotoBody = z.object({
   hint: z.string().max(300).optional(),
   /** product already on screen; the photo supplements it */
   base: z.record(z.string(), z.unknown()).optional(),
+  /** barcode decoded on the device from this photo */
+  ean: z.string().regex(/^\d{8,14}$/).optional(),
 });
 const ManualBody = z.object({
   name: z.string().trim().min(2).max(200),
@@ -260,6 +262,8 @@ export async function lookupPhoto(body: PhotoLookupRequest): Promise<ProductResu
   }
 
   let product = productFromPhoto(extraction, parsed.imageBase64);
+  // a decoder's read is exact, the model's reading of small digits is not
+  if (parsed.ean) product.ean = parsed.ean;
   let path = "photo";
   const photoCode = product.ean; // digits only (productFromPhoto), or undefined
   if (photoCode && !isInStoreCode(photoCode)) {

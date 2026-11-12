@@ -2,17 +2,18 @@ import { useIsFocused, useNavigation } from "@react-navigation/native";
 import { CameraView, useCameraPermissions, type BarcodeScanningResult } from "expo-camera";
 import * as Haptics from "expo-haptics";
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { Linking, Platform, Pressable, StyleSheet, Text, View } from "react-native";
+import { Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { Button } from "../components/Button";
 import { ErrorBox } from "../components/ErrorBox";
 import { LoadingOverlay } from "../components/LoadingOverlay";
 import { CollectBanner } from "../components/CollectBanner";
-import { ScanVoter } from "../core/scan";
+import { ScanVoter, pickScannedCode } from "../core/scan";
 import { useLookup } from "../hooks/useLookup";
 import type { RootNavigation } from "../navigationTypes";
 import { useProfile } from "../profile";
 import { fontSize, radius, spacing, useTheme } from "../theme";
+import { barcodesInPhoto } from "../utils/barcodePhoto";
 import {
   DEFAULT_ZOOM,
   cameraMountError,
@@ -23,14 +24,18 @@ import {
   tuneCameraTrack,
   type ZoomRange,
 } from "../utils/camera";
-import { PermissionDeniedError, pickLabelFromLibrary } from "../utils/image";
+import { PermissionDeniedError, pickLabelFromLibrary, takeLabelPhoto } from "../utils/image";
 
 const REPEAT_WINDOW_MS = 3000;
 const IN_STORE_HINT = "To je kód z váhy obchodu (cena). Namiřte na kód výrobce, nebo vyfoťte etiketu.";
+const IN_STORE_PHOTO = "Na fotce je jen kód z váhy obchodu (cena), ten výrobek neurčí. Vyfoťte kód výrobce. Etiketu bez kódu přečte AI po zadání Claude klíče.";
+const NO_CODE_ON_PHOTO = "Na fotce jsem nenašel čárový kód. Vyfoťte ho znovu, ostře a celý. Etiketu bez kódu přečte AI po zadání Claude klíče.";
 const DISTANCE_HINT = "15–20 cm od kódu, z blízka kamera nezaostří";
 const WEB = Platform.OS === "web";
 // the zoom chosen on this screen lasts for the session
 let sessionZoom = DEFAULT_ZOOM;
+// "Zapnout živý sken" on the photo-mode screen lasts until the app is closed
+let liveForSession = false;
 
 export function ScanScreen() {
   const t = useTheme();
@@ -39,11 +44,18 @@ export function ScanScreen() {
   const isFocused = useIsFocused();
   const isFocusedRef = useRef(isFocused);
   isFocusedRef.current = isFocused;
-  const { profile, hasClaudeKey } = useProfile();
+  const { profile, hasClaudeKey, photoScan, setPhotoScan } = useProfile();
+  const [liveOn, setLiveOn] = useState(liveForSession);
+  // web only: single photos with the system camera instead of the live camera, which
+  // an iPhone home-screen app has to ask permission for at every launch
+  const photoMode = WEB && photoScan && !liveOn;
   const [hint, setHint] = useState<string | null>(null);
   const hintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [localError, setLocalError] = useState<string | null>(null);
   // codes the server identified as in-store (scale/price) labels: answer locally next time
   const inStoreCodes = useRef(new Set<string>());
+  // true while a still photo is being looked up: an in-store code then needs a lasting message, not the scanner's hint
+  const photoFlow = useRef(false);
 
   const showHint = useCallback((text: string) => {
     setHint(text);
@@ -60,6 +72,10 @@ export function ScanScreen() {
 
   const onInStoreCode = useCallback(
     (ean: string) => {
+      if (photoFlow.current) {
+        setLocalError(IN_STORE_PHOTO);
+        return;
+      }
       inStoreCodes.current.add(ean);
       showHint(IN_STORE_HINT);
     },
@@ -72,8 +88,9 @@ export function ScanScreen() {
   const lastScan = useRef<{ data: string; at: number } | null>(null);
   // a code counts after two agreeing reads: one blurred frame can decode to wrong digits
   const voter = useRef(new ScanVoter());
-  const [localError, setLocalError] = useState<string | null>(null);
   const [capturing, setCapturing] = useState(false);
+  // a still photo is being searched for a barcode (before any lookup starts)
+  const [decoding, setDecoding] = useState(false);
   const [cameraError, setCameraError] = useState<string | null>(null);
   // bumping the key mounts the camera again (after a failure, or when the stream died while the phone was locked)
   const [cameraKey, setCameraKey] = useState(0);
@@ -92,7 +109,7 @@ export function ScanScreen() {
 
   const error = localError ?? lookup.error;
   // the scanner pauses while an error is shown, so the message cannot flicker away
-  const scannerPaused = lookup.busy || capturing || !!error;
+  const scannerPaused = lookup.busy || capturing || decoding || !!error;
 
   const onBarcode = useCallback(
     (res: BarcodeScanningResult) => {
@@ -143,6 +160,8 @@ export function ScanScreen() {
     let cancelled = false;
     const onVisible = () => {
       if (document.visibilityState !== "visible" || !isFocusedRef.current) return;
+      // no live camera on screen (photo mode, refusal): nothing to revive, and nothing may ask for the camera
+      if (!cameraVideoElement()) return;
       if (needsRemount.current) {
         needsRemount.current = false;
         remountCamera();
@@ -216,6 +235,36 @@ export function ScanScreen() {
     lastScan.current = null;
   }, [lookup]);
 
+  /**
+   * A still photo from the system camera or the gallery. On the web its barcode is read on the
+   * device first: free, and the database then answers as for a live scan. AI reads the label only
+   * when there is no code, the code is unknown, or it is a shop's scale label.
+   */
+  const lookupFromPhoto = useCallback(
+    async (uri: string) => {
+      if (!WEB) {
+        await lookup.lookupPhotoUri(uri);
+        return;
+      }
+      setDecoding(true);
+      let code: string | null = null;
+      try {
+        code = pickScannedCode(await barcodesInPhoto(uri));
+      } finally {
+        setDecoding(false);
+      }
+      photoFlow.current = true;
+      try {
+        if (code) await lookup.lookupCodeFromPhoto(code, uri, hasClaudeKey);
+        else if (hasClaudeKey) await lookup.lookupPhotoUri(uri);
+        else setLocalError(NO_CODE_ON_PHOTO);
+      } finally {
+        photoFlow.current = false;
+      }
+    },
+    [lookup, hasClaudeKey],
+  );
+
   const takePhoto = useCallback(async () => {
     if (!cameraRef.current || userAction.current) return;
     userAction.current = true;
@@ -234,13 +283,25 @@ export function ScanScreen() {
     }
   }, [lookup, dismissError]);
 
+  // The system camera (on the web a file input with `capture`): no permission prompt, the phone's own autofocus.
+  // Not guarded by `userAction`: an old iPhone never reports a cancelled camera, and the button must not stay dead.
+  const takeSystemPhoto = useCallback(async () => {
+    dismissError();
+    try {
+      const uri = await takeLabelPhoto();
+      if (uri) await lookupFromPhoto(uri);
+    } catch (err) {
+      setLocalError(err instanceof Error && err.message ? err.message : "Fotku se nepodařilo pořídit.");
+    }
+  }, [lookupFromPhoto, dismissError]);
+
   const pickFromGallery = useCallback(async () => {
     if (userAction.current) return;
     userAction.current = true;
     dismissError();
     try {
       const uri = await pickLabelFromLibrary();
-      if (uri) await lookup.lookupPhotoUri(uri);
+      if (uri) await lookupFromPhoto(uri);
     } catch (err) {
       if (err instanceof PermissionDeniedError) {
         setLocalError(err.message);
@@ -250,20 +311,96 @@ export function ScanScreen() {
     } finally {
       userAction.current = false;
     }
-  }, [lookup, dismissError]);
+  }, [lookupFromPhoto, dismissError]);
 
   const openKeySettings = useCallback(() => {
     dismissError();
     navigation.navigate("ClaudeKey");
   }, [navigation, dismissError]);
 
-  if (!permission) {
+  const startLive = useCallback(() => {
+    liveForSession = true;
+    dismissError();
+    setWebDenied(false);
+    setCameraError(null);
+    autoRemounts.current = [];
+    setCameraKey((k) => k + 1);
+    setLiveOn(true);
+    getPermission().catch(() => undefined);
+  }, [dismissError, getPermission]);
+
+  const authError = !localError && lookup.errorKind === "auth";
+  const lookupErrorBox = !error ? null : authError ? (
+    <ErrorBox title="Chybí nebo neplatí Claude klíč" message={error} actionLabel="Zadat klíč" onAction={openKeySettings} onRetry={dismissError} retryLabel="Zavřít" />
+  ) : (
+    <ErrorBox
+      message={error}
+      actionLabel={!localError && lookup.retry ? "Zkusit znovu" : undefined}
+      onAction={!localError && lookup.retry ? lookup.retry : undefined}
+      onRetry={dismissError}
+      retryLabel={localError ? "Rozumím" : "Zavřít"}
+    />
+  );
+  const overlay = <LoadingOverlay visible={lookup.busy || decoding} text={decoding ? "Hledám čárový kód na fotce…" : lookup.busyText} />;
+
+  if (!permission && !photoMode) {
     return <SafeAreaView style={[styles.safe, { backgroundColor: t.bg }]} />;
   }
 
   // On the web the camera itself asks: the browser prompt appears once, with no extra tap in between
   // (an iPhone home-screen app asks at every launch, so every tap saved counts). Native asks once, ever.
-  const cameraAllowed = permission.granted || (WEB && permission.status !== "denied" && !webDenied);
+  const cameraAllowed = !!permission && (permission.granted || (WEB && permission.status !== "denied" && !webDenied));
+
+  if (photoMode || (WEB && !cameraAllowed)) {
+    // no live camera: by choice (Profil → Sken bez dotazu na kameru) or because the prompt was refused
+    return (
+      <SafeAreaView style={[styles.safe, { backgroundColor: t.bg }]} edges={["top"]}>
+        <CollectBanner />
+        <ScrollView contentContainerStyle={styles.center} keyboardShouldPersistTaps="handled">
+          <Text style={[styles.h, { color: t.text }]}>{photoMode ? "Sken bez živé kamery" : "Živá kamera není povolená"}</Text>
+          <Text style={[styles.p, { color: t.muted }]}>
+            {photoMode
+              ? "Vyfoťte čárový kód nebo etiketu fotoaparátem iPhonu. Na kameru se nic neptá a foťák si zaostří sám."
+              : "Skenovat jde i bez ní: foťte fotoaparátem iPhonu, ten povolení nepotřebuje."}
+          </Text>
+          {lookupErrorBox}
+          {hint ? <Text style={[styles.note, { color: t.text }]}>{hint}</Text> : null}
+          <Button title="📷 Vyfotit kód nebo etiketu" onPress={takeSystemPhoto} />
+          <Button title="Nahrát z galerie" variant="secondary" onPress={pickFromGallery} style={{ marginTop: spacing.sm }} />
+          <Text style={[styles.note, { color: t.muted }]}>
+            {hasClaudeKey
+              ? "Kód z fotky přečte telefon sám a zdarma. Etiketu bez kódu přečte AI."
+              : "Kód z fotky přečte telefon sám a zdarma. Etiketu bez kódu umí přečíst jen AI s Claude klíčem."}
+          </Text>
+          {photoMode ? (
+            <>
+              <Button title="Zapnout živý sken" variant="ghost" onPress={startLive} style={{ marginTop: spacing.lg }} />
+              <Text style={[styles.note, { color: t.muted }]}>Živý sken čte kódy sám, bez focení. iPhone se před ním zeptá na kameru.</Text>
+            </>
+          ) : (
+            <>
+              <Button title="Zkusit živý sken znovu" variant="ghost" onPress={startLive} style={{ marginTop: spacing.lg }} />
+              <Text style={[styles.note, { color: t.muted }]}>
+                Když se iPhone už neptá, zavřete aplikaci v přepínači aplikací a otevřete ji znovu.
+              </Text>
+              <Button
+                title="Vždy skenovat bez živé kamery"
+                variant="ghost"
+                onPress={() => {
+                  liveForSession = false;
+                  setLiveOn(false);
+                  setPhotoScan(true).catch(() => undefined);
+                }}
+                style={{ marginTop: spacing.sm }}
+              />
+              <Text style={[styles.note, { color: t.muted }]}>Aplikace se pak na kameru neptá vůbec. Jde vrátit v Profilu.</Text>
+            </>
+          )}
+        </ScrollView>
+        {overlay}
+      </SafeAreaView>
+    );
+  }
 
   if (!cameraAllowed) {
     return (
@@ -273,22 +410,8 @@ export function ScanScreen() {
           <Text style={[styles.p, { color: t.muted }]}>
             Kamera slouží ke čtení čárových kódů a k focení etiket. Nic se neukládá bez vašeho vědomí.
           </Text>
-          {WEB ? (
-            <>
-              <Text style={[styles.p, { color: t.muted }]}>
-                Kamera byla odmítnuta. Zavřete aplikaci (v přepínači aplikací ji odsuňte nahoru) a otevřete ji znovu, iPhone se zeptá znovu. Když se
-                už neptá, povolte kameru v Nastavení → Safari → Kamera.
-              </Text>
-              <Button
-                title="Zkusit znovu"
-                onPress={() => {
-                  setWebDenied(false);
-                  setCameraKey((k) => k + 1);
-                  getPermission().catch(() => undefined);
-                }}
-              />
-            </>
-          ) : permission.canAskAgain ? (
+          {lookupErrorBox}
+          {permission?.canAskAgain ? (
             <Button title="Povolit kameru" onPress={() => requestPermission()} />
           ) : (
             <Button title="Otevřít nastavení" onPress={() => Linking.openSettings().catch(() => undefined)} />
@@ -296,12 +419,10 @@ export function ScanScreen() {
           <Button title="Nahrát fotku z galerie" variant="secondary" onPress={pickFromGallery} style={{ marginTop: spacing.sm }} />
           <Button title="Hledat podle názvu" variant="ghost" onPress={() => navigation.navigate("Tabs", { screen: "Search" })} style={{ marginTop: spacing.sm }} />
         </View>
-        <LoadingOverlay visible={lookup.busy} text={lookup.busyText} />
+        {overlay}
       </SafeAreaView>
     );
   }
-
-  const authError = !localError && lookup.errorKind === "auth";
 
   return (
     <View style={[styles.safe, { backgroundColor: "#000" }]}>
@@ -350,40 +471,22 @@ export function ScanScreen() {
               retryLabel="Zavřít"
             />
           ) : null}
-          {error ? (
-            authError ? (
-              <ErrorBox
-                title="Chybí nebo neplatí Claude klíč"
-                message={error}
-                actionLabel="Zadat klíč"
-                onAction={openKeySettings}
-                onRetry={dismissError}
-                retryLabel="Zavřít"
-              />
-            ) : (
-              <ErrorBox
-                message={error}
-                actionLabel={!localError && lookup.retry ? "Zkusit znovu" : undefined}
-                onAction={!localError && lookup.retry ? lookup.retry : undefined}
-                onRetry={dismissError}
-                retryLabel={localError ? "Rozumím" : "Zavřít"}
-              />
-            )
-          ) : null}
+          {lookupErrorBox}
           <Button title="Vyfotit etiketu" onPress={takePhoto} loading={capturing} style={styles.btn} />
           <Button title="Nahrát z galerie" variant="secondary" onPress={pickFromGallery} style={[styles.btn, { marginTop: spacing.sm }]} />
         </View>
       </SafeAreaView>
-      <LoadingOverlay visible={lookup.busy} text={lookup.busyText} />
+      {overlay}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   safe: { flex: 1 },
-  center: { flex: 1, justifyContent: "center", padding: spacing.xl },
+  center: { flexGrow: 1, justifyContent: "center", padding: spacing.xl },
   h: { fontSize: fontSize.xl, fontWeight: "800", marginBottom: spacing.sm, textAlign: "center" },
   p: { fontSize: fontSize.md, lineHeight: 22, marginBottom: spacing.lg, textAlign: "center" },
+  note: { fontSize: fontSize.sm, lineHeight: 20, marginTop: spacing.sm, textAlign: "center" },
   overlay: { flex: 1, justifyContent: "space-between" },
   topHint: { alignItems: "center", paddingTop: spacing.lg, paddingHorizontal: spacing.xl },
   hintText: { color: "#FFFFFF", fontSize: fontSize.lg, fontWeight: "700", textShadowColor: "#000", textShadowRadius: 6 },

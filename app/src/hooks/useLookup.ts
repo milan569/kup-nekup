@@ -4,6 +4,7 @@ import { useCallback, useRef, useState } from "react";
 import { ApiError, api, describeError, errorKindOf } from "../api/client";
 import type { Assessment, Insight, ProductData, ProductResult, QuickInsight, UserProfile } from "../api/types";
 import type { RootNavigation } from "../navigationTypes";
+import { isUnknownCodeProduct } from "../core/scan";
 import { prepareLabelImage } from "../utils/image";
 import { findSimilar } from "../storage/history";
 import { useCompare } from "../compare";
@@ -91,22 +92,65 @@ export function useLookup(profile: UserProfile, options: LookupOptions = {}) {
     [navigation],
   );
 
+  /** A shop's scale label is not an error: the caller shows a hint. */
+  const inStoreHandler = useCallback(
+    (ean: string) => (err: unknown) => {
+      const onInStore = optionsRef.current.onInStoreCode;
+      if (onInStore && err instanceof ApiError && err.code === "in_store_code") {
+        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning).catch(() => undefined);
+        onInStore(ean);
+        return true;
+      }
+      return false;
+    },
+    [],
+  );
+
   const lookupEan = useCallback(
     async (ean: string, userInitiated = false) => {
-      const action = () =>
-        run("Hledám produkt…", () => api.lookupEan({ ean, profile }), userInitiated, (err) => {
-          const onInStore = optionsRef.current.onInStoreCode;
-          if (onInStore && err instanceof ApiError && err.code === "in_store_code") {
-            Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning).catch(() => undefined);
-            onInStore(ean);
-            return true;
-          }
-          return false;
-        });
+      const action = () => run("Hledám produkt…", () => api.lookupEan({ ean, profile }), userInitiated, inStoreHandler(ean));
       setLastAction(() => action);
       return action();
     },
-    [profile, run],
+    [profile, run, inStoreHandler],
+  );
+
+  /**
+   * A photo whose barcode was decoded on the device. The database answers
+   * first (free). The label on the photo is read by AI only when the code is
+   * unknown or a shop's scale label, and only when `readLabel` allows it.
+   */
+  const lookupCodeFromPhoto = useCallback(
+    async (ean: string, uri: string, readLabel: boolean) => {
+      const action = () =>
+        run(
+          "Hledám produkt…",
+          async () => {
+            let byCode: ProductResult | undefined;
+            try {
+              byCode = await api.lookupEan({ ean, profile });
+            } catch (err) {
+              if (!(readLabel && err instanceof ApiError && err.code === "in_store_code")) throw err;
+            }
+            if (byCode && (!readLabel || !isUnknownCodeProduct(byCode.product))) return byCode;
+            setBusyText("Čtu etiketu…");
+            try {
+              const imageBase64 = await prepareLabelImage(uri);
+              const read = await api.lookupPhoto({ imageBase64, mediaType: "image/jpeg", profile, ean });
+              // the photo shows the code alone: the unknown-code result offers more (AI search by the code, adding a photo)
+              return byCode && read.product.id === "photo:none" ? byCode : read;
+            } catch (err) {
+              if (byCode) return byCode;
+              throw err;
+            }
+          },
+          true,
+          inStoreHandler(ean),
+        );
+      setLastAction(() => action);
+      return action();
+    },
+    [profile, run, inStoreHandler],
   );
 
   const lookupPhotoUri = useCallback(
@@ -176,6 +220,7 @@ export function useLookup(profile: UserProfile, options: LookupOptions = {}) {
     clearError,
     retry: lastAction ? retry : undefined,
     lookupEan,
+    lookupCodeFromPhoto,
     lookupPhotoUri,
     lookupManual,
     supplementPhotoUri,

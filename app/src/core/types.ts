@@ -416,6 +416,8 @@ export interface PhotoLookupRequest {
   hint?: string;
   /** the product already on screen: the photo adds to it (back label, ingredients, front with the name…) */
   base?: ProductData;
+  /** barcode decoded on the device from this photo: it wins over the digits the model reads off the picture */
+  ean?: string;
 }
 
 export interface ManualLookupRequest {

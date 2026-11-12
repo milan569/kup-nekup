@@ -1,3 +1,6 @@
+import { isInStoreCode } from "./off";
+import type { ProductData } from "./types";
+
 /**
  * Barcode reads are voted on before a lookup starts.
  *
@@ -39,4 +42,19 @@ export class ScanVoter {
     this.count = 0;
     this.lastAt = 0;
   }
+}
+
+/**
+ * Of the barcodes decoded from one still photo: the maker's code before a
+ * shop's scale label (weighed goods often carry both), null when the photo
+ * shows no product code at all.
+ */
+export function pickScannedCode(codes: readonly string[]): string | null {
+  const valid = [...new Set(codes.map((c) => c.trim()).filter((c) => /^\d{8,14}$/.test(c)))];
+  return valid.find((c) => !isInStoreCode(c)) ?? valid[0] ?? null;
+}
+
+/** The placeholder a lookup returns for a code no database knows (`unknownProduct` in lookup.ts). */
+export function isUnknownCodeProduct(product: ProductData): boolean {
+  return !!product.ean && product.id === product.ean && product.name === "Neznámý produkt" && product.dataCompleteness === "minimal";
 }
