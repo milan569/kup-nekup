@@ -131,6 +131,8 @@ Odhady vycházejí z ceníku Claude Opus 5.5 a webového vyhledávání. Levněj
 | Na ploše je stará verze | Zavřete aplikaci (přejetím nahoru v přepínači) a otevřete znovu; při nasazení trvá 2–4 minuty, než je nová verze online. |
 | „Něco se pokazilo“ s tlačítkem Načíst znovu | Chyba při vykreslení, nejčastěji starý záznam v historii. Načtěte znovu; když se to opakuje u jednoho výrobku, smažte ho v Historii podržením prstu. |
 | „Kamera nejde spustit“ | Kameru drží jiná aplikace nebo stream po odemknutí nenaběhl. Zavřete ostatní aplikace s kamerou nebo klepněte na Zkusit znovu; fotku lze vždy nahrát z galerie. |
+| Kamera se ptá o povolení při každém spuštění | Vlastnost iPhonu: aplikaci na ploše nejde kameru povolit natrvalo a po delší době v pozadí ji iOS spustí znovu. Aplikace se ptá jen jednou a bez klepnutí navíc. Zkuste Nastavení → Safari → Kamera → Povolit; u některých verzí iOS pak platí i pro aplikaci na ploše. |
+| Kód se nečte, nebo se přečetl špatně | Držte telefon 15–20 cm od kódu (z blízka hlavní kamera nezaostří, makro režim webová aplikace nemá) a nechte kód v záběru asi vteřinu: kód platí až po dvou shodných čteních. Tlačítko 2× vpravo nahoře obraz přiblíží, 1× ho vrátí. |
 
 ## 6. Známá omezení
 
