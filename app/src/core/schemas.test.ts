@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 import { ManualAssessment, ManufacturerSchema, PhotoExtraction } from "./claude";
-import { SUBMIT_TOOL } from "./insight";
+import { ALTERNATIVES_TOOL } from "./alternatives-research";
+import { COMPARE_TOOL } from "./compare";
+import { QUICK_TOOL, SUBMIT_TOOL } from "./insight";
 
 /**
  * The Claude API rejects structured-output / strict-tool schemas with more
@@ -31,6 +33,9 @@ describe("AI schemas stay within the API's union-parameter limit", () => {
     ["manual assessment", zodOutputFormat(ManualAssessment).schema],
     ["manufacturer", zodOutputFormat(ManufacturerSchema).schema],
     ["insight submit tool", SUBMIT_TOOL.input_schema],
+    ["quick opinion tool", QUICK_TOOL.input_schema],
+    ["comparison tool", COMPARE_TOOL.input_schema],
+    ["alternatives research tool", ALTERNATIVES_TOOL.input_schema],
   ];
   for (const [name, schema] of cases) {
     it(`${name}: ≤ ${API_UNION_LIMIT}`, () => {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Linking, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
-import { api, describeError, keyFormatProblem } from "../api/client";
+import { api, describeError, errorKindOf, keyFormatProblem } from "../api/client";
 import { Button } from "../components/Button";
 import { MODEL } from "../core/config";
 import { useProfile } from "../profile";
@@ -23,6 +23,7 @@ export function ClaudeKeyScreen() {
   const [status, setStatus] = useState<{ ok: boolean; text: string } | null>(null);
   const [spend, setSpend] = useState<SpendState | undefined>(currentSpend());
   const [cap, setCap] = useState(String(currentSpend()?.dailyCapUsd ?? DEFAULT_DAILY_CAP_USD));
+  const [capStatus, setCapStatus] = useState<string | null>(null);
 
   useEffect(() => onSpendChange(setSpend), []);
 
@@ -43,6 +44,8 @@ export function ClaudeKeyScreen() {
       setStatus({ ok: true, text: `✓ Klíč platí a je uložen jen v tomto zařízení. Model ${res.model} je dostupný.` });
     } catch (err) {
       setStatus({ ok: false, text: `✕ ${describeError(err)}` });
+      // a key Anthropic rejected must not stay stored as if it worked (a network failure keeps it)
+      if (errorKindOf(err) === "auth") await setClaudeKey("");
     } finally {
       setBusy(false);
     }
@@ -56,9 +59,14 @@ export function ClaudeKeyScreen() {
     });
 
   const saveCap = async () => {
-    const n = Number(cap.replace(",", "."));
-    if (!Number.isFinite(n) || n < 0) return;
+    const n = Number(cap.trim().replace(",", "."));
+    if (!cap.trim() || !Number.isFinite(n) || n < 0) {
+      setCapStatus("✕ Zadejte číslo v USD, např. 5 (0 = bez stropu).");
+      return;
+    }
     await setDailyCap(n);
+    setCap(String(n));
+    setCapStatus(n === 0 ? "✓ Uloženo: bez denního stropu." : `✓ Uloženo: denní strop ${formatUsd(n)}.`);
   };
 
   const inputStyle = [styles.input, { backgroundColor: t.card, color: t.text, borderColor: t.border }];
@@ -123,6 +131,7 @@ export function ClaudeKeyScreen() {
         />
         <Button title="Uložit" variant="secondary" compact onPress={saveCap} style={{ marginLeft: spacing.sm }} />
       </View>
+      {capStatus ? <Text style={[styles.hint, { color: t.text, marginTop: spacing.xs, marginBottom: 0 }]}>{capStatus}</Text> : null}
       <Text style={[styles.hint, { color: t.muted, marginTop: spacing.xs }]}>
         Po dosažení stropu se AI funkce do půlnoci zastaví; čárový kód a pravidla fungují dál. 0 = bez stropu. Měsíční limit nastavte také v Claude
         Console (Billing), ten platí pro všechny vaše klíče.

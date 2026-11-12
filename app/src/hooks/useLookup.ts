@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import * as Haptics from "expo-haptics";
 import { useCallback, useRef, useState } from "react";
-import { ApiError, api, describeError } from "../api/client";
+import { ApiError, api, describeError, errorKindOf } from "../api/client";
 import type { Assessment, Insight, ProductData, ProductResult, QuickInsight, UserProfile } from "../api/types";
 import type { RootNavigation } from "../navigationTypes";
 import { prepareLabelImage } from "../utils/image";
@@ -29,7 +29,9 @@ export function useLookup(profile: UserProfile, options: LookupOptions = {}) {
   const [busyText, setBusyText] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [errorKind, setErrorKind] = useState<LookupErrorKind | null>(null);
-  const [lastAction, setLastAction] = useState<(() => Promise<void>) | null>(null);
+  const [lastAction, setLastAction] = useState<(() => Promise<boolean>) | null>(null);
+  const profileRef = useRef(profile);
+  profileRef.current = profile;
   const inFlight = useRef(false);
 
   /**
@@ -47,10 +49,10 @@ export function useLookup(profile: UserProfile, options: LookupOptions = {}) {
       replace: false | ((result: ProductResult) => void) = false,
     ) => {
       if (inFlight.current) {
-        if (!wait) return;
+        if (!wait) return false;
         const until = Date.now() + 15000;
         while (inFlight.current && Date.now() < until) await new Promise((r) => setTimeout(r, 150));
-        if (inFlight.current) return;
+        if (inFlight.current) return false;
       }
       inFlight.current = true;
       setError(null);
@@ -67,18 +69,20 @@ export function useLookup(profile: UserProfile, options: LookupOptions = {}) {
         } else if (replace) replace(result);
         else {
           // analysed before (same name and brand, whatever the size): show the stored result, no new AI call
-          const prior = await findSimilar(result.product).catch(() => undefined);
+          const prior = await findSimilar(result.product, profileRef.current.tone).catch(() => undefined);
           const params = prior
             ? { result: prior.result, insight: prior.insight, quick: prior.quick, reused: { at: prior.at, fresh: result } }
             : { result };
           if (optionsRef.current.push) navigation.push("Result", params);
           else navigation.navigate("Result", params);
         }
+        return true;
       } catch (err) {
-        if (handleError && handleError(err)) return;
+        if (handleError && handleError(err)) return false;
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error).catch(() => undefined);
         setError(describeError(err));
-        setErrorKind(err instanceof ApiError && err.kind === "auth" ? "auth" : "other");
+        setErrorKind(errorKindOf(err));
+        return false;
       } finally {
         setBusyText(null);
         inFlight.current = false;
@@ -100,7 +104,7 @@ export function useLookup(profile: UserProfile, options: LookupOptions = {}) {
           return false;
         });
       setLastAction(() => action);
-      await action();
+      return action();
     },
     [profile, run],
   );
@@ -117,7 +121,7 @@ export function useLookup(profile: UserProfile, options: LookupOptions = {}) {
           true,
         );
       setLastAction(() => action);
-      await action();
+      return action();
     },
     [profile, run],
   );
@@ -141,7 +145,7 @@ export function useLookup(profile: UserProfile, options: LookupOptions = {}) {
             }),
         );
       setLastAction(() => action);
-      await action();
+      return action();
     },
     [profile, run, navigation],
   );
@@ -150,7 +154,7 @@ export function useLookup(profile: UserProfile, options: LookupOptions = {}) {
     async (name: string, brand?: string, description?: string) => {
       const action = () => run("Posuzuji produkt…", () => api.lookupManual({ name, brand, description, profile }), true);
       setLastAction(() => action);
-      await action();
+      return action();
     },
     [profile, run],
   );

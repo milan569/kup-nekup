@@ -54,6 +54,11 @@ export function ScanScreen() {
   const lastScan = useRef<{ data: string; at: number } | null>(null);
   const [localError, setLocalError] = useState<string | null>(null);
   const [capturing, setCapturing] = useState(false);
+  const [cameraError, setCameraError] = useState<string | null>(null);
+  // bumping the key remounts the camera (after a failure, or when the web app comes back from the lock screen)
+  const [cameraKey, setCameraKey] = useState(0);
+  // the code that opened the last result: not again right after Zpět while the phone still points at it
+  const ignoreCode = useRef<{ data: string; until: number } | null>(null);
   // true while the user takes a photo or picks one from the gallery: the
   // barcode scanner must not start lookups meanwhile (it used to swallow the photo)
   const userAction = useRef(false);
@@ -72,12 +77,29 @@ export function ScanScreen() {
       }
       const now = Date.now();
       if (lastScan.current && lastScan.current.data === data && now - lastScan.current.at < REPEAT_WINDOW_MS) return;
+      if (ignoreCode.current && ignoreCode.current.data === data && now < ignoreCode.current.until) return;
+      ignoreCode.current = null;
       lastScan.current = { data, at: now };
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => undefined);
       lookup.lookupEan(data);
     },
     [lookup, showHint],
   );
+
+  useEffect(() => {
+    // back on this screen: the barcode of the result just closed stays ignored for a moment
+    if (isFocused && lastScan.current) ignoreCode.current = { data: lastScan.current.data, until: Date.now() + 5000 };
+  }, [isFocused]);
+
+  useEffect(() => {
+    // iOS freezes the camera stream of a web app while the phone is locked: start it again when the app is back
+    if (Platform.OS !== "web" || typeof document === "undefined") return;
+    const onVisible = () => {
+      if (document.visibilityState === "visible") setCameraKey((k) => k + 1);
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => document.removeEventListener("visibilitychange", onVisible);
+  }, []);
 
   const dismissError = useCallback(() => {
     setLocalError(null);
@@ -138,13 +160,21 @@ export function ScanScreen() {
           <Text style={[styles.p, { color: t.muted }]}>
             Kamera slouží ke čtení čárových kódů a k focení etiket. Nic se neukládá bez vašeho vědomí.
           </Text>
-          {permission.canAskAgain ? (
+          {Platform.OS === "web" ? (
+            // the browser reports canAskAgain even after a refusal, and Safari never asks twice: after a refusal show the way through Settings
+            permission.status === "denied" ? (
+              <>
+                <Text style={[styles.p, { color: t.muted }]}>
+                  Kamera je pro tuto stránku zakázaná. Na iPhonu ji povolte v Nastavení → Safari → Kamera (u aplikace na ploše v Nastavení → Kup / Nekup),
+                  pak aplikaci zavřete a znovu otevřete.
+                </Text>
+                <Button title="Zkusit znovu" variant="ghost" onPress={() => requestPermission()} />
+              </>
+            ) : (
+              <Button title="Povolit kameru" onPress={() => requestPermission()} />
+            )
+          ) : permission.canAskAgain ? (
             <Button title="Povolit kameru" onPress={() => requestPermission()} />
-          ) : Platform.OS === "web" ? (
-            <Text style={[styles.p, { color: t.muted }]}>
-              Kamera je pro tuto stránku zakázaná. Na iPhonu ji povolte v Nastavení → Safari → Kamera (u aplikace na ploše v Nastavení → Kup / Nekup), pak
-              aplikaci znovu otevřete.
-            </Text>
           ) : (
             <Button title="Otevřít nastavení" onPress={() => Linking.openSettings().catch(() => undefined)} />
           )}
@@ -162,11 +192,13 @@ export function ScanScreen() {
     <View style={[styles.safe, { backgroundColor: "#000" }]}>
       {isFocused && (
         <CameraView
+          key={cameraKey}
           ref={cameraRef}
           style={StyleSheet.absoluteFill}
           facing="back"
           barcodeScannerSettings={{ barcodeTypes: ["ean13", "ean8", "upc_a", "upc_e"] }}
           onBarcodeScanned={scannerPaused ? undefined : onBarcode}
+          onMountError={(e) => setCameraError(e?.message || "Kameru se nepodařilo spustit.")}
         />
       )}
       <SafeAreaView style={styles.overlay} edges={["top", "bottom"]} pointerEvents="box-none">
@@ -176,6 +208,19 @@ export function ScanScreen() {
           <Text style={styles.hintSub}>{hint ?? (hasClaudeKey ? "nebo vyfoťte etiketu se složením" : "bez Claude klíče funguje jen čárový kód a pravidla")}</Text>
         </View>
         <View style={styles.bottom}>
+          {cameraError ? (
+            <ErrorBox
+              title="Kamera nejde spustit"
+              message={`${cameraError} Zavřete ostatní aplikace, které kameru používají, nebo nahrajte fotku z galerie.`}
+              actionLabel="Zkusit znovu"
+              onAction={() => {
+                setCameraError(null);
+                setCameraKey((k) => k + 1);
+              }}
+              onRetry={() => setCameraError(null)}
+              retryLabel="Zavřít"
+            />
+          ) : null}
           {error ? (
             authError ? (
               <ErrorBox

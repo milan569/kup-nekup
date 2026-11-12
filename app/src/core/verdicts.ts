@@ -163,8 +163,10 @@ export const ALCOHOL_HUMOR: Record<Verdict, VerdictText> = {
 const LABEL_SETS: Record<LabelSet, Record<Verdict, VerdictText>> = { alcohol: ALCOHOL_HUMOR };
 
 export function verdictText(v: Verdict, tone: Tone = "humor", labelSet?: LabelSet): VerdictText {
-  if (tone !== "serious" && labelSet && LABEL_SETS[labelSet]) return LABEL_SETS[labelSet][v] ?? VERDICTS[v].humor;
-  return VERDICTS[v][tone];
+  // a stored verdict from an older version may be unknown: never crash the list, show "nevíme"
+  const base = VERDICTS[v] ?? VERDICTS.nevime;
+  if (tone !== "serious" && labelSet && LABEL_SETS[labelSet]) return LABEL_SETS[labelSet][v] ?? base.humor;
+  return base[tone];
 }
 
 export function verdictFromScore(score: number): Verdict {

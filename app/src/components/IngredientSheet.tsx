@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ActivityIndicator, Modal, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { api, describeError } from "../api/client";
 import type { HealthInfo, IngredientInfo, Risk, Tone } from "../api/types";
 import { useTone } from "../profile";
@@ -63,6 +64,7 @@ interface Props {
 export function IngredientSheet({ query, onClose }: Props) {
   const t = useTheme();
   const tone = useTone();
+  const insets = useSafeAreaInsets();
   const [matches, setMatches] = useState<IngredientInfo[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [attempt, setAttempt] = useState(0);
@@ -142,7 +144,7 @@ export function IngredientSheet({ query, onClose }: Props) {
             )}
           </ScrollView>
 
-          <View style={styles.footer}>
+          <View style={[styles.footer, { paddingBottom: spacing.lg + insets.bottom }]}>
             <Button title="Zavřít" variant="secondary" onPress={onClose} />
           </View>
         </Pressable>

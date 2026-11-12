@@ -60,11 +60,14 @@ export class Cache {
     let removed = 0;
     try {
       const now = Date.now();
+      // namespaces whose entries are promised a longer life than the default sweep age
+      const maxAgeByNs: Record<string, number> = { translation: TTL.translation };
       for (const key of await this.store.keys()) {
         const raw = await this.store.get(key);
         const m = raw && /^\{"t":(\d+)/.exec(raw.slice(0, 24));
         if (!m) continue;
-        if (now - Number(m[1]) > maxAgeMs) {
+        const ns = key.slice(0, Math.max(0, key.indexOf(SEP)));
+        if (now - Number(m[1]) > (maxAgeByNs[ns] ?? maxAgeMs)) {
           await this.store.delete(key);
           removed++;
         }

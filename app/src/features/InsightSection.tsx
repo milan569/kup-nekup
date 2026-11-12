@@ -4,7 +4,8 @@ import type { Insight, InsightSource, QuickInsight, Tone, LabelSet } from "../ap
 import { WORKING_HUMOR, WORKING_SERIOUS } from "../data/phrases";
 import { useRotatingPhrase } from "../hooks/useRotatingPhrase";
 import { Chip, ChipRow } from "../components/Chip";
-import { ErrorBox } from "../components/ErrorBox";
+import type { ErrorKind } from "../api/client";
+import { ApiErrorBox } from "../components/ApiErrorBox";
 import { Skeleton } from "../components/Skeleton";
 import { SourceLink, domainOf } from "../components/SourceLink";
 import { VerdictBadge } from "../components/VerdictBadge";
@@ -24,18 +25,20 @@ interface Props {
   quickStatus: InsightStatus;
   quick?: QuickInsight;
   quickError: string | null;
+  quickErrorKind?: ErrorKind | null;
   onRetryQuick: () => void;
   // deep
   deepStatus: InsightStatus;
   insight?: Insight;
   deepError: string | null;
+  deepErrorKind?: ErrorKind | null;
   meta: { cached: boolean; ms: number } | null;
   onStartDeep: () => void;
 }
 
 /** Content of the „Posudek AI" card: quick opinion first, deep research on a button. */
 export function InsightSection(props: Props) {
-  const { tone, labelSet, quickStatus, quick, quickError, onRetryQuick, deepStatus, insight, deepError, meta, onStartDeep } = props;
+  const { tone, labelSet, quickStatus, quick, quickError, quickErrorKind, onRetryQuick, deepStatus, insight, deepError, deepErrorKind, meta, onStartDeep } = props;
   const t = useTheme();
   // the waiting line rotates through the funny phrases so a 15-second wait does not feel stuck
   const working = useRotatingPhrase(tone === "serious" ? WORKING_SERIOUS : WORKING_HUMOR, quickStatus === "loading");
@@ -54,7 +57,7 @@ export function InsightSection(props: Props) {
         </View>
       )}
       {quickStatus === "error" && (
-        <ErrorBox message={quickError ?? "Rychlý názor se nepodařilo načíst."} onRetry={onRetryQuick} />
+        <ApiErrorBox message={quickError ?? "Rychlý názor se nepodařilo načíst."} kind={quickErrorKind} onRetry={onRetryQuick} />
       )}
       {quickStatus === "idle" && (
         <Text style={[styles.muted, { color: t.muted }]}>Rychlý názor AI se načte po otevření této karty.</Text>
@@ -62,7 +65,7 @@ export function InsightSection(props: Props) {
       {quickStatus === "done" && quick && <QuickOpinion quick={quick} tone={tone} labelSet={labelSet} />}
 
       <View style={[styles.divider, { backgroundColor: t.border }]} />
-      <DeepAction status={deepStatus} error={deepError} tone={tone} onStart={onStartDeep} />
+      <DeepAction status={deepStatus} error={deepError} kind={deepErrorKind} tone={tone} onStart={onStartDeep} />
     </View>
   );
 }
@@ -100,11 +103,11 @@ function SourceList({ sources }: { sources: InsightSource[] }) {
   );
 }
 
-function DeepAction({ status, error, tone, onStart }: { status: InsightStatus; error: string | null; tone: Tone; onStart: () => void }) {
+function DeepAction({ status, error, kind, tone, onStart }: { status: InsightStatus; error: string | null; kind?: ErrorKind | null; tone: Tone; onStart: () => void }) {
   const t = useTheme();
   if (status === "loading") return <DeepProgress tone={tone} />;
   if (status === "error") {
-    return <ErrorBox title="Důkladný průzkum se nepovedl" message={error ?? "Zkuste to prosím znovu."} onRetry={onStart} />;
+    return <ApiErrorBox title={kind === "auth" ? undefined : "Důkladný průzkum se nepovedl"} message={error ?? "Zkuste to prosím znovu."} kind={kind} onRetry={onStart} />;
   }
   return (
     <Pressable

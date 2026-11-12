@@ -2,12 +2,13 @@ import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React, { useCallback, useEffect, useState } from "react";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
-import { api, describeError } from "../api/client";
+import { api, describeError, errorKindOf, type ErrorKind } from "../api/client";
 import type { Alternative, AlternativesResearchResponse, InsightAlternative, ProductImage, ProductResult, UserProfile, Verdict } from "../api/types";
 import { VERDICTS } from "../api/verdicts";
 import { Button } from "../components/Button";
 import { Chip, ChipRow } from "../components/Chip";
 import { EmptyState } from "../components/EmptyState";
+import { ApiErrorBox } from "../components/ApiErrorBox";
 import { ErrorBox } from "../components/ErrorBox";
 import { InlineLoading } from "../components/LoadingOverlay";
 import { PhotoViewer, photosOf } from "../components/PhotoViewer";
@@ -50,6 +51,7 @@ export function AlternativesSection({ result, profile, active, minScore, aiAlter
   const [research, setResearch] = useState<AlternativesResearchResponse | null>(null);
   const [researching, setResearching] = useState(false);
   const [researchError, setResearchError] = useState<string | null>(null);
+  const [researchErrorKind, setResearchErrorKind] = useState<ErrorKind | null>(null);
   const currentVerdict = result.assessment.verdict;
   const showPhotos = (images: ProductImage[], title: string) => (images.length ? () => setPhotos({ images, title }) : undefined);
 
@@ -100,6 +102,7 @@ export function AlternativesSection({ result, profile, active, minScore, aiAlter
       setResearch(await api.alternativesResearch({ product: result.product, assessment: result.assessment, country, profile }));
     } catch (err) {
       setResearchError(describeError(err));
+      setResearchErrorKind(errorKindOf(err));
     } finally {
       setResearching(false);
     }
@@ -160,7 +163,7 @@ export function AlternativesSection({ result, profile, active, minScore, aiAlter
     <View>
       {lookup.busy && <InlineLoading text={lookup.busyText} />}
       {lookup.error && !lookup.busy && (
-        <ErrorBox message={lookup.error} actionLabel={lookup.retry ? "Zkusit znovu" : undefined} onAction={lookup.retry} onRetry={lookup.clearError} retryLabel="Zavřít" />
+        <ApiErrorBox message={lookup.error} kind={lookup.errorKind} onRetry={lookup.retry} onDismiss={lookup.clearError} />
       )}
 
       {hasTips && (
@@ -187,7 +190,7 @@ export function AlternativesSection({ result, profile, active, minScore, aiAlter
         <Text style={[styles.label, { color: t.muted }]}>Nejbližší alternativy v zemi</Text>
         <ChipRow>
           {countryOptions.map((c) => (
-            <Chip key={c.key} label={c.label} selected={country === c.key} onPress={() => setCountry(c.key)} small />
+            <Chip key={c.key} label={c.label} selected={country === c.key} onPress={() => setCountry(c.key)} />
           ))}
         </ChipRow>
         {!research && (
@@ -202,7 +205,7 @@ export function AlternativesSection({ result, profile, active, minScore, aiAlter
           />
         )}
         {researching && <InlineLoading text={`Hledám výrobky přesně stejného druhu v zemi ${countryLabel(country)}…`} />}
-        {researchError && !researching ? <ErrorBox message={researchError} onRetry={() => setResearchError(null)} retryLabel="Zavřít" /> : null}
+        {researchError && !researching ? <ApiErrorBox message={researchError} kind={researchErrorKind} onRetry={runResearch} onDismiss={() => setResearchError(null)} /> : null}
         {research && (
           <View style={{ marginTop: spacing.sm }}>
             <Text style={[styles.productType, { color: t.muted }]}>
@@ -226,9 +229,7 @@ export function AlternativesSection({ result, profile, active, minScore, aiAlter
                 ))}
               </View>
             )}
-            <Text style={[styles.again, { color: t.muted }]} onPress={runResearch} suppressHighlighting>
-              Hledat znovu
-            </Text>
+            <Button title="Hledat znovu" variant="ghost" compact onPress={runResearch} style={{ marginTop: spacing.xs }} />
           </View>
         )}
       </View>

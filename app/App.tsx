@@ -3,6 +3,7 @@ import React from "react";
 import { ActivityIndicator, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { CompareProvider } from "./src/compare";
+import { ErrorBoundary } from "./src/components/ErrorBoundary";
 import { Navigation } from "./src/navigation";
 import { ProfileProvider, useProfile } from "./src/profile";
 import { useTheme } from "./src/theme";
@@ -23,12 +24,14 @@ function Root() {
 export default function App() {
   return (
     <SafeAreaProvider>
-      <ProfileProvider>
-        <CompareProvider>
-          <Root />
-          <StatusBar style="auto" />
-        </CompareProvider>
-      </ProfileProvider>
+      <ErrorBoundary>
+        <ProfileProvider>
+          <CompareProvider>
+            <Root />
+            <StatusBar style="auto" />
+          </CompareProvider>
+        </ProfileProvider>
+      </ErrorBoundary>
     </SafeAreaProvider>
   );
 }

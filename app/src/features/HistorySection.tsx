@@ -60,7 +60,7 @@ export function HistorySection({ status, insight, onStartDeep }: { status: Insig
           {history.map((e, i) => (
             <View key={i} style={styles.tlRow}>
               <View style={styles.tlRail}>
-                <View style={[styles.tlDot, { backgroundColor: IMPACT_COLORS[e.impact] }]} />
+                <View style={[styles.tlDot, { backgroundColor: IMPACT_COLORS[e.impact] ?? t.muted }]} />
                 {i < history.length - 1 && <View style={[styles.tlLine, { backgroundColor: t.border }]} />}
               </View>
               <View style={styles.tlBody}>

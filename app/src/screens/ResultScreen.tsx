@@ -3,7 +3,8 @@ import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React, { useEffect, useState } from "react";
 import { Alert, Image, Modal, Platform, Pressable, ScrollView, Share, StyleSheet, Text, TextInput, View } from "react-native";
 import { describeError } from "../api/client";
-import { ErrorBox } from "../components/ErrorBox";
+import { ApiErrorBox } from "../components/ApiErrorBox";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useLookup } from "../hooks/useLookup";
 import { pickLabelFromLibrary, takeLabelPhoto } from "../utils/image";
 import { verdictText } from "../api/verdicts";
@@ -13,7 +14,7 @@ import { Chip, ChipRow } from "../components/Chip";
 import { InlineLoading } from "../components/LoadingOverlay";
 import { PhotoViewer, photosOf } from "../components/PhotoViewer";
 import { ReasonRow } from "../components/ReasonRow";
-import { useCompare } from "../compare";
+import { MAX_COMPARE, useCompare } from "../compare";
 import { DtestRow } from "../components/DtestRow";
 import { ValueBadge } from "../components/ValueBadge";
 import { VerdictBadge } from "../components/VerdictBadge";
@@ -34,8 +35,12 @@ type Props = NativeStackScreenProps<RootStackParamList, "Result">;
 export function ResultScreen({ route, navigation }: Props) {
   const t = useTheme();
   const tone = useTone();
+  const insets = useSafeAreaInsets();
   const { profile } = useProfile();
-  const { result, insight: initialInsight, quick: initialQuick, fromAlternative, refine, reused } = route.params;
+  const { result, fromAlternative, refine, reused } = route.params;
+  // AI texts written in the other tone (Slušný režim switched since) are not shown; the opinion loads again, cached per tone
+  const initialInsight = route.params.insight && (!route.params.insight.tone || route.params.insight.tone === tone) ? route.params.insight : undefined;
+  const initialQuick = route.params.quick && (!route.params.quick.tone || route.params.quick.tone === tone) ? route.params.quick : undefined;
   const ai = useInsight(result, profile, { auto: !fromAlternative, initial: initialInsight, initialQuick, refine });
   // product may be replaced by the insight (composition found online)
   const product = ai.product;
@@ -54,7 +59,10 @@ export function ResultScreen({ route, navigation }: Props) {
     if (inBasket) compare.update(ai.shownResult);
   }, [inBasket, ai.shownResult, compare]);
   const toCompare = () => {
-    if (!inBasket) compare.add(ai.shownResult);
+    if (!inBasket && !compare.add(ai.shownResult)) {
+      setPhotoError(`Do porovnání se vejdou nejvýš ${MAX_COMPARE} výrobky. Nějaký odeberte na záložce Porovnat.`);
+      return;
+    }
     navigation.navigate("Tabs", { screen: "Compare" });
   };
   // a further photo of the same product (back label, ingredients, front with the name)
@@ -95,7 +103,9 @@ export function ResultScreen({ route, navigation }: Props) {
 
   const share = () => {
     const v = verdictText(assessment.verdict, tone, assessment.labelSet);
-    const detail = insight?.headline ?? assessment.reasons.slice(0, 2).map((r) => r.text).join(" ");
+    // the AI headline only in the tone the user has on now (sharing is what Slušný režim is for)
+    const aiHeadline = insight && (!insight.tone || insight.tone === tone) ? insight.headline : undefined;
+    const detail = aiHeadline ?? assessment.reasons.slice(0, 2).map((r) => r.text).join(" ");
     Share.share({ message: `${product.name} – ${v.label}. ${detail}`.trim() }).catch(() => undefined);
   };
 
@@ -194,13 +204,13 @@ export function ResultScreen({ route, navigation }: Props) {
           />
           {supplement.busy ? <InlineLoading text={supplement.busyText} /> : null}
           {supplement.error || photoError ? (
-            <ErrorBox
+            <ApiErrorBox
               message={supplement.error ?? photoError ?? ""}
-              onRetry={() => {
+              kind={supplement.error ? supplement.errorKind : "other"}
+              onDismiss={() => {
                 supplement.clearError();
                 setPhotoError(null);
               }}
-              retryLabel="Zavřít"
             />
           ) : null}
         </View>
@@ -223,10 +233,12 @@ export function ResultScreen({ route, navigation }: Props) {
             quickStatus={ai.quickStatus}
             quick={ai.quick}
             quickError={ai.quickError}
+            quickErrorKind={ai.quickErrorKind}
             onRetryQuick={ai.loadQuick}
             deepStatus={ai.status}
             insight={insight}
             deepError={ai.error}
+            deepErrorKind={ai.errorKind}
             meta={ai.meta}
             onStartDeep={ai.loadDeep}
           />
@@ -341,7 +353,7 @@ export function ResultScreen({ route, navigation }: Props) {
 
       <Modal visible={reportOpen} transparent animationType="slide" onRequestClose={() => setReportOpen(false)}>
         <Pressable style={[styles.backdrop, { backgroundColor: t.overlay }]} onPress={() => setReportOpen(false)}>
-          <Pressable style={[styles.sheet, { backgroundColor: t.card }]} onPress={() => undefined}>
+          <Pressable style={[styles.sheet, { backgroundColor: t.card, paddingBottom: spacing.xxl + insets.bottom }]} onPress={() => undefined}>
             <Text style={[styles.sheetTitle, { color: t.text }]}>Co je špatně?</Text>
             {reportSaved ? (
               <Text style={[styles.body, { color: t.success }]}>Uloženo, odešleme ve fázi 1.</Text>

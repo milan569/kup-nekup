@@ -360,6 +360,7 @@ export async function runToolLoop<T>(o: ToolLoopOptions<T>): Promise<{ submitted
   const hits = new Map<string, SourceHit>();
   let nudged = false;
   let webNudged = false;
+  let searched = false;
 
   for (let turn = 0; turn < o.maxTurns; turn++) {
     const res = await c.beta.messages.create({
@@ -375,26 +376,29 @@ export async function runToolLoop<T>(o: ToolLoopOptions<T>): Promise<{ submitted
       fallbacks: "default",
     } as Anthropic.Beta.Messages.MessageCreateParamsNonStreaming);
 
-    recordUsage(res.usage, INSIGHT_MODEL, o.submitName);
+    // `res.model`: a safety fallback may have answered from another model (priced differently)
+    recordUsage(res.usage, res.model || INSIGHT_MODEL, o.submitName);
     if (res.stop_reason === "refusal") throw new ClaudeRefusedError();
     collectHits(res.content, hits);
+    if ((res.usage?.server_tool_use?.web_search_requests ?? 0) > 0) searched = true;
 
     const input = findSubmit(res.content, o.submitName);
-    if (input !== undefined && o.requireWeb && hits.size === 0 && !webNudged) {
+    // the model answered from memory only (no search at all – an empty search result is not its fault)
+    if (input !== undefined && o.requireWeb && !searched && hits.size === 0 && !webNudged) {
       // the model answered from memory only – send it back to check the web first
       webNudged = true;
-      const toolUse = res.content.find((b) => b.type === "tool_use" && b.name === o.submitName) as { id: string } | undefined;
       messages.push({ role: "assistant", content: res.content as Anthropic.Beta.Messages.BetaContentBlockParam[] });
+      // every tool_use block needs its tool_result, or the API rejects the next turn
       messages.push({
         role: "user",
-        content: [
-          {
-            type: "tool_result",
-            tool_use_id: toolUse!.id,
+        content: res.content
+          .filter((b): b is Anthropic.Beta.Messages.BetaToolUseBlock => b.type === "tool_use")
+          .map((b) => ({
+            type: "tool_result" as const,
+            tool_use_id: b.id,
             is_error: true,
             content: "Nejdřív ověř výrobek nebo výrobce aspoň jedním webovým vyhledáváním, pak odevzdej znovu se zdroji.",
-          },
-        ],
+          })),
       });
       continue;
     }
@@ -637,6 +641,8 @@ export function combine(
     }
   }
   if (rule.hardRules.length && rule.verdict !== "nevime" && isBetter(target, rule.verdict)) target = rule.verdict;
+  // a list copied from the web is not the label: never "poklad" on that basis
+  if (target === "poklad" && product.compositionSource) target = "urcite_kup";
   if (target === rule.verdict) return rule;
 
   const fromUnknown = rule.verdict === "nevime";
@@ -644,7 +650,8 @@ export function combine(
     ? { kind: "neutral", text: `Verdikt podle: ${label} (pravidla neměla dost údajů). ${insight.headline}` }
     : {
         kind: isBetter(target, rule.verdict) ? "positive" : "negative",
-        text: `${label} ${isBetter(target, rule.verdict) ? "zlepšil" : "zhoršil"} verdikt: ${insight.headline}`,
+        // no headline here: the AI card shows it, and this reason is stored with the product whatever tone is on later
+        text: `${label} ${isBetter(target, rule.verdict) ? "zlepšil" : "zhoršil"} verdikt (viz karta Posudek AI).`,
       };
   const mid = Math.round(((VERDICTS[target].minScore ?? 0) + (VERDICTS[target].maxScore ?? 100)) / 2);
   return {
@@ -655,6 +662,13 @@ export function combine(
     reasons: [reason, ...rule.reasons],
     aiAdjusted: { from: rule.verdict, to: target },
   };
+}
+
+/** The verdict the user will see for this product (rules + AI): the bar every alternative has to clear. */
+export function alternativesBaseline(product: ProductData, rule: Assessment, insight: Pick<Insight, "verdict" | "confidence" | "headline">): Verdict {
+  const shown = combine(product, rule, insight).verdict;
+  if (shown !== "nevime") return shown;
+  return insight.verdict !== "nevime" ? insight.verdict : rule.verdict;
 }
 
 export async function researchInsight(product: ProductData, rule: Assessment, profile: UserProfile = EMPTY_PROFILE): Promise<Insight> {
@@ -676,8 +690,7 @@ export async function researchInsight(product: ProductData, rule: Assessment, pr
       console.warn("[insight] alternatives enrichment failed:", (err as Error).message);
       return insight.alternatives!;
     });
-    const baseline = insight.verdict !== "nevime" ? insight.verdict : rule.verdict;
-    const { kept, dropped } = keepNotWorse(enriched, baseline);
+    const { kept, dropped } = keepNotWorse(enriched, alternativesBaseline(product, rule, insight));
     insight.alternatives = kept;
     if (dropped) insight.alternativesDropped = dropped;
   }
@@ -809,6 +822,7 @@ Vyjdi z něj a uprav ho jen tam, kde nové údaje (složení, nutriční hodnoty
     value: value ?? previous?.value,
     dtest: dtestRef(sources, { summary: submitted.opinion }) ?? previous?.dtest,
     refined: previous ? true : undefined,
+    tone: profile.tone ?? "humor",
     generatedAt: new Date().toISOString(),
   };
 }

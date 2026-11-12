@@ -28,8 +28,8 @@ import type {
 import { EMPTY_PROFILE } from "./types";
 import { Cache, TTL, memoryStore } from "./cache";
 import { ApiError } from "./errors";
-import { applyValue, combine, quickInsight as runQuickInsight, researchInsight } from "./insight";
-import { ENRICH_VERSION, enrichAlternatives } from "./alternatives-enrich";
+import { alternativesBaseline, applyValue, combine, quickInsight as runQuickInsight, researchInsight } from "./insight";
+import { ENRICH_VERSION, enrichAlternatives, keepNotWorse } from "./alternatives-enrich";
 import { MAX_COMPARE_ITEMS, compareKey, deepCompare, quickCompare } from "./compare";
 import { marketOf, researchAlternatives, type AlternativesResearch } from "./alternatives-research";
 import { OffUnavailableError, fetchByEan, isInStoreCode, mapLimit, searchProducts } from "./off";
@@ -261,12 +261,13 @@ export async function lookupPhoto(body: PhotoLookupRequest): Promise<ProductResu
 
   let product = productFromPhoto(extraction, parsed.imageBase64);
   let path = "photo";
-  if (extraction.barcode && /^\d{8,14}$/.test(extraction.barcode) && !isInStoreCode(extraction.barcode)) {
-    const cached = await cache.get<ProductData>(ns, extraction.barcode, TTL.product);
-    const known = cached ?? (await fetchByEan(extraction.barcode).catch(() => undefined))?.product;
+  const photoCode = product.ean; // digits only (productFromPhoto), or undefined
+  if (photoCode && !isInStoreCode(photoCode)) {
+    const cached = await cache.get<ProductData>(ns, photoCode, TTL.product);
+    const known = cached ?? (await fetchByEan(photoCode).catch(() => undefined))?.product;
     if (known) {
       product = mergePhotoIntoProduct(known, product);
-      await cache.set(ns, extraction.barcode, product);
+      await cache.set(ns, photoCode, product);
       path = "photo+off";
     }
   }
@@ -277,7 +278,6 @@ export async function lookupPhoto(body: PhotoLookupRequest): Promise<ProductResu
     product = merged;
     path = "photo-supplement";
     // next scan of the same code finds the richer product (only when the photo shows no other code)
-    const photoCode = extraction.barcode?.trim();
     if (base.ean && (!photoCode || photoCode === base.ean)) await cache.set(ns, base.ean, product);
   }
   await cache.set(ns, product.id, product);
@@ -303,7 +303,19 @@ export async function lookupManual(body: ManualLookupRequest): Promise<ProductRe
   const started = Date.now();
   const parsed = ManualBody.parse(body);
   const profile = toProfile(parsed.profile);
-  const key = `${parsed.name}|${parsed.brand ?? ""}|${parsed.description ?? ""}|${profile.diets.join(",")}|${profile.avoid.join(",")}`.toLowerCase();
+  // everything the prompt sees (assessManual) is part of the key: tone, countries, allergies, diets, avoid list
+  const key = [
+    parsed.name,
+    parsed.brand ?? "",
+    parsed.description ?? "",
+    profile.tone ?? "humor",
+    [...profile.countries].sort().join(","),
+    [...profile.allergens].sort().join(","),
+    [...profile.diets].sort().join(","),
+    [...profile.avoid].sort().join(","),
+  ]
+    .join("|")
+    .toLowerCase();
   const cached = await cache.get<ProductResult>("manual", key, TTL.manufacturer);
   if (cached) return { ...cached, timing: { ms: Date.now() - started, path: "manual-cache" } };
   const res = await assessManual(parsed.name, parsed.brand, parsed.description, profile);
@@ -335,8 +347,10 @@ export async function search(q: string, countries: string[]): Promise<SearchResp
 const quickInFlight = new Map<string, Promise<QuickInsight>>();
 const insightInFlight = new Map<string, Promise<Insight>>();
 
-const quickKey = (productId: string, tone: string | undefined) => `${productId}|${tone ?? "humor"}|${ref().version}|q${QUICK_VERSION}`;
-const insightKey = (productId: string, tone: string) => `${productId}|${tone}|${ref().version}|v${INSIGHT_VERSION}`;
+/** The briefs name the user's countries and stores (prices, where alternatives are sold): another market is another answer. */
+const marketSig = (profile: UserProfile) => `${[...profile.countries].sort().join(",")}@${[...profile.stores].sort().join(",")}`;
+const quickKey = (productId: string, profile: UserProfile) => `${productId}|${profile.tone ?? "humor"}|${marketSig(profile)}|${ref().version}|q${QUICK_VERSION}`;
+const insightKey = (productId: string, profile: UserProfile) => `${productId}|${profile.tone ?? "humor"}|${marketSig(profile)}|${ref().version}|v${INSIGHT_VERSION}`;
 
 export async function quickInsight(body: InsightRequest): Promise<QuickInsightResponse> {
   const started = Date.now();
@@ -345,7 +359,7 @@ export async function quickInsight(body: InsightRequest): Promise<QuickInsightRe
   const rule = parsed.assessment as unknown as Assessment;
   const profile = toProfile(parsed.profile);
   if (product.id === "photo:none") throw new ApiError("http", "Na fotce nebyl rozpoznán žádný výrobek.", 422);
-  const key = quickKey(product.id, profile.tone);
+  const key = quickKey(product.id, profile);
 
   const finish = (quick: QuickInsight, cached: boolean): QuickInsightResponse => {
     const combined = applyValue(combine(product, rule, quick, "Rychlý názor AI"), quick.value, quick.confidence, profile.tone);
@@ -373,7 +387,7 @@ export async function insight(body: InsightRequest): Promise<InsightResponse> {
   const profile = toProfile(parsed.profile);
   const tone = profile.tone ?? "humor";
   if (product0.id === "photo:none") throw new ApiError("http", "Na fotce nebyl rozpoznán žádný výrobek.", 422);
-  const key = insightKey(product0.id, tone);
+  const key = insightKey(product0.id, profile);
 
   // composition found online → the rules can judge it; the AI then nudges by one step
   const finish = async (ins: Insight, cached: boolean): Promise<InsightResponse> => {
@@ -390,12 +404,19 @@ export async function insight(body: InsightRequest): Promise<InsightResponse> {
       });
     }
     // price/value comes from the quick opinion (it always runs first); the deep tool schema has no room for it
-    const quick = ins.value ? undefined : await cache.get<QuickInsight>("quick", quickKey(product0.id, tone), TTL.insight);
+    const quick = ins.value ? undefined : await cache.get<QuickInsight>("quick", quickKey(product0.id, profile), TTL.insight);
     const value = ins.value ?? quick?.value;
     const valueConfidence = ins.value ? ins.confidence : (quick?.confidence ?? "low");
+    const assessment = applyValue(combine(product, rule, ins), value, valueConfidence, tone);
+    let shown: Insight = value && !ins.value ? { ...ins, value } : ins;
+    // alternatives are there to buy better: nothing at or below the verdict on screen
+    if (shown.alternatives?.length && assessment.verdict !== "nevime") {
+      const { kept, dropped } = keepNotWorse(shown.alternatives, assessment.verdict);
+      if (dropped) shown = { ...shown, alternatives: kept, alternativesDropped: (shown.alternativesDropped ?? 0) + dropped };
+    }
     return {
-      insight: value && !ins.value ? { ...ins, value } : ins,
-      assessment: applyValue(combine(product, rule, ins), value, valueConfidence, tone),
+      insight: shown,
+      assessment,
       product: product !== product0 ? product : undefined,
       cached,
       ms: Date.now() - started,
@@ -414,11 +435,23 @@ export async function insight(body: InsightRequest): Promise<InsightResponse> {
     return finish(cachedInsight, true);
   }
   if (cachedInsight) {
-    // researched before the alternatives got photos and codes: add them once (a few seconds)
-    const alternatives = await enrichAlternatives(cachedInsight.alternatives!, profile).catch(() => cachedInsight.alternatives!);
-    const updated: Insight = { ...cachedInsight, alternatives, enrichVersion: ENRICH_VERSION };
-    await cache.set("insight", key, updated);
-    return finish(updated, true);
+    // researched before the alternatives got photos and codes: add them once (a few seconds);
+    // when the database is down, show the stored list now and try again next time
+    try {
+      const enriched = await enrichAlternatives(cachedInsight.alternatives!, profile);
+      const { kept, dropped } = keepNotWorse(enriched, alternativesBaseline(product0, rule0, cachedInsight));
+      const updated: Insight = {
+        ...cachedInsight,
+        alternatives: kept,
+        alternativesDropped: (cachedInsight.alternativesDropped ?? 0) + dropped,
+        enrichVersion: ENRICH_VERSION,
+      };
+      await cache.set("insight", key, updated);
+      return finish(updated, true);
+    } catch (err) {
+      console.warn("[insight] re-enrichment failed, showing the stored alternatives:", (err as Error).message);
+      return finish(cachedInsight, true);
+    }
   }
 
   let pending = insightInFlight.get(key);
@@ -440,7 +473,7 @@ export async function alternativesResearch(body: AlternativesResearchRequest): P
   const assessment = parsed.assessment as unknown as Assessment;
   const profile = toProfile(parsed.profile);
   const country = marketOf(parsed.country).code;
-  const key = `${product.id}|${country}|${profile.tone ?? "humor"}|${ref().version}|a${ALT_RESEARCH_VERSION}`;
+  const key = `${product.id}|${country}|${profile.tone ?? "humor"}|${marketSig(profile)}|${ref().version}|a${ALT_RESEARCH_VERSION}`;
   const finish = (r: AlternativesResearch, cached: boolean): AlternativesResearchResponse => ({ ...r, cached, ms: Date.now() - started });
   const cached = await cache.get<AlternativesResearch>("alt-research", key, TTL.insight);
   if (cached) return finish(cached, true);
@@ -456,7 +489,7 @@ export async function compareQuick(body: CompareRequest): Promise<CompareRespons
   const parsed = CompareBody.parse(body);
   const items = parsed.items as unknown as CompareItem[];
   const profile = toProfile(parsed.profile);
-  const key = compareKey(items, profile.tone, "quick", `${ref().version}|c${COMPARE_VERSION}`);
+  const key = compareKey(items, profile.tone, "quick", `${marketSig(profile)}|${ref().version}|c${COMPARE_VERSION}`);
   const cached = await cache.get<CompareResult>("compare", key, TTL.insight);
   if (cached) return { result: cached, cached: true, ms: Date.now() - started };
   const res = await quickCompare(items, profile);
@@ -470,20 +503,26 @@ export async function compare(body: CompareRequest): Promise<CompareResponse> {
   const items = parsed.items as unknown as CompareItem[];
   const profile = toProfile(parsed.profile);
   const tone = profile.tone ?? "humor";
-  const key = compareKey(items, tone, "deep", `${ref().version}|c${COMPARE_VERSION}|v${INSIGHT_VERSION}`);
+  const key = compareKey(items, tone, "deep", `${marketSig(profile)}|${ref().version}|c${COMPARE_VERSION}|v${INSIGHT_VERSION}`);
   const cached = await cache.get<CompareResult>("compare", key, TTL.insight);
   if (cached) return { result: cached, cached: true, ms: Date.now() - started };
   // every product gets its full research first (free when the user already ran it), two at a time
-  const insights = await mapLimit(items, 2, async (it) => {
-    const ikey = insightKey(it.product.id, tone);
+  // `insights[i]` must belong to `items[i]`: mapLimit answers in completion order, so fill by index
+  const insights: (Insight | undefined)[] = items.map(() => undefined);
+  await mapLimit(items.map((it, i) => ({ it, i })), 2, async ({ it, i }) => {
+    const ikey = insightKey(it.product.id, profile);
     const known = await cache.get<Insight>("insight", ikey, TTL.insight);
-    if (known) return known;
+    if (known) {
+      insights[i] = known;
+      return true;
+    }
     const ins = await researchInsight(it.product, it.assessment, profile).catch((err) => {
       console.warn("[compare] research failed for", it.product.name, (err as Error).message);
       return undefined;
     });
     if (ins) await cache.set("insight", ikey, ins);
-    return ins;
+    insights[i] = ins;
+    return true;
   });
   const res = await deepCompare(items, insights, profile);
   await cache.set("compare", key, res);

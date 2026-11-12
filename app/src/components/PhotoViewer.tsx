@@ -55,8 +55,9 @@ export function PhotoViewer({ visible, onClose, images, title, startIndex = 0 }:
     return () => clearTimeout(t);
   }, [visible, startIndex, width]);
 
+  // native: at the end of the swipe; web: react-native-web emits only onScroll (also fired when a swipe settles)
   const onScrollEnd = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
-    setIndex(Math.round(e.nativeEvent.contentOffset.x / Math.max(1, width)));
+    setIndex(Math.min(images.length - 1, Math.max(0, Math.round(e.nativeEvent.contentOffset.x / Math.max(1, width)))));
   };
 
   const pageHeight = height - insets.top - insets.bottom - 120;
@@ -80,7 +81,8 @@ export function PhotoViewer({ visible, onClose, images, title, startIndex = 0 }:
           pagingEnabled
           showsHorizontalScrollIndicator={false}
           onMomentumScrollEnd={onScrollEnd}
-          onScrollEndDrag={Platform.OS === "web" ? onScrollEnd : undefined}
+          onScroll={Platform.OS === "web" ? onScrollEnd : undefined}
+          scrollEventThrottle={64}
           style={{ flex: 1 }}
         >
           {images.map((img) => (

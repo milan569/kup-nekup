@@ -1,5 +1,6 @@
 import { ImageManipulator, SaveFormat, manipulateAsync } from "expo-image-manipulator";
 import * as ImagePicker from "expo-image-picker";
+import { Image } from "react-native";
 
 /**
  * Claude reads images up to about 1568 px on the long side; anything larger is
@@ -14,13 +15,18 @@ function resizeFor(width: number, height: number): { width: number } | { height:
   return width >= height ? { width: MAX_LONG_EDGE } : { height: MAX_LONG_EDGE };
 }
 
+/** Pixel size of a local image without decoding it onto a canvas (a 24 MP gallery photo can exceed Safari's canvas limit). */
+function imageSize(uri: string): Promise<{ width: number; height: number }> {
+  return new Promise((resolve, reject) => Image.getSize(uri, (width, height) => resolve({ width, height }), reject));
+}
+
 /** Long edge ≤ 1568 px, JPEG 0.82, base64 without the data: prefix. */
 export async function prepareLabelImage(uri: string): Promise<string> {
   try {
-    const original = await ImageManipulator.manipulate(uri).renderAsync();
-    const resize = resizeFor(original.width, original.height);
+    const { width, height } = await imageSize(uri);
+    const resize = resizeFor(width, height);
     const context = ImageManipulator.manipulate(uri);
-    const ref = resize ? await context.resize(resize).renderAsync() : original;
+    const ref = await (resize ? context.resize(resize) : context).renderAsync();
     const result = await ref.saveAsync({ compress: JPEG_QUALITY, format: SaveFormat.JPEG, base64: true });
     if (result.base64) return stripPrefix(result.base64);
   } catch {

@@ -10,16 +10,32 @@ const PREFIX = "kupnekup-cache:";
 export function platformCacheStore(): CacheStore {
   return {
     async get(key) {
-      return (await AsyncStorage.getItem(PREFIX + key)) ?? undefined;
+      try {
+        return (await AsyncStorage.getItem(PREFIX + key)) ?? undefined;
+      } catch {
+        return undefined;
+      }
     },
     async set(key, value) {
-      await AsyncStorage.setItem(PREFIX + key, value);
+      try {
+        await AsyncStorage.setItem(PREFIX + key, value);
+      } catch (err) {
+        console.warn("[cache] write failed:", (err as Error).message);
+      }
     },
     async delete(key) {
-      await AsyncStorage.removeItem(PREFIX + key);
+      try {
+        await AsyncStorage.removeItem(PREFIX + key);
+      } catch {
+        // ignore
+      }
     },
     async keys() {
-      return (await AsyncStorage.getAllKeys()).filter((k) => k.startsWith(PREFIX)).map((k) => k.slice(PREFIX.length));
+      try {
+        return (await AsyncStorage.getAllKeys()).filter((k) => k.startsWith(PREFIX)).map((k) => k.slice(PREFIX.length));
+      } catch {
+        return [];
+      }
     },
   };
 }

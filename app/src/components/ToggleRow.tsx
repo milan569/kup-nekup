@@ -10,7 +10,7 @@ export function ToggleRow({ label, value, onChange, hint }: { label: string; val
         <Text style={[styles.label, { color: t.text }]}>{label}</Text>
         {hint ? <Text style={[styles.hint, { color: t.muted }]}>{hint}</Text> : null}
       </View>
-      <Switch value={value} onValueChange={onChange} trackColor={{ true: t.primary }} />
+      <Switch value={value} onValueChange={onChange} trackColor={{ true: t.primary }} accessibilityLabel={label} accessibilityHint={hint} />
     </View>
   );
 }

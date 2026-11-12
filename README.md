@@ -103,6 +103,7 @@ Při změně datových tabulek v `app/src/core/data/` se cache produktů obnoví
 - **Kredity z Maxu.** Plán Claude Max dává každý měsíc API kredity (Max 5x 100 USD, Max 20x 200 USD): na claude.ai v Settings → Billing → API credits → Link organization propojte svou organizaci v Console. Kredity se čerpají před koupenými a koncem cyklu propadají.
 - **Automatické dobíjení** v Console nechte vypnuté; po vyčerpání kreditu API jen přestane odpovídat. Měsíční strop útraty nastavte v Console na stránce Billing.
 - **Denní strop v aplikaci** (Profil → Claude API klíč, výchozí 5 USD): po dosažení odhadu útraty za den se AI funkce zastaví do půlnoci. Počítadlo útraty je odhad z ceníku podle skutečně spotřebovaných tokenů; přesnou částku ukazuje Console.
+- **Posudky AI jsou uložené podle tónu a trhu.** Texty vzniklé ve vtipném režimu se po zapnutí Slušného režimu nezobrazují (a naopak): názor se načte znovu, z cache zdarma, jinak rychlý názor za pár centů. Stejně tak změna zemí nebo řetězců v Profilu znamená nový posudek, protože alternativy a ceny se hledají pro váš trh.
 
 | Operace | Kdy | Odhad za jeden produkt |
 |---|---|---|
@@ -128,6 +129,8 @@ Odhady vycházejí z ceníku Claude Opus 5.5 a webového vyhledávání. Levněj
 | Po týdnu nepoužívání chybí klíč i historie | Safari maže úložiště webové aplikace nepoužívané 7 dní. Vložte klíč znovu. |
 | Kamera nejde ve webové aplikaci | Nastavení → Safari → Kamera (u aplikace na ploše Nastavení → Kup / Nekup) → Povolit; nebo použijte „Nahrát z galerie“, které umí i vyfotit. |
 | Na ploše je stará verze | Zavřete aplikaci (přejetím nahoru v přepínači) a otevřete znovu; při nasazení trvá 2–4 minuty, než je nová verze online. |
+| „Něco se pokazilo“ s tlačítkem Načíst znovu | Chyba při vykreslení, nejčastěji starý záznam v historii. Načtěte znovu; když se to opakuje u jednoho výrobku, smažte ho v Historii podržením prstu. |
+| „Kamera nejde spustit“ | Kameru drží jiná aplikace nebo stream po odemknutí nenaběhl. Zavřete ostatní aplikace s kamerou nebo klepněte na Zkusit znovu; fotku lze vždy nahrát z galerie. |
 
 ## 6. Známá omezení
 

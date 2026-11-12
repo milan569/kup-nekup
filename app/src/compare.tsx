@@ -48,14 +48,16 @@ export function CompareProvider({ children }: { children: React.ReactNode }) {
     if (loaded.current) writeJson(KEY, items).catch(() => undefined);
   }, [items]);
 
+  // the latest basket, readable synchronously: add() must answer before React re-renders
+  const itemsRef = useRef(items);
+  itemsRef.current = items;
   const add = useCallback((result: ProductResult): boolean => {
-    let ok = false;
-    setItems((prev) => {
-      if (prev.length >= MAX_COMPARE || prev.some((r) => r.product.id === result.product.id)) return prev;
-      ok = true;
-      return [...prev, result];
-    });
-    return ok;
+    const prev = itemsRef.current;
+    if (prev.length >= MAX_COMPARE || prev.some((r) => r.product.id === result.product.id)) return false;
+    const next = [...prev, result];
+    itemsRef.current = next;
+    setItems(next);
+    return true;
   }, []);
   const remove = useCallback((productId: string) => setItems((prev) => prev.filter((r) => r.product.id !== productId)), []);
   const update = useCallback(

@@ -40,9 +40,23 @@ function rollover(s: SpendState): SpendState {
   return { ...s, day: today(), dayUsd: 0, dayCalls: 0 };
 }
 
+/** a finite number, or the fallback: a corrupted store must never poison the counters with NaN */
+function num(v: unknown, fallback: number): number {
+  return typeof v === "number" && Number.isFinite(v) ? v : fallback;
+}
+
 export async function loadSpend(): Promise<SpendState> {
   const stored = await readJson<Partial<SpendState> | null>(KEY, null);
-  state = rollover({ ...fresh(), ...(stored ?? {}) });
+  const f = fresh();
+  state = rollover({
+    ...f,
+    ...(stored ?? {}),
+    usd: num(stored?.usd, 0),
+    calls: num(stored?.calls, 0),
+    dayUsd: num(stored?.dayUsd, 0),
+    dayCalls: num(stored?.dayCalls, 0),
+    dailyCapUsd: num(stored?.dailyCapUsd, f.dailyCapUsd),
+  });
   return state;
 }
 
@@ -58,14 +72,22 @@ async function persist(next: SpendState): Promise<void> {
   for (const fn of listeners) fn(next);
 }
 
-export async function addSpend(usd: number): Promise<void> {
-  const s = rollover(state ?? (await loadSpend()));
-  await persist({ ...s, usd: s.usd + usd, calls: s.calls + 1, dayUsd: s.dayUsd + usd, dayCalls: s.dayCalls + 1 });
+// usage events can arrive together (opinion + translation); write them one after another
+let queue: Promise<void> = Promise.resolve();
+
+export function addSpend(usd: number): Promise<void> {
+  const delta = Number.isFinite(usd) && usd > 0 ? usd : 0;
+  const job = queue.then(async () => {
+    const s = rollover(state ?? (await loadSpend()));
+    await persist({ ...s, usd: s.usd + delta, calls: s.calls + 1, dayUsd: s.dayUsd + delta, dayCalls: s.dayCalls + 1 });
+  });
+  queue = job.catch(() => undefined);
+  return job;
 }
 
 export async function setDailyCap(usd: number): Promise<void> {
   const s = state ?? (await loadSpend());
-  await persist({ ...s, dailyCapUsd: Math.max(0, usd) });
+  await persist({ ...s, dailyCapUsd: Math.max(0, num(usd, 0)) });
 }
 
 export async function resetSpend(): Promise<void> {

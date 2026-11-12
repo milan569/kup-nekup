@@ -11,17 +11,33 @@ const store = createStore("kupnekup-cache", "kv");
 export function platformCacheStore(): CacheStore {
   return {
     async get(key) {
-      const v = await get<string>(key, store);
-      return typeof v === "string" ? v : undefined;
+      try {
+        const v = await get<string>(key, store);
+        return typeof v === "string" ? v : undefined;
+      } catch {
+        return undefined;
+      }
     },
     async set(key, value) {
-      await set(key, value, store);
+      try {
+        await set(key, value, store);
+      } catch (err) {
+        console.warn("[cache] write failed:", (err as Error).message);
+      }
     },
     async delete(key) {
-      await del(key, store);
+      try {
+        await del(key, store);
+      } catch {
+        // ignore
+      }
     },
     async keys() {
-      return (await keys<string>(store)).filter((k): k is string => typeof k === "string");
+      try {
+        return (await keys<string>(store)).filter((k): k is string => typeof k === "string");
+      } catch {
+        return [];
+      }
     },
   };
 }

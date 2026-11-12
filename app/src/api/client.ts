@@ -37,10 +37,16 @@ import type {
 
 export { ApiError, describeError, hasApiKey, keyFormatProblem };
 
+/** "auth" = no Claude key or a rejected one: screens then offer the key screen instead of a retry. */
+export type ErrorKind = "auth" | "other";
+export function errorKindOf(err: unknown): ErrorKind {
+  return err instanceof ApiError && err.kind === "auth" ? "auth" : "other";
+}
+
 const cache = new Cache(platformCacheStore());
 lookup.initLookup(cache);
 setUsageListener((e) => {
-  void addSpend(e.usd);
+  addSpend(e.usd).catch((err) => console.warn("[spend] write failed:", (err as Error).message));
 });
 setSpendGuard(spendGuardMessage);
 // old cache entries go after start-up, not on the critical path

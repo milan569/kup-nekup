@@ -15,7 +15,7 @@ import { webSearchOnce, type WebHit } from "./websearch";
  */
 
 /** bump when enrichment learns something new; cached insights are re-enriched once */
-export const ENRICH_VERSION = 3;
+export const ENRICH_VERSION = 4; // 4: baseline = the verdict shown (rules + AI), not the raw AI verdict
 
 export { eanFromOffUrl };
 

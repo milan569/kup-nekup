@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { LayoutAnimation, Platform } from "react-native";
-import { api, describeError } from "../api/client";
+import { api, describeError, errorKindOf, type ErrorKind } from "../api/client";
 import type { Assessment, Insight, ProductData, ProductResult, QuickInsight, UserProfile } from "../api/types";
 import type { RefineParams } from "../navigationTypes";
 import { addToHistory, updateHistoryInsight, updateHistoryQuick } from "../storage/history";
@@ -33,11 +33,13 @@ export function useInsight(result: ProductResult, profile: UserProfile, opts: Op
   const [status, setStatus] = useState<InsightStatus>(opts.initial ? "done" : "idle");
   const [insight, setInsight] = useState<Insight | undefined>(opts.initial);
   const [error, setError] = useState<string | null>(null);
+  const [errorKind, setErrorKind] = useState<ErrorKind | null>(null);
   const [meta, setMeta] = useState<{ cached: boolean; ms: number } | null>(null);
   // quick
   const [quickStatus, setQuickStatus] = useState<InsightStatus>(opts.initialQuick ? "done" : "idle");
   const [quick, setQuick] = useState<QuickInsight | undefined>(opts.initialQuick);
   const [quickError, setQuickError] = useState<string | null>(null);
+  const [quickErrorKind, setQuickErrorKind] = useState<ErrorKind | null>(null);
   // shown data
   const [assessment, setAssessment] = useState<Assessment>(result.assessment);
   const [product, setProduct] = useState<ProductData>(result.product);
@@ -68,6 +70,7 @@ export function useInsight(result: ProductResult, profile: UserProfile, opts: Op
     } catch (err) {
       if (!mounted.current) return;
       setQuickError(describeError(err));
+      setQuickErrorKind(errorKindOf(err));
       setQuickStatus("error");
     } finally {
       quickInFlight.current = false;
@@ -95,6 +98,7 @@ export function useInsight(result: ProductResult, profile: UserProfile, opts: Op
     } catch (err) {
       if (!mounted.current) return;
       setError(describeError(err));
+      setErrorKind(errorKindOf(err));
       setStatus("error");
     } finally {
       deepInFlight.current = false;
@@ -159,12 +163,14 @@ export function useInsight(result: ProductResult, profile: UserProfile, opts: Op
     status,
     insight,
     error,
+    errorKind,
     meta,
     loadDeep: startDeep,
     // quick
     quickStatus,
     quick,
     quickError,
+    quickErrorKind,
     loadQuick: retryQuick,
     ensureQuick,
     // shown

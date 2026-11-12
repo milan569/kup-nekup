@@ -60,7 +60,11 @@ export function HistoryScreen() {
 
   const open = (row: Row) => {
     if (row.kind === "product") {
-      navigation.navigate("Result", { result: row.entry.result, insight: row.entry.insight, quick: row.entry.quick });
+      // AI texts written in the other tone stay stored but are not shown; the opinion loads again (cached per tone)
+      const e = row.entry;
+      const insight = !e.insight?.tone || e.insight.tone === tone ? e.insight : undefined;
+      const quick = !e.quick?.tone || e.quick.tone === tone ? e.quick : undefined;
+      navigation.navigate("Result", { result: e.result, insight, quick });
     } else {
       navigation.navigate("Tabs", { screen: "Compare", params: { comparisonId: row.id } });
     }

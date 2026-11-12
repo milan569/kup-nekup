@@ -2,7 +2,7 @@ import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React, { useState } from "react";
 import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import { Button } from "../components/Button";
-import { ErrorBox } from "../components/ErrorBox";
+import { ApiErrorBox } from "../components/ApiErrorBox";
 import { LoadingOverlay } from "../components/LoadingOverlay";
 import { CollectBanner } from "../components/CollectBanner";
 import { useLookup } from "../hooks/useLookup";
@@ -49,7 +49,7 @@ export function ManualEntryScreen({ route }: Props) {
           multiline
           style={[...inputStyle, styles.multiline]}
         />
-        {lookup.error ? <ErrorBox message={lookup.error} onRetry={lookup.retry} /> : null}
+        {lookup.error ? <ApiErrorBox message={lookup.error} kind={lookup.errorKind} onRetry={lookup.retry} onDismiss={lookup.clearError} /> : null}
         <View style={{ marginTop: spacing.lg }}>
           <Button title="Posoudit" onPress={submit} disabled={!canSubmit} />
         </View>

@@ -141,6 +141,12 @@ export async function extractFromPhoto(
 }
 
 /** "" (the schema's "unknown") → undefined */
+/** The model sometimes copies a barcode with spaces ("4 056489 605195"); keep digits only, or nothing. */
+export function barcodeDigits(v: string | null | undefined): string | undefined {
+  const digits = (v ?? "").replace(/\D/g, "");
+  return /^\d{8,14}$/.test(digits) ? digits : undefined;
+}
+
 function text(v: string | null | undefined): string | undefined {
   const t = v?.trim();
   return t ? t : undefined;
@@ -182,7 +188,7 @@ export function productFromPhoto(x: PhotoExtractionT, imageBase64: string): Prod
 
   return {
     id: `photo:${hash}`,
-    ean: text(x.barcode),
+    ean: barcodeDigits(x.barcode),
     name: text(x.name) ?? "Produkt z fotky",
     brand: text(x.brand),
     manufacturer: text(x.manufacturer) ?? text(x.brand),

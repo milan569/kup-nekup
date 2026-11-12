@@ -169,6 +169,7 @@ export interface OffLookup {
 
 export async function fetchByEan(ean: string, timeoutMs = 4000, priority: Priority = "user"): Promise<OffLookup> {
   const errors: string[] = [];
+  let offAnswered = false;
   // background work only asks the main food database and only with spare budget
   const order: OffSource[] = priority === "user" ? ["off", "obf", "opf"] : ["off"];
   for (const src of order) {
@@ -184,11 +185,14 @@ export async function fetchByEan(ean: string, timeoutMs = 4000, priority: Priori
       if (json.status === 1 && json.product) {
         return { product: normalize(json.product, src), notFound: false, errors };
       }
+      if (src === "off") offAnswered = true;
     } catch (err) {
       errors.push(`${src}: ${(err as Error).message}`);
     }
   }
-  return { notFound: errors.length === 0, errors };
+  // the food database is the one that counts: when it says "unknown", a cosmetics
+  // database timing out must not turn the answer into "database unavailable"
+  return { notFound: offAnswered || errors.length === 0, errors };
 }
 
 /** EAN from an Open Food Facts product link, e.g. de.openfoodfacts.org/produkt/4056489605195/… */
@@ -283,6 +287,7 @@ export async function searchByText(q: string, countries: string[], timeoutMs = 5
 }
 
 async function legacySearch(q: string, countries: string[], timeoutMs: number): Promise<SearchCandidate[]> {
+  if (Date.now() < cooldownUntil) throw new OffUnavailableError("rate limited by the database, cooling down");
   const params = new URLSearchParams({
     search_terms: q,
     search_simple: "1",
@@ -334,6 +339,8 @@ export async function categoryCandidates(
   const list = (countries.length ? countries : ["cz"]).slice(0, 3);
   const out = new Map<string, CategoryCandidate>();
   let failures = 0;
+  // background work: never ahead of the user's own scans, never during a 429 cooldown
+  if (!admit("background")) throw new OffUnavailableError("rate budget reserved for user scans");
   for (const cc of list) {
     const params = new URLSearchParams({
       categories_tags: categoryTag,

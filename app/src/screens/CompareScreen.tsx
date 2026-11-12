@@ -1,15 +1,15 @@
 import { Ionicons } from "@expo/vector-icons";
 import type { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Image, Modal, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { api, describeError } from "../api/client";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
+import { api, describeError, errorKindOf, type ErrorKind } from "../api/client";
 import type { CompareResult, ProductResult } from "../api/types";
 import { MAX_COMPARE, useCompare } from "../compare";
 import { Button } from "../components/Button";
 import { Chip, ChipRow } from "../components/Chip";
-import { ErrorBox } from "../components/ErrorBox";
+import { ApiErrorBox } from "../components/ApiErrorBox";
 import { InlineLoading, LoadingOverlay } from "../components/LoadingOverlay";
 import { SourceLink } from "../components/SourceLink";
 import { VerdictBadge } from "../components/VerdictBadge";
@@ -19,6 +19,7 @@ import { useProfile } from "../profile";
 import { loadFavorites, loadHistory, toggleFavorite, type HistoryEntry } from "../storage/history";
 import { comparisonId, findComparison, saveComparison } from "../storage/comparisons";
 import { fontSize, radius, spacing, useTheme } from "../theme";
+import { confirmDestructive } from "../utils/confirm";
 import { pickLabelFromLibrary } from "../utils/image";
 
 const MEDALS = ["🥇", "🥈", "🥉", "4."];
@@ -34,6 +35,7 @@ const COMPARABLE: Record<CompareResult["comparable"], { label: string; bg: strin
  */
 export function CompareScreen() {
   const t = useTheme();
+  const insets = useSafeAreaInsets();
   const navigation = useNavigation<RootNavigation>();
   const tabNavigation = useNavigation<BottomTabNavigationProp<TabParamList, "Compare">>();
   const route = useRoute<RouteProp<TabParamList, "Compare">>();
@@ -44,16 +46,20 @@ export function CompareScreen() {
   const [deep, setDeep] = useState<CompareResult | null>(null);
   const [running, setRunning] = useState<"quick" | "deep" | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [errorKind, setErrorKind] = useState<ErrorKind | null>(null);
   const [historyOpen, setHistoryOpen] = useState(false);
   const [history, setHistory] = useState<HistoryEntry[]>([]);
   const [saved, setSaved] = useState(false);
 
   // a changed basket means another comparison: show the stored one when it exists
   const basketKey = compare.items.map((r) => r.product.id).join("|");
+  const basketRef = useRef(basketKey);
+  basketRef.current = basketKey;
   const entryId = comparisonId(compare.items);
   useEffect(() => {
     let cancelled = false;
     setError(null);
+    setErrorKind(null);
     findComparison(entryId).then((e) => {
       if (cancelled) return;
       setQuick(e?.quick ?? null);
@@ -90,29 +96,39 @@ export function CompareScreen() {
     setSaved(await toggleFavorite(entryId));
   };
 
+  const fail = (err: unknown) => {
+    setError(describeError(err));
+    setErrorKind(errorKindOf(err));
+  };
+
   const runQuick = async () => {
+    const forBasket = basketKey;
     setRunning("quick");
     setError(null);
     try {
       const r = (await api.compareQuick(payload())).result;
+      // the basket changed meanwhile: this ranking would land on other products
+      if (basketRef.current !== forBasket) return;
       setQuick(r);
       await persist(r, deep);
     } catch (err) {
-      setError(describeError(err));
+      if (basketRef.current === forBasket) fail(err);
     } finally {
       setRunning(null);
     }
   };
 
   const runDeep = async () => {
+    const forBasket = basketKey;
     setRunning("deep");
     setError(null);
     try {
       const r = (await api.compare(payload())).result;
+      if (basketRef.current !== forBasket) return;
       setDeep(r);
       await persist(quick, r);
     } catch (err) {
-      setError(describeError(err));
+      if (basketRef.current === forBasket) fail(err);
     } finally {
       setRunning(null);
     }
@@ -129,10 +145,12 @@ export function CompareScreen() {
       const uri = await pickLabelFromLibrary();
       if (!uri) return;
       compare.setCollecting(true);
-      await lookup.lookupPhotoUri(uri);
+      const ok = await lookup.lookupPhotoUri(uri);
+      // the lookup shows its own error box; a failed photo must not leave the basket in collecting mode
+      if (!ok) compare.setCollecting(false);
     } catch (err) {
       compare.setCollecting(false);
-      setError(describeError(err));
+      fail(err);
     }
   };
 
@@ -143,6 +161,7 @@ export function CompareScreen() {
 
   const full = compare.items.length >= MAX_COMPARE;
   const result = deep ?? quick;
+  const comparableInfo = result ? (COMPARABLE[result.comparable] ?? COMPARABLE.partly) : COMPARABLE.partly;
   const byIndex = (i: number): ProductResult | undefined => compare.items[i];
 
   return (
@@ -175,7 +194,14 @@ export function CompareScreen() {
                 <VerdictBadge verdict={r.assessment.verdict} size="compact" labelSet={r.assessment.labelSet} />
               </View>
             </Pressable>
-            <Pressable onPress={() => compare.remove(r.product.id)} hitSlop={10} accessibilityRole="button" accessibilityLabel="Odebrat z porovnání">
+            <Pressable
+              onPress={() => compare.remove(r.product.id)}
+              disabled={running !== null}
+              hitSlop={10}
+              accessibilityRole="button"
+              accessibilityLabel="Odebrat z porovnání"
+              style={{ opacity: running ? 0.3 : 1 }}
+            >
               <Ionicons name="close-circle" size={24} color={t.muted} />
             </Pressable>
           </View>
@@ -207,19 +233,25 @@ export function CompareScreen() {
         )}
         {compare.items.length === 1 && <Text style={[styles.hint, { color: t.muted }]}>Přidejte ještě aspoň jeden výrobek.</Text>}
         {compare.items.length >= 2 && (
-          <Text style={[styles.clear, { color: t.muted }]} onPress={compare.clear} suppressHighlighting>
-            Vyprázdnit porovnání
-          </Text>
+          <Button
+            title="Vyprázdnit porovnání"
+            variant="ghost"
+            compact
+            disabled={running !== null}
+            onPress={() => confirmDestructive("Vyprázdnit porovnání?", "Výrobky z košíku zmizí; porovnání uložená v historii zůstanou.", "Vyprázdnit", compare.clear)}
+            style={{ marginTop: spacing.sm }}
+          />
         )}
 
         {running === "quick" && <InlineLoading text="Rychlé porovnání podle složení, pravidel a krátkého ověření na webu…" />}
         {running === "deep" && <InlineLoading text="Důkladné porovnání: průzkum každého výrobku a srovnání. Zabere 1–3 minuty…" />}
-        {error && !running ? <ErrorBox message={error} onRetry={() => setError(null)} retryLabel="Zavřít" /> : null}
+        {error && !running ? <ApiErrorBox message={error} kind={errorKind} onDismiss={() => setError(null)} /> : null}
+        {lookup.error && !lookup.busy ? <ApiErrorBox message={lookup.error} kind={lookup.errorKind} onRetry={lookup.retry} onDismiss={lookup.clearError} /> : null}
 
         {result && (
           <View style={[styles.result, { backgroundColor: t.card, borderColor: t.border }]}>
             <ChipRow>
-              <Chip label={COMPARABLE[result.comparable].label} bg={COMPARABLE[result.comparable].bg} color="#FFFFFF" small />
+              <Chip label={comparableInfo.label} bg={comparableInfo.bg} color="#FFFFFF" small />
               <Chip label={result.mode === "deep" ? "důkladné porovnání" : "rychlé porovnání"} small />
             </ChipRow>
             <Text style={[styles.headline, { color: t.text }]}>{result.headline}</Text>
@@ -290,9 +322,7 @@ export function CompareScreen() {
               </Pressable>
             )}
             {quick && !deep && (
-              <Text style={[styles.clear, { color: t.muted }]} onPress={runQuick} suppressHighlighting>
-                Spustit rychlé porovnání znovu
-              </Text>
+              <Button title="Spustit rychlé porovnání znovu" variant="ghost" compact onPress={runQuick} disabled={running !== null} style={{ marginTop: spacing.sm }} />
             )}
           </View>
         )}
@@ -311,7 +341,7 @@ export function CompareScreen() {
                     key={e.id}
                     disabled={inBasket || full}
                     onPress={() => {
-                      compare.add(e.result);
+                      if (!compare.add(e.result)) fail(new Error(`Do porovnání se vejdou nejvýš ${MAX_COMPARE} výrobky.`));
                       setHistoryOpen(false);
                     }}
                     style={({ pressed }) => [styles.histRow, { borderColor: t.border, opacity: inBasket ? 0.4 : pressed ? 0.7 : 1 }]}
@@ -332,7 +362,7 @@ export function CompareScreen() {
                 );
               })}
             </ScrollView>
-            <View style={{ padding: spacing.lg }}>
+            <View style={{ padding: spacing.lg, paddingBottom: spacing.lg + insets.bottom }}>
               <Button title="Zavřít" variant="secondary" onPress={() => setHistoryOpen(false)} />
             </View>
           </Pressable>
@@ -369,7 +399,6 @@ const styles = StyleSheet.create({
   addBtn: { alignItems: "center", justifyContent: "center", width: 72, paddingVertical: spacing.sm, borderRadius: radius.sm, gap: 4 },
   addLabel: { fontSize: fontSize.xs, fontWeight: "700" },
   hint: { fontSize: fontSize.sm, marginTop: spacing.md, textAlign: "center" },
-  clear: { fontSize: fontSize.sm, fontWeight: "700", textAlign: "center", marginTop: spacing.md, textDecorationLine: "underline" },
   result: { marginTop: spacing.lg, padding: spacing.md, borderRadius: radius.md, borderWidth: 1 },
   headline: { fontSize: fontSize.lg, fontWeight: "800", marginTop: spacing.sm },
   summary: { fontSize: fontSize.md, lineHeight: 23, marginTop: spacing.sm, marginBottom: spacing.md },

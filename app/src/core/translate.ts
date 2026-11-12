@@ -47,7 +47,7 @@ export async function translateIngredients(text: string): Promise<string> {
     .replace(/^(složení|ingredients)\s*:\s*/i, "")
     .replace(/^["„“]+|["“”]+$/g, "")
     .trim();
-  if (!out) throw new Error("Překlad složení se nepodařil.");
   recordUsage(res.usage, res.model, "translate");
+  if (!out) throw new Error("Překlad složení se nepodařil.");
   return out;
 }

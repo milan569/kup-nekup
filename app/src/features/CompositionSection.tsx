@@ -146,7 +146,7 @@ export function CompositionSection({ product }: { product: ProductData }) {
                   style={[
                     styles.tapItem,
                     { textDecorationColor: t.muted },
-                    it.severity > 0 && { color: severityColor(it.severity as 1 | 2 | 3), fontWeight: "700" },
+                    it.severity > 0 && { color: severityColor(it.severity as 1 | 2 | 3, t.dark), fontWeight: "700" },
                   ]}
                 >
                   {it.text}
@@ -179,8 +179,8 @@ export function CompositionSection({ product }: { product: ProductData }) {
               <Chip
                 key={a.code}
                 label={`${a.code} ${a.name}`}
-                bg={riskColors[a.risk].bg}
-                color={riskColors[a.risk].text}
+                bg={(riskColors[a.risk] ?? riskColors[0]).bg}
+                color={(riskColors[a.risk] ?? riskColors[0]).text}
                 onPress={() => setQuery({ title: `${a.code} ${a.name}`, ref: `additive:${a.code}` })}
               />
             ))}
@@ -198,7 +198,7 @@ export function CompositionSection({ product }: { product: ProductData }) {
               accessibilityRole="button"
               style={({ pressed }) => [
                 styles.flag,
-                { backgroundColor: t.cardAlt, borderLeftColor: severityColor(f.severity), opacity: pressed ? 0.75 : 1 },
+                { backgroundColor: t.cardAlt, borderLeftColor: severityColor(f.severity, t.dark), opacity: pressed ? 0.75 : 1 },
               ]}
             >
               <Text style={[styles.flagTitle, { color: t.text }]}>{f.label} ›</Text>
@@ -295,8 +295,9 @@ function novaLabel(g: number): string {
   return g === 1 ? "minimálně zpracované" : g === 2 ? "kuchyňské suroviny" : g === 3 ? "zpracované" : "ultra-zpracované";
 }
 
-function severityColor(s: 1 | 2 | 3): string {
-  return s === 3 ? "#C62828" : s === 2 ? "#EF6C00" : "#F9A825";
+function severityColor(s: 1 | 2 | 3, dark: boolean): string {
+  // yellow text on a white card is unreadable (~1.9:1); a darker amber in light mode
+  return s === 3 ? (dark ? "#EF5350" : "#C62828") : s === 2 ? (dark ? "#FFA726" : "#E65100") : dark ? "#F9A825" : "#A66A00";
 }
 
 function formatNumber(n: number): string {

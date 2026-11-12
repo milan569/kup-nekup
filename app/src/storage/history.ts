@@ -1,4 +1,4 @@
-import type { Assessment, Insight, ProductData, ProductResult, QuickInsight } from "../api/types";
+import type { Assessment, Insight, ProductData, ProductResult, QuickInsight, Tone } from "../api/types";
 import { readJson, removeKey, writeJson } from "./kv";
 
 export interface HistoryEntry {
@@ -100,7 +100,8 @@ function overlap(a: string[], b: string[]): number {
   const B = new Set(b);
   let n = 0;
   for (const w of A) if (B.has(w)) n++;
-  return n / Math.min(A.size, B.size);
+  // against the longer name: "jogurt" alone must not match every "jogurt bílý", "jogurt jahodový"…
+  return n / Math.max(A.size, B.size);
 }
 
 /** "Balans obrok 330 g" (Imlek) and "Balans obrok 500 g" (Imlek) are the same product. */
@@ -116,10 +117,11 @@ export function sameProduct(a: { id: string; name: string; brand?: string }, b: 
   return overlap([...na, ...ba], [...nb, ...bb]) >= 0.75;
 }
 
-/** The newest history entry for the same product that already has an AI opinion. */
-export async function findSimilar(product: { id: string; name: string; brand?: string }): Promise<HistoryEntry | undefined> {
+/** The newest history entry for the same product that already has an AI opinion (in the given tone, when known). */
+export async function findSimilar(product: { id: string; name: string; brand?: string }, tone?: Tone): Promise<HistoryEntry | undefined> {
   const list = await loadHistory();
-  return list.find((e) => (e.quick || e.insight) && sameProduct(e.result.product, product));
+  const toneOf = (e: HistoryEntry) => e.insight?.tone ?? e.quick?.tone;
+  return list.find((e) => (e.quick || e.insight) && (!tone || !toneOf(e) || toneOf(e) === tone) && sameProduct(e.result.product, product));
 }
 
 export async function removeFromHistory(id: string): Promise<void> {

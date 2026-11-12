@@ -365,6 +365,8 @@ export interface QuickInsight {
   value?: ValueAssessment;
   /** built on an earlier opinion after a supplementary photo (not a fresh start) */
   refined?: boolean;
+  /** the tone the texts were written in (absent in opinions stored before this field existed) */
+  tone?: Tone;
   /** dTest test page found by the search (link only, see DtestRef) */
   dtest?: DtestRef;
   generatedAt: string;
