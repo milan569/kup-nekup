@@ -12,3 +12,5 @@ dist/
 *.sqlite-shm
 /data/
 .claude/settings.local.json
+# hand-over packages built for other people (git archive of HEAD)
+/prenos/

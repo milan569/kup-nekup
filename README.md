@@ -2,6 +2,7 @@
 
 Aplikace pro iPhone, která v obchodě odpoví na otázku „Mám to koupit?“.
 Zadání a rozhodnutí jsou v [ZADANI.md](ZADANI.md).
+Chcete vlastní nezávislou kopii (svůj GitHub, svůj klíč)? Postup pro vás i pro vašeho Clauda je v [PRENOS.md](PRENOS.md).
 
 Od 25. 10. 2026 je to webová aplikace bez serveru: běží z GitHub Pages na adrese
 **https://milan569.github.io/kup-nekup/**, na iPhonu se přidá na plochu a Open Food Facts
@@ -13,6 +14,7 @@ app/src/core/   jádro: Open Food Facts, pravidla, posudky AI, překlady, cache 
 app/src/core/data/   tabulky E-čísel, nežádoucích přísad, alergenů a zdravotních textů
 app/scripts/    kouřový test a kontrola schémat (klíč jen v git-ignorovaném app/scripts/.env)
 .github/workflows/pages.yml   build a nasazení na GitHub Pages při každém push do main
+PRENOS.md       jak si aplikaci rozchodit jako vlastní kopii pod jiným účtem
 ```
 
 Původní Node server pro Fly.io byl 25. 10. 2026 smazán; zůstává v historii gitu (commit „Snapshot před převodem na web bez serveru“).
@@ -75,11 +77,11 @@ Požadavky: Node 24+.
 cd app
 npm install
 npx expo start --web          # http://localhost:8081 (nebo spouštěcí konfigurace „app-web“)
-npm test                      # vitest, 134 testů jádra
+npm test                      # vitest, testy jádra
 npm run typecheck
 ```
 
-Statický export jako na GitHub Pages (z Git Bash je nutné `MSYS_NO_PATHCONV=1`, jinak Git převede `/kup-nekup` na cestu):
+Statický export jako na GitHub Pages (cesta je jméno repozitáře, CI si ji odvodí samo; z Git Bash je nutné `MSYS_NO_PATHCONV=1`, jinak Git převede `/kup-nekup` na cestu):
 
 ```bash
 cd app

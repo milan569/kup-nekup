@@ -30,12 +30,20 @@ jobs:
       - run: npm ci
       - run: npx tsc --noEmit
       - run: npx vitest run
+      # The site lives at https://<owner>.github.io/<repository>/, so the base path is the
+      # repository name: a copy under another account or name deploys without any change
+      # (see PRENOS.md). A repository named <owner>.github.io is served from the root.
+      - name: Base path of the site
+        run: |
+          repo="${GITHUB_REPOSITORY#*/}"
+          owner="${GITHUB_REPOSITORY_OWNER}"
+          if [ "${repo,,}" = "${owner,,}.github.io" ]; then base=""; else base="/$repo"; fi
+          echo "EXPO_BASE_URL=$base" >> "$GITHUB_ENV"
+          echo "Base path: '$base'"
       - run: npx expo export -p web
         env:
           CI: "1"
           EXPO_NO_TELEMETRY: "1"
-          # the site lives at https://milan569.github.io/kup-nekup/
-          EXPO_BASE_URL: /kup-nekup
       - uses: actions/upload-pages-artifact@v3
         with:
           path: app/dist
