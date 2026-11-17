@@ -1,32 +1,33 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import type { ValueAssessment } from "../api/types";
-import { VALUE_VERDICTS, valueText } from "../api/verdicts";
+import type { ValueAssessment, Verdict } from "../api/types";
+import { valueBadge } from "../api/verdicts";
 import { useTone } from "../profile";
 import { fontSize, spacing } from "../theme";
 import { domainOf, openUrl } from "./SourceLink";
 
 /**
  * Price against what you get, right under the quality verdict:
- * "💸 Vyhozený prachy" (overpriced) or "💰 Za ty prachy dobrý" (good value).
- * Fair price and unknown price show nothing.
+ * "💸 Vyhozený prachy" (overpriced), "💰 Za ty prachy dobrý" (good value on a
+ * product worth buying) or "🪙 Levný, to jo" (a low price on a poor product).
+ * Fair price and unknown price show nothing. The wording follows the quality
+ * verdict above it, so the two never contradict each other.
  */
-export function ValueBadge({ value }: { value?: ValueAssessment }) {
+export function ValueBadge({ value, quality }: { value?: ValueAssessment; quality: Verdict }) {
   const tone = useTone();
-  if (!value || (value.verdict !== "vyhozene_prachy" && value.verdict !== "vyhodne")) return null;
-  const meta = VALUE_VERDICTS[value.verdict];
-  const text = valueText(value.verdict, tone);
-  const color = meta.textColor;
+  const badge = valueBadge(value?.verdict, quality, tone);
+  if (!value || !badge) return null;
+  const color = badge.textColor;
   return (
-    <View style={[styles.box, { backgroundColor: meta.color }]} accessibilityLabel={`${text.label}. ${value.reason}`}>
-      <Text style={styles.emoji}>{meta.emoji}</Text>
+    <View style={[styles.box, { backgroundColor: badge.color }]} accessibilityLabel={`${badge.text.label}. ${value.reason}`}>
+      <Text style={styles.emoji}>{badge.emoji}</Text>
       <View style={{ flex: 1 }}>
-        <Text style={[styles.label, { color }]}>{text.label}</Text>
-        <Text style={[styles.subtitle, { color }]}>{text.subtitle}</Text>
+        <Text style={[styles.label, { color }]}>{badge.text.label}</Text>
+        <Text style={[styles.subtitle, { color }]}>{badge.text.subtitle}</Text>
         {value.reason ? <Text style={[styles.reason, { color }]}>{value.reason}</Text> : null}
         {value.cheaperOption ? (
           <Text style={[styles.reason, { color }]}>
-            <Text style={{ fontWeight: "800" }}>{value.verdict === "vyhozene_prachy" ? "Levněji: " : "Pro srovnání: "}</Text>
+            <Text style={{ fontWeight: "800" }}>{badge.kind === "vyhozene_prachy" ? "Levněji: " : "Pro srovnání: "}</Text>
             {value.cheaperOption}
           </Text>
         ) : null}

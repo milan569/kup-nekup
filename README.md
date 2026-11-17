@@ -47,7 +47,7 @@ U alkoholu má vtipný režim vlastní stupnici (`ALCOHOL_HUMOR` ve `verdicts.ts
 
 **Alkohol, káva, čaj a koření** se nehodnotí podle zdraví. Alkohol škodí stejně v každé lahvi. Pravidla posuzují poctivost výroby (pivo ze sladu vs. s cukrem, sirupem nebo kukuřicí, pravý destilát vs. líh s aromatem, aromatizované víno, označení původu) bez Nutri-Score a NOVA. Verdikt vede AI podle recenzí, hodnocení chuti a reputace. Zdraví se ozve jen u rizikových výrobků (`alcoholRules` v `category.ts`). Káva: 100 % arabika, zrnková, původ, bez aromatizace a cikorky. Čaj: sypaný list, původ, bez aromatizace, ovocné čaje hlavně z ibišku, sena v „detox“ čajích. Koření: čistota bez soli, plnidel, glutamátu a barviv, kumarin v kasii. Slazené nápoje zůstávají u běžných pravidel (`QUALITY_FIRST`).
 
-**💸 Vyhozený prachy** je cenový štítek vedle verdiktu kvality. AI při rychlém názoru i průzkumu hledá ceny (e-shopy řetězců, letáky) a porovná je za kg nebo litr se stejně kvalitními výrobky. Když se platí hlavně za značku, obal nebo marketing, ukáže štítek s cenou, levnější volbou a odkazem na cenu a verdikt sníží nejvýš na „Ujde to“. Bez stránky s cenou z vyhledávání se štítek nezobrazí. Opačný štítek je 💰 „Za ty prachy dobrý“ (`applyValue` v `insight.ts`).
+**💸 Vyhozený prachy** je cenový štítek vedle verdiktu kvality. AI při rychlém názoru i průzkumu hledá ceny (e-shopy řetězců, letáky) a porovná je za kg nebo litr se stejně kvalitními výrobky. Když se platí hlavně za značku, obal nebo marketing, ukáže štítek s cenou, levnější volbou a odkazem na cenu a verdikt sníží nejvýš na „Ujde to“. Bez stránky s cenou z vyhledávání se štítek nezobrazí. Opačný štítek je 💰 „Za ty prachy dobrý“ (`applyValue` v `insight.ts`). Ten chválí výrobek, takže se ukáže jen u verdiktu „Ujde to“ a lepšího. Nízká cena u slabého výrobku nebo u výrobku s neznámou kvalitou dostane neutrální štítek 🪙 „Levný, to jo“; text štítku se vždy řídí verdiktem kvality nad ním (`valueBadge` ve `verdicts.ts`).
 
 **Složení česky.** Cizojazyčné složení přeloží malý rychlý model `claude-haiku-5-5` do 1–3 s, asi za 0,001 USD. Každý text se překládá jen jednou, pak jde z cache. V aplikaci se dá přepnout na originál. Model se mění v `app/src/core/config.ts`.
 
@@ -67,7 +67,7 @@ U alkoholu má vtipný režim vlastní stupnici (`ALCOHOL_HUMOR` ve `verdicts.ts
 
 Bez klíče funguje čárový kód a pravidla. Fotky etiket, posudky AI, překlady a hledání podle názvu při výpadku databáze potřebují klíč.
 
-Nová verze aplikace: Expo Go ani žádný obchod už nejsou potřeba. Po každém pushi do `main` GitHub Actions web znovu sestaví a nasadí (2–4 minuty); aplikace na ploše si novou verzi stáhne při dalším otevření.
+Nová verze aplikace: Expo Go ani žádný obchod už nejsou potřeba. Po každém pushi do `main` GitHub Actions web znovu sestaví a nasadí (2–4 minuty); aplikace na ploše si novou verzi stáhne při dalším otevření. Které sestavení v telefonu běží, ukazuje poslední řádek Profilu (datum a zkrácený commit).
 
 ## 3. Vývoj na PC
 

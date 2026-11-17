@@ -147,7 +147,7 @@ export function ResultScreen({ route, navigation }: Props) {
             />
           </View>
         ) : null}
-        <ValueBadge value={ai.insight?.value ?? ai.quick?.value} />
+        <ValueBadge value={ai.insight?.value ?? ai.quick?.value} quality={assessment.verdict} />
         {assessment.aiAdjusted && (
           <Text style={[styles.adjusted, { color: t.muted, backgroundColor: t.cardAlt }]}>
             Pravidla: {verdictText(assessment.aiAdjusted.from, tone, assessment.labelSet).label} → s posudkem AI:{" "}

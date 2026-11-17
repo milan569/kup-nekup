@@ -12,7 +12,7 @@ import { useProfile } from "../profile";
 import { clearHistory } from "../storage/history";
 import { fontSize, spacing, useTheme } from "../theme";
 import { confirmDestructive } from "../utils/confirm";
-import { APP_VERSION } from "../version";
+import { APP_BUILD, APP_VERSION } from "../version";
 
 type ListKey = keyof Pick<UserProfile, "countries" | "stores" | "allergens" | "diets" | "avoid">;
 
@@ -108,7 +108,8 @@ export function ProfileScreen() {
           <Text style={[styles.sub, { color: t.muted, marginTop: spacing.xs }]}>Bez klíče funguje jen čárový kód a pravidla; fotky etiket a posudky AI potřebují klíč.</Text>
         ) : null}
         <Button title="Smazat historii" variant="ghost" onPress={confirmClear} style={{ marginTop: spacing.sm }} />
-        <Text style={[styles.version, { color: t.muted }]}>Kup / Nekup {APP_VERSION} · verdikt není zdravotní rada</Text>
+        <Text style={[styles.version, { color: t.muted }]}>Kup / Nekup {APP_VERSION}
+          {APP_BUILD ? ` (sestavení ${APP_BUILD})` : ""} · verdikt není zdravotní rada</Text>
       </ScrollView>
     </SafeAreaView>
   );

@@ -143,6 +143,53 @@ export function valueText(v: keyof typeof VALUE_VERDICTS, tone: Tone = "humor"):
   return VALUE_VERDICTS[v][tone === "serious" ? "serious" : "humor"];
 }
 
+/** What the price badge says once the quality verdict is known. */
+export interface ValueBadgeView {
+  /** "levne" = a low price on a product that earns no praise: poor quality, or quality unknown */
+  kind: "vyhozene_prachy" | "vyhodne" | "levne";
+  emoji: string;
+  color: string;
+  textColor: string;
+  text: VerdictText;
+}
+
+const CHEAP: ValueMeta = {
+  emoji: "🪙",
+  color: "#455A64",
+  textColor: "#FFFFFF",
+  humor: { label: "Levný, to jo", subtitle: "Stojí málo, protože za moc nestojí." },
+  serious: { label: "Nízká cena", subtitle: "Cena nevyvažuje slabou kvalitu." },
+};
+const CHEAP_UNKNOWN: Record<"humor" | "serious", VerdictText> = {
+  humor: { label: "Levný, to jo", subtitle: "Cena dobrá. Co je uvnitř, zatím nevíme." },
+  serious: { label: "Nízká cena", subtitle: "Kvalitu zatím nelze posoudit." },
+};
+const GOOD_VALUE_AVERAGE: Record<"humor" | "serious", VerdictText> = {
+  humor: { label: "Za ty prachy dobrý", subtitle: "Žádný zázrak, ale cena sedí." },
+  serious: { label: "Výhodná koupě", subtitle: "Průměrná kvalita za příznivou cenu." },
+};
+
+/**
+ * The price badge that fits the quality verdict on the same screen.
+ * "Za ty prachy dobrý – poctivá věc" praises the product, so it needs one worth
+ * buying; next to "Chemický šmejd" it was a contradiction. A low price on a poor
+ * product, or on one whose quality is unknown, is shown as just that: cheap.
+ */
+export function valueBadge(value: ValueVerdict | undefined, quality: Verdict, tone: Tone = "humor"): ValueBadgeView | null {
+  const t = tone === "serious" ? "serious" : "humor";
+  if (value === "vyhozene_prachy") {
+    const m = VALUE_VERDICTS.vyhozene_prachy;
+    return { kind: "vyhozene_prachy", emoji: m.emoji, color: m.color, textColor: m.textColor, text: m[t] };
+  }
+  if (value !== "vyhodne") return null;
+  const rank = VERDICTS[quality]?.rank ?? 0;
+  if (rank >= VERDICTS.jsou_lepsi.rank) {
+    const m = VALUE_VERDICTS.vyhodne;
+    return { kind: "vyhodne", emoji: m.emoji, color: m.color, textColor: m.textColor, text: rank > VERDICTS.jsou_lepsi.rank ? m[t] : GOOD_VALUE_AVERAGE[t] };
+  }
+  return { kind: "levne", emoji: CHEAP.emoji, color: CHEAP.color, textColor: CHEAP.textColor, text: rank === 0 ? CHEAP_UNKNOWN[t] : CHEAP[t] };
+}
+
 /** an overpriced product can be at most "jsou lepší": the same thing cheaper is the better buy */
 export const VALUE_CAP: Verdict = "jsou_lepsi";
 

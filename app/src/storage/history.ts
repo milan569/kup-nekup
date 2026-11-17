@@ -1,4 +1,5 @@
 import type { Assessment, Insight, ProductData, ProductResult, QuickInsight, Tone } from "../api/types";
+import { productTokens, sameProduct } from "../core/identity";
 import { readJson, removeKey, writeJson } from "./kv";
 
 export interface HistoryEntry {
@@ -78,44 +79,8 @@ export async function updateHistoryQuick(result: ProductResult, quick: QuickInsi
   }
 }
 
-// ---- the same product again? (name + brand, ignoring size, vintage, packaging) ----
-
-const NOISE =
-  /\b\d+([.,]\d+)?\s*(g|kg|mg|ml|l|cl|dl|%|ks|pcs|x|st)\b|\b(19|20)\d{2}\b|\b(plech(ovka)?|lahev|láhev|sklo|pet|baleni|balení|multipack|karton|sacek|sáček|kelimek|kelímek|vratna|vratná|nevratna|nevratná|family|mini|maxi|xl|xxl)\b/giu;
-
-export function productTokens(s: string | undefined): string[] {
-  return (s ?? "")
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .replace(NOISE, " ")
-    .replace(/[^a-z0-9]+/g, " ")
-    .split(" ")
-    .filter((w) => w.length > 1);
-}
-
-function overlap(a: string[], b: string[]): number {
-  if (!a.length || !b.length) return 0;
-  const A = new Set(a);
-  const B = new Set(b);
-  let n = 0;
-  for (const w of A) if (B.has(w)) n++;
-  // against the longer name: "jogurt" alone must not match every "jogurt bílý", "jogurt jahodový"…
-  return n / Math.max(A.size, B.size);
-}
-
-/** "Balans obrok 330 g" (Imlek) and "Balans obrok 500 g" (Imlek) are the same product. */
-export function sameProduct(a: { id: string; name: string; brand?: string }, b: { id: string; name: string; brand?: string }): boolean {
-  if (a.id === b.id) return true;
-  const na = productTokens(a.name);
-  const nb = productTokens(b.name);
-  if (overlap(na, nb) < 0.75) return false;
-  const ba = productTokens(a.brand);
-  const bb = productTokens(b.brand);
-  if (ba.length && bb.length) return overlap(ba, bb) >= 0.5;
-  // one side has no brand: the names together must still match
-  return overlap([...na, ...ba], [...nb, ...bb]) >= 0.75;
-}
+// "The same product again?" lives in the engine (src/core/identity.ts), where it is unit-tested.
+export { productTokens, sameProduct };
 
 /** The newest history entry for the same product that already has an AI opinion (in the given tone, when known). */
 export async function findSimilar(product: { id: string; name: string; brand?: string }, tone?: Tone): Promise<HistoryEntry | undefined> {

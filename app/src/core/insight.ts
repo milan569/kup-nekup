@@ -24,7 +24,7 @@ import { INSIGHT_EFFORT, INSIGHT_MAX_FETCHES, INSIGHT_MAX_SEARCHES, INSIGHT_MODE
 import { assertSpendAllowed, recordUsage } from "./usage";
 import { scoreForVerdict } from "./scoring";
 import { QUALITY_FIRST, detectCategory, categoryRules } from "./category";
-import { VALUE_CAP, VERDICTS, VERDICT_SCALE, isBetter, valueText } from "./verdicts";
+import { VALUE_CAP, VERDICTS, VERDICT_SCALE, isBetter, valueBadge, valueText } from "./verdicts";
 import { ENRICH_VERSION, enrichAlternatives, keepNotWorse } from "./alternatives-enrich";
 
 /**
@@ -871,8 +871,9 @@ export function applyValue(
     };
   }
   if (value.verdict === "vyhodne") {
-    const t = valueText("vyhodne", tone);
-    return { ...a, reasons: [{ kind: "positive", text: `💰 ${t.label}: ${value.reason}` }, ...a.reasons] };
+    // praise only what is worth buying: a low price on a poor product is a neutral note, not a plus
+    const badge = valueBadge("vyhodne", a.verdict, tone)!;
+    return { ...a, reasons: [{ kind: badge.kind === "vyhodne" ? "positive" : "neutral", text: `${badge.emoji} ${badge.text.label}: ${value.reason}` }, ...a.reasons] };
   }
   return a;
 }

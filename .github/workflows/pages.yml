@@ -40,6 +40,9 @@ jobs:
           if [ "${repo,,}" = "${owner,,}.github.io" ]; then base=""; else base="/$repo"; fi
           echo "EXPO_BASE_URL=$base" >> "$GITHUB_ENV"
           echo "Base path: '$base'"
+      # shown at the bottom of Profil: which build runs on the phone (not a secret)
+      - name: Build stamp
+        run: echo "EXPO_PUBLIC_BUILD=$(date -u +%Y-%m-%d) ${GITHUB_SHA::7}" >> "$GITHUB_ENV"
       - run: npx expo export -p web
         env:
           CI: "1"

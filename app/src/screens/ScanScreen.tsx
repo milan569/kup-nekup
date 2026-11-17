@@ -12,6 +12,7 @@ import { ScanVoter, pickScannedCode } from "../core/scan";
 import { useLookup } from "../hooks/useLookup";
 import type { RootNavigation } from "../navigationTypes";
 import { useProfile } from "../profile";
+import { dismissPhotoScanOffer, loadPhotoScanOffer } from "../storage/scanMode";
 import { fontSize, radius, spacing, useTheme } from "../theme";
 import { barcodesInPhoto } from "../utils/barcodePhoto";
 import {
@@ -49,6 +50,21 @@ export function ScanScreen() {
   // web only: single photos with the system camera instead of the live camera, which
   // an iPhone home-screen app has to ask permission for at every launch
   const photoMode = WEB && photoScan && !liveOn;
+  // live camera on the web: offer the prompt-free mode right here, until the user answers once
+  const [offer, setOffer] = useState(false);
+  useEffect(() => {
+    let cancelled = false;
+    if (!WEB || photoScan) setOffer(false);
+    else
+      loadPhotoScanOffer()
+        .then((show) => {
+          if (!cancelled) setOffer(show);
+        })
+        .catch(() => undefined);
+    return () => {
+      cancelled = true;
+    };
+  }, [photoScan]);
   const [hint, setHint] = useState<string | null>(null);
   const hintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [localError, setLocalError] = useState<string | null>(null);
@@ -329,6 +345,18 @@ export function ScanScreen() {
     getPermission().catch(() => undefined);
   }, [dismissError, getPermission]);
 
+  const switchToPhotoScan = useCallback(() => {
+    liveForSession = false;
+    setLiveOn(false);
+    setOffer(false);
+    setPhotoScan(true).catch(() => undefined);
+  }, [setPhotoScan]);
+
+  const dismissOffer = useCallback(() => {
+    setOffer(false);
+    dismissPhotoScanOffer().catch(() => undefined);
+  }, []);
+
   const authError = !localError && lookup.errorKind === "auth";
   const lookupErrorBox = !error ? null : authError ? (
     <ErrorBox title="Chybí nebo neplatí Claude klíč" message={error} actionLabel="Zadat klíč" onAction={openKeySettings} onRetry={dismissError} retryLabel="Zavřít" />
@@ -383,16 +411,7 @@ export function ScanScreen() {
               <Text style={[styles.note, { color: t.muted }]}>
                 Když se iPhone už neptá, zavřete aplikaci v přepínači aplikací a otevřete ji znovu.
               </Text>
-              <Button
-                title="Vždy skenovat bez živé kamery"
-                variant="ghost"
-                onPress={() => {
-                  liveForSession = false;
-                  setLiveOn(false);
-                  setPhotoScan(true).catch(() => undefined);
-                }}
-                style={{ marginTop: spacing.sm }}
-              />
+              <Button title="Vždy skenovat bez živé kamery" variant="ghost" onPress={switchToPhotoScan} style={{ marginTop: spacing.sm }} />
               <Text style={[styles.note, { color: t.muted }]}>Aplikace se pak na kameru neptá vůbec. Jde vrátit v Profilu.</Text>
             </>
           )}
@@ -457,6 +476,19 @@ export function ScanScreen() {
           </Pressable>
         ) : null}
         <View style={styles.bottom}>
+          {offer && !cameraError && !error ? (
+            <View style={styles.offer}>
+              <Text style={styles.offerText}>Vadí vám dotaz na kameru při každém spuštění? Bez živé kamery se iPhone neptá: fotíte jeho fotoaparátem.</Text>
+              <View style={styles.offerRow}>
+                <Pressable onPress={switchToPhotoScan} hitSlop={8} accessibilityRole="button">
+                  <Text style={styles.offerAction}>Skenovat bez dotazu</Text>
+                </Pressable>
+                <Pressable onPress={dismissOffer} hitSlop={8} accessibilityRole="button">
+                  <Text style={styles.offerDismiss}>Nechat živý sken</Text>
+                </Pressable>
+              </View>
+            </View>
+          ) : null}
           {cameraError ? (
             <ErrorBox
               title="Kamera nejde spustit"
@@ -506,5 +538,10 @@ const styles = StyleSheet.create({
   },
   zoomText: { color: "#FFFFFF", fontSize: fontSize.md, fontWeight: "700" },
   bottom: { padding: spacing.lg },
+  offer: { backgroundColor: "rgba(0,0,0,0.7)", borderRadius: radius.md, padding: spacing.md, marginBottom: spacing.sm },
+  offerText: { color: "#FFFFFF", fontSize: fontSize.sm, lineHeight: 20 },
+  offerRow: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: spacing.sm, gap: spacing.md },
+  offerAction: { color: "#7BE0A3", fontSize: fontSize.md, fontWeight: "800" },
+  offerDismiss: { color: "#FFFFFF", fontSize: fontSize.sm, opacity: 0.85, textDecorationLine: "underline" },
   btn: { marginHorizontal: 0 },
 });
